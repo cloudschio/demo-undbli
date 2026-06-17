@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Undangan digital tema Bali - Made & Ayu" />
-  <title>Undangan Digital | Made & Ayu</title>
+  <meta name="description" content="Undangan digital premium tema Bali" />
+  <title>Undangan Digital Premium | Bali Theme</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="preload" id="preload">
-    <div class="preload-card">
-      <p class="preload-small">Om Swastiastu</p>
+  <div class="loader" id="loader">
+    <div class="loader-card">
+      <p class="loader-kicker">Om Swastiastu</p>
       <h1>Undangan Pernikahan</h1>
-      <p class="preload-names">Made & Ayu</p>
-      <p class="preload-text">Dengan penuh suka cita, kami mengundang Anda untuk hadir dan memberi restu.</p>
-      <button id="openBtn">Buka Undangan</button>
+      <p class="loader-names">Made & Ayu</p>
+      <p class="loader-text">Dengan penuh rasa syukur, kami mengundang Anda untuk hadir dan memberikan doa restu.</p>
+      <button id="openBtn" class="btn btn-gold">Buka Undangan</button>
     </div>
   </div>
 
@@ -25,30 +25,34 @@
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   </audio>
 
-  <main class="page">
+  <button id="musicToggle" class="music-btn" aria-label="Toggle music">♪</button>
+
+  <main>
     <section class="hero">
       <div class="hero-overlay"></div>
+      <div class="ornament ornament-top"></div>
+      <div class="ornament ornament-bottom"></div>
       <div class="hero-content">
-        <p class="hero-kicker">Pawiwahan</p>
+        <p class="hero-kicker">Pawiwahan Agung</p>
         <h1>Made & Ayu</h1>
         <p class="hero-date">Minggu, 20 Juli 2026</p>
         <p class="hero-place">Ubud, Gianyar - Bali</p>
         <div class="hero-actions">
           <a href="#details" class="btn btn-gold">Lihat Detail</a>
-          <a href="#maps" class="btn btn-outline">Lokasi Acara</a>
+          <a href="#rsvp" class="btn btn-outline">Konfirmasi</a>
         </div>
       </div>
-      <div class="scroll-down">Scroll ke bawah</div>
+      <div class="scroll-indicator">Scroll ke bawah</div>
     </section>
 
-    <section class="section quote" id="details">
+    <section class="section intro" id="details">
       <div class="container">
-        <div class="card centered">
+        <div class="glass-card intro-card">
           <p class="script-title">Om Swastiastu</p>
           <p>
             Dengan memohon rahmat Tuhan Yang Maha Esa, kami bermaksud menyelenggarakan
             upacara pernikahan dan resepsi. Kehadiran serta doa restu Bapak/Ibu/Saudara/i
-            akan menjadi kehormatan bagi kami.
+            merupakan kehormatan terbesar bagi kami.
           </p>
         </div>
       </div>
@@ -58,19 +62,29 @@
       <div class="container">
         <h2 class="section-title">Mempelai</h2>
         <div class="couple-grid">
-          <article class="person-card">
-            <div class="portrait">M</div>
+          <article class="profile-card">
+            <div class="portrait portrait-left">M</div>
             <h3>Made Wirawan</h3>
-            <p class="person-desc">Putra dari Bapak I Made Sujana<br>dan Ibu Ni Ketut Sari</p>
+            <p>Putra dari Bapak I Made Sujana<br>dan Ibu Ni Ketut Sari</p>
           </article>
-
-          <div class="heart-separator">❤</div>
-
-          <article class="person-card">
-            <div class="portrait">A</div>
+          <div class="heart">❤</div>
+          <article class="profile-card">
+            <div class="portrait portrait-right">A</div>
             <h3>Ayu Lestari</h3>
-            <p class="person-desc">Putri dari Bapak I Wayan Arta<br>dan Ibu Ni Luh Dewi</p>
+            <p>Putri dari Bapak I Wayan Arta<br>dan Ibu Ni Luh Dewi</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story">
+      <div class="container">
+        <h2 class="section-title">Cerita Kami</h2>
+        <div class="glass-card story-card">
+          <p>
+            Dari pertemuan yang sederhana, tumbuh rasa yang membawa kami pada perjalanan hidup baru.
+            Kini, dengan restu keluarga dan doa yang tulus, kami melangkah ke ikatan suci pernikahan.
+          </p>
         </div>
       </div>
     </section>
@@ -79,25 +93,23 @@
       <div class="container">
         <h2 class="section-title">Detail Acara</h2>
         <div class="event-grid">
-          <article class="event-card">
-            <span class="event-badge">01</span>
+          <article class="glass-card event-card">
+            <span class="badge">01</span>
             <h3>Mepandes / Mekala-kalaan</h3>
             <p>Jumat, 18 Juli 2026</p>
             <p>08.00 WITA</p>
           </article>
-
-          <article class="event-card">
-            <span class="event-badge">02</span>
+          <article class="glass-card event-card">
+            <span class="badge">02</span>
             <h3>Resepsi Pernikahan</h3>
             <p>Minggu, 20 Juli 2026</p>
             <p>11.00 - 16.00 WITA</p>
           </article>
-
-          <article class="event-card" id="maps">
-            <span class="event-badge">03</span>
+          <article class="glass-card event-card" id="location">
+            <span class="badge">03</span>
             <h3>Lokasi</h3>
             <p>Jl. Raya Ubud No. 88, Gianyar, Bali</p>
-            <a class="link" href="https://maps.google.com" target="_blank" rel="noopener">Buka Google Maps</a>
+            <a href="https://maps.google.com" target="_blank" rel="noopener" class="link">Buka Google Maps</a>
           </article>
         </div>
       </div>
@@ -107,22 +119,10 @@
       <div class="container">
         <h2 class="section-title">Menuju Hari Bahagia</h2>
         <div class="countdown-grid">
-          <div class="count-box"><span id="days">0</span><small>Hari</small></div>
-          <div class="count-box"><span id="hours">0</span><small>Jam</small></div>
-          <div class="count-box"><span id="minutes">0</span><small>Menit</small></div>
-          <div class="count-box"><span id="seconds">0</span><small>Detik</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section story">
-      <div class="container">
-        <h2 class="section-title">Cerita Singkat</h2>
-        <div class="story-card">
-          <p>
-            Dari pertemuan sederhana, tumbuh rasa yang membawa kami ke perjalanan hidup baru.
-            Dengan restu keluarga, kami memulai lembaran baru dalam ikatan suci pernikahan.
-          </p>
+          <div class="glass-card count-box"><span id="days">0</span><small>Hari</small></div>
+          <div class="glass-card count-box"><span id="hours">0</span><small>Jam</small></div>
+          <div class="glass-card count-box"><span id="minutes">0</span><small>Menit</small></div>
+          <div class="glass-card count-box"><span id="seconds">0</span><small>Detik</small></div>
         </div>
       </div>
     </section>
@@ -131,9 +131,9 @@
       <div class="container">
         <h2 class="section-title">Galeri</h2>
         <div class="gallery-grid">
-          <div class="gallery-item">Foto 1</div>
-          <div class="gallery-item">Foto 2</div>
-          <div class="gallery-item">Foto 3</div>
+          <div class="gallery-item g1"><span>Foto 1</span></div>
+          <div class="gallery-item g2"><span>Foto 2</span></div>
+          <div class="gallery-item g3"><span>Foto 3</span></div>
         </div>
       </div>
     </section>
@@ -141,7 +141,7 @@
     <section class="section wishes">
       <div class="container">
         <h2 class="section-title">Ucapan & Doa</h2>
-        <form id="wishForm" class="wish-form">
+        <form id="wishForm" class="glass-card wish-form">
           <div class="input-row">
             <input type="text" id="guestName" placeholder="Nama Anda" required />
             <input type="text" id="guestRole" placeholder="Relasi (opsional)" />
@@ -153,11 +153,11 @@
       </div>
     </section>
 
-    <section class="section rsvp">
+    <section class="section rsvp" id="rsvp">
       <div class="container">
         <h2 class="section-title">Konfirmasi Kehadiran</h2>
-        <div class="rsvp-card">
-          <p>Kirim konfirmasi lewat WhatsApp agar kami dapat menyiapkan tempat dengan lebih baik.</p>
+        <div class="glass-card rsvp-card">
+          <p>Kirim konfirmasi kehadiran melalui WhatsApp agar kami dapat menyiapkan tempat dengan lebih baik.</p>
           <a class="btn btn-whatsapp" href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20konfirmasi%20kehadiran%20di%20undangan%20Made%20%26%20Ayu" target="_blank" rel="noopener">Konfirmasi via WhatsApp</a>
         </div>
       </div>
@@ -171,7 +171,6 @@
     </footer>
   </main>
 
-  <button id="musicToggle" class="music-btn" aria-label="Toggle music">♪</button>
   <script src="script.js"></script>
 </body>
 </html>
