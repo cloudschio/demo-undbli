@@ -324,9 +324,7 @@ button,input,textarea{font:inherit}
 .hidden{display:none !important}
 
 @media (max-width:900px){
-  .couple-grid{
-    grid-template-columns:1fr;
-  }
+  .couple-grid{grid-template-columns:1fr}
   .heart-separator{display:none}
   .input-row{grid-template-columns:1fr}
 }
