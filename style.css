@@ -2,7 +2,6 @@
   --bg:#110704;
   --bg2:#1d110b;
   --card:rgba(36,22,15,.72);
-  --card2:rgba(255,255,255,.06);
   --line:rgba(246,215,140,.18);
   --gold:#d9a441;
   --gold2:#f8dea0;
@@ -35,7 +34,7 @@ button,input,textarea{font:inherit}
   padding:12px 24px;border-radius:999px;border:none;cursor:pointer;
   font-weight:700;transition:.3s ease;
 }
-.btn:hover,.music-btn:hover{transform:translateY(-2px)}
+.btn:hover,.music-btn:hover,.copy-btn:hover{transform:translateY(-2px)}
 .btn-gold{background:linear-gradient(135deg,var(--gold),#f1cd73);color:#2b1706}
 .btn-outline{border:1px solid rgba(248,222,160,.42);color:var(--text);background:transparent}
 .btn-whatsapp{background:#25d366;color:#fff}
@@ -59,7 +58,7 @@ button,input,textarea{font:inherit}
 .ornament-bottom{right:18px;bottom:18px;width:180px;height:180px;clip-path:polygon(50% 0%, 62% 29%, 93% 29%, 69% 47%, 78% 78%, 50% 61%, 22% 78%, 31% 47%, 7% 29%, 38% 29%)}
 .section{padding:82px 0}
 .section-title{font-family:'Cormorant Garamond',serif;text-align:center;color:var(--gold2);font-size:clamp(2.4rem,6vw,3.8rem);margin-bottom:28px;letter-spacing:.5px}
-.intro-card,.story-card,.wish-form,.rsvp-card,.event-card,.profile-card,.count-box,.gallery-item,.wish-item{box-shadow:var(--shadow)}
+.intro-card,.story-card,.wish-form,.rsvp-card,.event-card,.profile-card,.count-box,.gallery-item,.wish-item,.gift-card,.gift-box,.qris-box{box-shadow:var(--shadow)}
 .intro-card{padding:30px;text-align:center;max-width:840px;margin:0 auto}
 .script-title{font-family:'Great Vibes',cursive;font-size:2.3rem;color:var(--gold2);margin-bottom:12px}
 .intro-card p{color:var(--muted);line-height:1.85}
@@ -69,7 +68,7 @@ button,input,textarea{font:inherit}
 .profile-card h3{font-size:1.5rem;margin-bottom:8px;font-family:'Cormorant Garamond',serif}
 .profile-card p{color:var(--muted);line-height:1.8}
 .heart{color:var(--gold2);font-size:2.4rem;text-align:center}
-.event-grid,.countdown-grid,.gallery-grid{display:grid;gap:18px}
+.event-grid,.countdown-grid,.gallery-grid,.gift-grid{display:grid;gap:18px}
 .event-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .event-card{padding:26px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:24px}
 .badge{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;margin-bottom:14px;background:linear-gradient(135deg,var(--gold),#a96516);color:#2b1706;font-weight:800}
@@ -88,6 +87,15 @@ button,input,textarea{font:inherit}
 .g1{background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=900&q=80') center/cover no-repeat}
 .g2{background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80') center/cover no-repeat}
 .g3{background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80') center/cover no-repeat}
+.gift-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.gift-card{padding:24px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:24px}
+.gift-icon{font-size:2rem;display:inline-block;margin-bottom:10px}
+.gift-card h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;margin-bottom:10px}
+.gift-note{color:var(--muted);line-height:1.75;margin-bottom:14px}
+.gift-box{padding:18px;border-radius:18px;background:rgba(0,0,0,.16);border:1px solid rgba(248,222,160,.14);margin-top:10px}
+.gift-box p{color:var(--muted);line-height:1.75}
+.copy-btn{margin-top:12px;border:none;border-radius:999px;padding:10px 16px;background:linear-gradient(135deg,var(--gold),#f1cd73);color:#2b1706;font-weight:700;cursor:pointer;transition:.3s ease}
+.qris-box{margin-top:10px;min-height:180px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#4a2a17,#23110a);color:var(--gold2);font-weight:700;border:1px dashed rgba(248,222,160,.3)}
 .wish-form{max-width:800px;margin:0 auto 18px;padding:24px;display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:26px}
 .input-row{display:grid;grid-template-columns:1fr 220px;gap:12px}
 .wish-form input,.wish-form textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(248,222,160,.16);background:#120805;color:var(--text);outline:none}
