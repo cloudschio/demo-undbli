@@ -1,16 +1,34 @@
-const loader = document.getElementById('loader');
-const openInvitation = document.getElementById('openInvitation');
+const preload = document.getElementById('preload');
+const openBtn = document.getElementById('openBtn');
 const wishForm = document.getElementById('wishForm');
 const wishList = document.getElementById('wishList');
+const bgm = document.getElementById('bgm');
+const musicToggle = document.getElementById('musicToggle');
 
-const targetDate = new Date('2026-07-20T08:00:00+08:00').getTime();
+const targetDate = new Date('2026-07-20T11:00:00+08:00').getTime();
 
-openInvitation.addEventListener('click', () => {
-  loader.style.display = 'none';
+openBtn.addEventListener('click', async () => {
+  preload.classList.add('hidden');
+  try {
+    await bgm.play();
+    musicToggle.textContent = '❚❚';
+  } catch (e) {}
+});
+
+musicToggle.addEventListener('click', async () => {
+  if (bgm.paused) {
+    try {
+      await bgm.play();
+      musicToggle.textContent = '❚❚';
+    } catch (e) {}
+  } else {
+    bgm.pause();
+    musicToggle.textContent = '♪';
+  }
 });
 
 function updateCountdown() {
-  const now = new Date().getTime();
+  const now = Date.now();
   const distance = targetDate - now;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -30,15 +48,18 @@ updateCountdown();
 wishForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const name = document.getElementById('name').value.trim();
-  const message = document.getElementById('message').value.trim();
+  const name = document.getElementById('guestName').value.trim();
+  const role = document.getElementById('guestRole').value.trim();
+  const message = document.getElementById('guestMessage').value.trim();
 
   if (!name || !message) return;
 
   const item = document.createElement('div');
   item.className = 'wish-item';
-  item.innerHTML = `<strong>${name}</strong><p>${message}</p>`;
+  item.innerHTML = `
+    <strong>${name}${role ? ` <span style="color:#d9a441;font-weight:500;">(${role})</span>` : ''}</strong>
+    <p>${message}</p>
+  `;
   wishList.prepend(item);
-
   wishForm.reset();
 });
