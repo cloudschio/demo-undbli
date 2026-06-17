@@ -4,6 +4,7 @@ const wishForm = document.getElementById('wishForm');
 const wishList = document.getElementById('wishList');
 const bgm = document.getElementById('bgm');
 const musicToggle = document.getElementById('musicToggle');
+const copyBtns = document.querySelectorAll('.copy-btn');
 const targetDate = new Date('2026-07-20T11:00:00+08:00').getTime();
 
 openBtn.addEventListener('click', async () => {
@@ -18,6 +19,20 @@ musicToggle.addEventListener('click', async () => {
     bgm.pause();
     musicToggle.textContent = '♪';
   }
+});
+
+copyBtns.forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const text = btn.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(text);
+      const old = btn.textContent;
+      btn.textContent = 'Tersalin';
+      setTimeout(() => btn.textContent = old, 1500);
+    } catch (e) {
+      alert('Gagal menyalin teks');
+    }
+  });
 });
 
 function updateCountdown(){
