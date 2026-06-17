@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Undangan digital premium tema Bali" />
   <title>Undangan Digital Premium | Bali Theme</title>
-  //fonts.googleapis.com">
-  //fonts.gstatic.com" crossorigin>
-  //fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  " />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="progress-bar"><span id="progressFill"></span></div>
-
   <div class="loader" id="loader">
     <div class="loader-card">
       <p class="loader-kicker">Om Swastiastu</p>
@@ -22,13 +21,10 @@
       <button id="openBtn" class="btn btn-gold">Buka Undangan</button>
     </div>
   </div>
-
   <audio id="bgm" loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   </audio>
-
   <button id="musicToggle" class="music-btn" aria-label="Toggle music">♪</button>
-
   <main>
     <section class="hero">
       <div class="hero-overlay"></div>
@@ -46,190 +42,20 @@
       </div>
       <div class="scroll-indicator">Scroll ke bawah</div>
     </section>
-
-    <section class="section intro reveal" id="details">
-      <div class="container">
-        <div class="glass-card intro-card">
-          <p class="script-title">Om Swastiastu</p>
-          <p>
-            Dengan memohon rahmat Tuhan Yang Maha Esa, kami bermaksud menyelenggarakan
-            upacara pernikahan dan resepsi. Kehadiran serta doa restu Bapak/Ibu/Saudara/i
-            merupakan kehormatan terbesar bagi kami.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section couple reveal">
-      <div class="container">
-        <h2 class="section-title">Mempelai</h2>
-        <div class="couple-grid">
-          <article class="profile-card">
-            <div class="portrait portrait-left">M</div>
-            <h3>Made Wirawan</h3>
-            <p>Putra dari Bapak I Made Sujana<br>dan Ibu Ni Ketut Sari</p>
-          </article>
-          <div class="heart">❤</div>
-          <article class="profile-card">
-            <div class="portrait portrait-right">A</div>
-            <h3>Ayu Lestari</h3>
-            <p>Putri dari Bapak I Wayan Arta<br>dan Ibu Ni Luh Dewi</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section story reveal">
-      <div class="container">
-        <h2 class="section-title">Cerita Kami</h2>
-        <div class="glass-card story-card">
-          <p>
-            Dari pertemuan yang sederhana, tumbuh rasa yang membawa kami pada perjalanan hidup baru.
-            Kini, dengan restu keluarga dan doa yang tulus, kami melangkah ke ikatan suci pernikahan.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section event reveal">
-      <div class="container">
-        <h2 class="section-title">Detail Acara</h2>
-        <div class="event-grid">
-          <article class="glass-card event-card">
-            <span class="badge">01</span>
-            <h3>Mepandes / Mekala-kalaan</h3>
-            <p>Jumat, 18 Juli 2026</p>
-            <p>08.00 WITA</p>
-          </article>
-          <article class="glass-card event-card">
-            <span class="badge">02</span>
-            <h3>Resepsi Pernikahan</h3>
-            <p>Minggu, 20 Juli 2026</p>
-            <p>11.00 - 16.00 WITA</p>
-          </article>
-          <article class="glass-card event-card" id="location">
-            <span class="badge">03</span>
-            <h3>Lokasi</h3>
-            <p>Jl. Raya Ubud No. 88, Gianyar, Bali</p>
-            <a href="https://maps.google.com" target="_blank" rel="noopener" class="link">Buka Google Maps</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section countdown-section reveal">
-      <div class="container">
-        <h2 class="section-title">Menuju Hari Bahagia</h2>
-        <div class="countdown-grid">
-          <div class="glass-card count-box"><span id="days">0</span><small>Hari</small></div>
-          <div class="glass-card count-box"><span id="hours">0</span><small>Jam</small></div>
-          <div class="glass-card count-box"><span id="minutes">0</span><small>Menit</small></div>
-          <div class="glass-card count-box"><span id="seconds">0</span><small>Detik</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section gift-section reveal">
-      <div class="container">
-        <h2 class="section-title">Gift</h2>
-        <div class="gift-grid">
-          <article class="glass-card gift-card">
-            <span class="gift-icon">🎁</span>
-            <h3>Digital Gift</h3>
-            <p class="gift-note">Bagi keluarga dan sahabat yang ingin memberi hadiah, dapat melalui transfer bank berikut.</p>
-            <div class="gift-box">
-              <p><strong>BCA</strong> 1234567890</p>
-              <p>a.n. Made Wirawan</p>
-              <button class="copy-btn" data-copy="1234567890">Salin No. Rekening</button>
-            </div>
-          </article>
-          <article class="glass-card gift-card">
-            <span class="gift-icon">💳</span>
-            <h3>QRIS / E-Wallet</h3>
-            <p class="gift-note">Tambahkan gambar QRIS milikmu di sini untuk memudahkan tamu memberi hadiah.</p>
-            <div class="qris-box">QRIS IMAGE</div>
-          </article>
-          <article class="glass-card gift-card">
-            <span class="gift-icon">📦</span>
-            <h3>Alamat Hadiah</h3>
-            <p class="gift-note">Jika ingin mengirim hadiah fisik, bisa dikirim ke alamat berikut.</p>
-            <div class="gift-box">
-              <p>Jl. Raya Ubud No. 88</p>
-              <p>Gianyar, Bali</p>
-              <button class="copy-btn" data-copy="Jl. Raya Ubud No. 88, Gianyar, Bali">Salin Alamat</button>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section gallery reveal" id="gallery">
-      <div class="container">
-        <h2 class="section-title">Galeri</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item g1">
-            <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/73b82b7f54bf6e15896dba6d0f2a627073299d1c.jpg" alt="Sample wedding couple" />
-            <span>Sample 1</span>
-          </div>
-          <div class="gallery-item g2">
-            <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/52b6b239a371c10cccd24f49b5fa66f5443674fc.jpg" alt="Indonesian wedding couple" />
-            <span>Sample 2</span>
-          </div>
-          <div class="gallery-item g3">
-            <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/960842e65212e2009607bab3225ef22774e83810.jpg" alt="Romantic wedding reception" />
-            <span>Sample 3</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wishes reveal">
-      <div class="container">
-        <h2 class="section-title">Ucapan & Doa</h2>
-        <form id="wishForm" class="glass-card wish-form">
-          <div class="input-row">
-            <input type="text" id="guestName" placeholder="Nama Anda" required />
-            <input type="text" id="guestRole" placeholder="Relasi (opsional)" />
-          </div>
-          <textarea id="guestMessage" rows="5" placeholder="Tulis ucapan terbaik Anda..." required></textarea>
-          <button type="submit" class="btn btn-gold">Kirim Ucapan</button>
-        </form>
-        <div id="wishList" class="wish-list"></div>
-      </div>
-    </section>
-
-    <section class="section rsvp reveal" id="rsvp">
-      <div class="container">
-        <h2 class="section-title">Konfirmasi Kehadiran</h2>
-        <div class="glass-card rsvp-card">
-          <p>Kirim konfirmasi kehadiran melalui WhatsApp agar kami dapat menyiapkan tempat dengan lebih baik.</p>
-          <a class="btn btn-whatsapp" href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20konfirmasi%20kehadiran%20di%20undangan%20Made%20%26%20Ayu" target="_blank" rel="noopener">Konfirmasi via WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer reveal">
-      <div class="container">
-        <p class="footer-title">Terima kasih atas doa dan kehadirannya.</p>
-        <p class="footer-text">Om Shanti Shanti Shanti Om</p>
-      </div>
-    </footer>
+    <section class="section intro reveal" id="details"><div class="container"><div class="glass-card intro-card"><p class="script-title">Om Swastiastu</p><p>Dengan memohon rahmat Tuhan Yang Maha Esa, kami bermaksud menyelenggarakan upacara pernikahan dan resepsi. Kehadiran serta doa restu Bapak/Ibu/Saudara/i merupakan kehormatan terbesar bagi kami.</p></div></div></section>
+    <section class="section couple reveal"><div class="container"><h2 class="section-title">Mempelai</h2><div class="couple-grid"><article class="profile-card"><div class="portrait portrait-left">M</div><h3>Made Wirawan</h3><p>Putra dari Bapak I Made Sujana<br>dan Ibu Ni Ketut Sari</p></article><div class="heart">❤</div><article class="profile-card"><div class="portrait portrait-right">A</div><h3>Ayu Lestari</h3><p>Putri dari Bapak I Wayan Arta<br>dan Ibu Ni Luh Dewi</p></article></div></div></section>
+    <section class="section story reveal"><div class="container"><h2 class="section-title">Cerita Kami</h2><div class="glass-card story-card"><p>Dari pertemuan yang sederhana, tumbuh rasa yang membawa kami pada perjalanan hidup baru. Kini, dengan restu keluarga dan doa yang tulus, kami melangkah ke ikatan suci pernikahan.</p></div></div></section>
+    <section class="section event reveal"><div class="container"><h2 class="section-title">Detail Acara</h2><div class="event-grid"><article class="glass-card event-card"><span class="badge">01</span><h3>Mepandes / Mekala-kalaan</h3><p>Jumat, 18 Juli 2026</p><p>08.00 WITA</p></article><article class="glass-card event-card"><span class="badge">02</span><h3>Resepsi Pernikahan</h3><p>Minggu, 20 Juli 2026</p><p>11.00 - 16.00 WITA</p></article><article class="glass-card event-card" id="location"><span class="badge">03</span><h3>Lokasi</h3><p>Jl. Raya Ubud No. 88, Gianyar, Bali</p><a href="https://maps.google.com" target="_blank" rel="noopener" class="link">Buka Google Maps</a></article></div></div></section>
+    <section class="section countdown-section reveal"><div class="container"><h2 class="section-title">Menuju Hari Bahagia</h2><div class="countdown-grid"><div class="glass-card count-box"><span id="days">0</span><small>Hari</small></div><div class="glass-card count-box"><span id="hours">0</span><small>Jam</small></div><div class="glass-card count-box"><span id="minutes">0</span><small>Menit</small></div><div class="glass-card count-box"><span id="seconds">0</span><small>Detik</small></div></div></div></section>
+    <section class="section gift-section reveal"><div class="container"><h2 class="section-title">Gift</h2><div class="gift-grid"><article class="glass-card gift-card"><span class="gift-icon">🎁</span><h3>Digital Gift</h3><p class="gift-note">Bagi keluarga dan sahabat yang ingin memberi hadiah, dapat melalui transfer bank berikut.</p><div class="gift-box"><p><strong>BCA</strong> 1234567890</p><p>a.n. Made Wirawan</p><button class="copy-btn" data-copy="1234567890">Salin No. Rekening</button></div></article><article class="glass-card gift-card"><span class="gift-icon">💳</span><h3>QRIS / E-Wallet</h3><p class="gift-note">Tambahkan gambar QRIS milikmu di sini untuk memudahkan tamu memberi hadiah.</p><div class="qris-box">QRIS IMAGE</div></article><article class="glass-card gift-card"><span class="gift-icon">📦</span><h3>Alamat Hadiah</h3><p class="gift-note">Jika ingin mengirim hadiah fisik, bisa dikirim ke alamat berikut.</p><div class="gift-box"><p>Jl. Raya Ubud No. 88</p><p>Gianyar, Bali</p><button class="copy-btn" data-copy="Jl. Raya Ubud No. 88, Gianyar, Bali">Salin Alamat</button></div></article></div></div></section>
+    <section class="section gallery reveal" id="gallery"><div class="container"><h2 class="section-title">Galeri</h2><div class="gallery-grid"><div class="gallery-item g1"><img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/73b82b7f54bf6e15896dba6d0f2a627073299d1c.jpg" alt="Sample wedding couple" /><span>Sample 1</span></div><div class="gallery-item g2"><img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/52b6b239a371c10cccd24f49b5fa66f5443674fc.jpg" alt="Indonesian wedding couple" /><span>Sample 2</span></div><div class="gallery-item g3"><img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/960842e65212e2009607bab3225ef22774e83810.jpg" alt="Romantic wedding reception" /><span>Sample 3</span></div></div></div></section>
+    <section class="section wishes reveal"><div class="container"><h2 class="section-title">Ucapan & Doa</h2><form id="wishForm" class="glass-card wish-form"><div class="input-row"><input type="text" id="guestName" placeholder="Nama Anda" required /><input type="text" id="guestRole" placeholder="Relasi (opsional)" /></div><textarea id="guestMessage" rows="5" placeholder="Tulis ucapan terbaik Anda..." required></textarea><button type="submit" class="btn btn-gold">Kirim Ucapan</button></form><div id="wishList" class="wish-list"></div></div></section>
+    <section class="section rsvp reveal" id="rsvp"><div class="container"><h2 class="section-title">Konfirmasi Kehadiran</h2><div class="glass-card rsvp-card"><p>Kirim konfirmasi kehadiran melalui WhatsApp agar kami dapat menyiapkan tempat dengan lebih baik.</p><a class="btn btn-whatsapp" href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20konfirmasi%20kehadiran%20di%20undangan%20Made%20%26%20Ayu" target="_blank" rel="noopener">Konfirmasi via WhatsApp</a></div></div></section>
+    <footer class="footer reveal"><div class="container"><p class="footer-title">Terima kasih atas doa dan kehadirannya.</p><p class="footer-text">Om Shanti Shanti Shanti Om</p></div></footer>
   </main>
-
-  <nav class="bottom-nav" id="bottomNav">
-    <a href="#details">Detail</a>
-    <a href="#location">Lokasi</a>
-    <a href="#gallery">Galeri</a>
-    <a href="#rsvp">RSVP</a>
-  </nav>
-
-  <div class="lightbox hidden" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose">×</button>
-    <img id="lightboxImg" alt="Preview foto" />
-  </div>
-
+  <nav class="bottom-nav" id="bottomNav"><a href="#details">Detail</a><a href="#location">Lokasi</a><a href="#gallery">Galeri</a><a href="#rsvp">RSVP</a></nav>
+  <div class="lightbox hidden" id="lightbox"><button class="lightbox-close" id="lightboxClose">×</button><img id="lightboxImg" alt="Preview foto" /></div>
   <div class="cursor-sparkle" id="cursorSparkle"></div>
-
   <script src="script.js"></script>
 </body>
 </html>
