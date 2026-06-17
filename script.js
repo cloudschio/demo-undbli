@@ -7,8 +7,27 @@ const musicToggle = document.getElementById('musicToggle');
 const copyBtns = document.querySelectorAll('.copy-btn');
 const targetDate = new Date('2026-07-20T11:00:00+08:00').getTime();
 
+function createParticle(){
+  const p = document.createElement('span');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + 'vw';
+  p.style.setProperty('--drift', (Math.random() * 120 - 60) + 'px');
+  p.style.setProperty('--size', (Math.random() * 6 + 4) + 'px');
+  p.style.setProperty('--dur', (Math.random() * 5 + 6) + 's');
+  p.style.opacity = (Math.random() * 0.5 + 0.35).toFixed(2);
+  p.style.animationDelay = (Math.random() * 4) + 's';
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), 12000);
+}
+
+function startParticles(){
+  for(let i=0;i<18;i++) setTimeout(createParticle, i*180);
+  setInterval(createParticle, 900);
+}
+
 openBtn.addEventListener('click', async () => {
   loader.classList.add('hidden');
+  startParticles();
   try { await bgm.play(); musicToggle.textContent = '❚❚'; } catch (e) {}
 });
 
