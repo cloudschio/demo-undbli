@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="progress-bar"><span id="progressFill"></span></div>
+
   <div class="loader" id="loader">
     <div class="loader-card">
       <p class="loader-kicker">Om Swastiastu</p>
@@ -32,9 +34,9 @@
       <div class="hero-overlay"></div>
       <div class="ornament ornament-top"></div>
       <div class="ornament ornament-bottom"></div>
-      <div class="hero-content">
+      <div class="hero-content parallax-layer">
         <p class="hero-kicker">Pawiwahan Agung</p>
-        <h1>Made & Ayu</h1>
+        <h1 class="typewriter">Made & Ayu</h1>
         <p class="hero-date">Minggu, 20 Juli 2026</p>
         <p class="hero-place">Ubud, Gianyar - Bali</p>
         <div class="hero-actions">
@@ -45,7 +47,7 @@
       <div class="scroll-indicator">Scroll ke bawah</div>
     </section>
 
-    <section class="section intro" id="details">
+    <section class="section intro reveal" id="details">
       <div class="container">
         <div class="glass-card intro-card">
           <p class="script-title">Om Swastiastu</p>
@@ -58,7 +60,7 @@
       </div>
     </section>
 
-    <section class="section couple">
+    <section class="section couple reveal">
       <div class="container">
         <h2 class="section-title">Mempelai</h2>
         <div class="couple-grid">
@@ -77,7 +79,7 @@
       </div>
     </section>
 
-    <section class="section story">
+    <section class="section story reveal">
       <div class="container">
         <h2 class="section-title">Cerita Kami</h2>
         <div class="glass-card story-card">
@@ -89,7 +91,7 @@
       </div>
     </section>
 
-    <section class="section event">
+    <section class="section event reveal">
       <div class="container">
         <h2 class="section-title">Detail Acara</h2>
         <div class="event-grid">
@@ -115,7 +117,7 @@
       </div>
     </section>
 
-    <section class="section countdown-section">
+    <section class="section countdown-section reveal">
       <div class="container">
         <h2 class="section-title">Menuju Hari Bahagia</h2>
         <div class="countdown-grid">
@@ -127,7 +129,7 @@
       </div>
     </section>
 
-    <section class="section gift-section">
+    <section class="section gift-section reveal">
       <div class="container">
         <h2 class="section-title">Gift</h2>
         <div class="gift-grid">
@@ -161,18 +163,27 @@
       </div>
     </section>
 
-    <section class="section gallery">
+    <section class="section gallery reveal" id="gallery">
       <div class="container">
         <h2 class="section-title">Galeri</h2>
         <div class="gallery-grid">
-          <div class="gallery-item g1"><span>Foto 1</span></div>
-          <div class="gallery-item g2"><span>Foto 2</span></div>
-          <div class="gallery-item g3"><span>Foto 3</span></div>
+          <div class="gallery-item g1">
+            <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/73b82b7f54bf6e15896dba6d0f2a627073299d1c.jpg" alt="Sample wedding couple" />
+            <span>Sample 1</span>
+          </div>
+          <div class="gallery-item g2">
+            <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/52b6b239a371c10cccd24f49b5fa66f5443674fc.jpg" alt="Indonesian wedding couple" />
+            <span>Sample 2</span>
+          </div>
+          <div class="gallery-item g3">
+            <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/960842e65212e2009607bab3225ef22774e83810.jpg" alt="Romantic wedding reception" />
+            <span>Sample 3</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section wishes">
+    <section class="section wishes reveal">
       <div class="container">
         <h2 class="section-title">Ucapan & Doa</h2>
         <form id="wishForm" class="glass-card wish-form">
@@ -187,7 +198,7 @@
       </div>
     </section>
 
-    <section class="section rsvp" id="rsvp">
+    <section class="section rsvp reveal" id="rsvp">
       <div class="container">
         <h2 class="section-title">Konfirmasi Kehadiran</h2>
         <div class="glass-card rsvp-card">
@@ -197,13 +208,27 @@
       </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer reveal">
       <div class="container">
         <p class="footer-title">Terima kasih atas doa dan kehadirannya.</p>
         <p class="footer-text">Om Shanti Shanti Shanti Om</p>
       </div>
     </footer>
   </main>
+
+  <nav class="bottom-nav" id="bottomNav">
+    <a href="#details">Detail</a>
+    <a href="#location">Lokasi</a>
+    <a href="#gallery">Galeri</a>
+    <a href="#rsvp">RSVP</a>
+  </nav>
+
+  <div class="lightbox hidden" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <img id="lightboxImg" alt="Preview foto" />
+  </div>
+
+  <div class="cursor-sparkle" id="cursorSparkle"></div>
 
   <script src="script.js"></script>
 </body>
