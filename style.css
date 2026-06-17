@@ -23,18 +23,8 @@ body{
 a{text-decoration:none;color:inherit}
 button,input,textarea{font:inherit}
 .container{width:min(1100px,calc(100% - 32px));margin:0 auto}
-.glass-card{
-  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-  border:1px solid rgba(246,215,140,.16);
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(12px);
-  border-radius:26px;
-}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:12px 24px;border-radius:999px;border:none;cursor:pointer;
-  font-weight:700;transition:.35s ease;
-}
+.glass-card{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));border:1px solid rgba(246,215,140,.16);box-shadow:var(--shadow);backdrop-filter:blur(12px);border-radius:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;border-radius:999px;border:none;cursor:pointer;font-weight:700;transition:.35s ease}
 .btn:hover,.music-btn:hover,.copy-btn:hover{transform:translateY(-3px) scale(1.01)}
 .btn-gold{background:linear-gradient(135deg,var(--gold),#f1cd73);color:#2b1706;box-shadow:0 10px 24px rgba(217,164,65,.22)}
 .btn-outline{border:1px solid rgba(248,222,160,.42);color:var(--text);background:rgba(255,255,255,.03)}
@@ -119,6 +109,7 @@ button,input,textarea{font:inherit}
 .footer-title{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold2);margin-bottom:8px}
 .footer-text{color:var(--muted)}
 .music-btn{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border:none;border-radius:50%;background:linear-gradient(135deg,var(--gold),#f0c85e);color:#2b1706;font-size:1.15rem;box-shadow:var(--shadow);z-index:60;animation:float 4s ease-in-out infinite}
+.particle{position:fixed;top:-20px;width:var(--size);height:var(--size);border-radius:50%;pointer-events:none;z-index:55;background:radial-gradient(circle, rgba(248,222,160,.95), rgba(217,164,65,.4) 55%, transparent 70%);filter:blur(.2px);animation:fall var(--dur) linear forwards}
 .hidden{display:none !important}
 @media (max-width:900px){.couple-grid{grid-template-columns:1fr}.heart{display:none}.input-row{grid-template-columns:1fr}}
 @media (max-width:640px){.section{padding:64px 0}.hero-actions{flex-direction:column;align-items:center}.btn{width:min(280px,100%)}.loader-card h1{font-size:2.8rem}}
@@ -132,3 +123,4 @@ button,input,textarea{font:inherit}
 @keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes shine{0%{transform:translateX(-120%) skewX(-20deg)}100%{transform:translateX(120%) skewX(-20deg)}}
 @keyframes countPop{0%{transform:scale(.8)}100%{transform:scale(1)}}
+@keyframes fall{0%{transform:translate3d(0,-10vh,0) rotate(0deg);opacity:0}10%{opacity:1}100%{transform:translate3d(var(--drift),110vh,0) rotate(360deg);opacity:0}}
