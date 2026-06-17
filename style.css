@@ -19,7 +19,7 @@ button,input,textarea{font:inherit}
 .loader-card h1{font-family:'Great Vibes',cursive;font-size:3.4rem;line-height:1;margin-bottom:12px}
 .loader-names{color:var(--gold2);font-weight:700;margin-bottom:8px}
 .loader-text{color:var(--muted);line-height:1.8;margin-bottom:22px}
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.68)),url('https://images.unsplash.com/photo-1511005813165-5f6da43d0e3b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;overflow:hidden}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.68)),url('https://pplx-res.cloudinary.com/image/upload/pplx_search_images/cd68596577fe8c959866a46e571f66135b8bb91b.jpg') center/cover no-repeat;overflow:hidden}
 .hero::before,.hero::after{content:'';position:absolute;inset:auto;pointer-events:none;border-radius:50%;filter:blur(2px)}
 .hero::before{width:260px;height:260px;left:-70px;top:10%;background:radial-gradient(circle, rgba(248,222,160,.18), transparent 65%);animation:float 8s ease-in-out infinite}
 .hero::after{width:220px;height:220px;right:-60px;bottom:8%;background:radial-gradient(circle, rgba(217,164,65,.16), transparent 65%);animation:float 10s ease-in-out infinite reverse}
