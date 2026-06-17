@@ -3,114 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Undangan Digital - Tema Bali</title>
+  <meta name="description" content="Undangan digital tema Bali untuk pernikahan Made & Ayu" />
+  <title>Undangan Digital | Made & Ayu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page-loader" id="loader">
-    <div class="loader-card">
-      <p>Om Swastiastu</p>
+  <div class="preload" id="preload">
+    <div class="preload-card">
+      <p class="preload-small">Om Swastiastu</p>
       <h1>Undangan Pernikahan</h1>
-      <span>Made & Ayu</span>
-      <button id="openInvitation">Buka Undangan</button>
+      <p class="preload-names">Made & Ayu</p>
+      <p class="preload-text">Dengan penuh suka cita, kami mengundang Anda untuk hadir dan memberi restu.</p>
+      <button id="openBtn">Buka Undangan</button>
     </div>
   </div>
 
-  <main class="main-content">
-    <section class="hero">
-      <div class="overlay"></div>
+  <audio id="bgm" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <main class="page">
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="subtitle">Pawiwahan</p>
+        <p class="hero-kicker">Pawiwahan</p>
         <h1>Made & Ayu</h1>
-        <p class="date">Minggu, 20 Juli 2026</p>
-        <p class="location">Bali, Indonesia</p>
-        <a href="#details" class="btn">Lihat Undangan</a>
+        <p class="hero-date">Minggu, 20 Juli 2026</p>
+        <p class="hero-place">Ubud, Gianyar - Bali</p>
+        <div class="hero-actions">
+          <a href="#details" class="btn btn-gold">Lihat Detail</a>
+          <a href="#maps" class="btn btn-outline">Lokasi Acara</a>
+        </div>
       </div>
+      <div class="scroll-down">Scroll ke bawah</div>
     </section>
 
-    <section class="section intro" id="details">
-      <div class="card">
-        <p class="greeting">Om Swastiastu</p>
-        <p>
-          Dengan penuh suka cita, kami mengundang Bapak/Ibu/Saudara/i untuk hadir
-          dan memberikan doa restu pada hari bahagia pernikahan kami.
-        </p>
+    <section class="section quote">
+      <div class="container">
+        <div class="card centered">
+          <p class="script-title">Om Swastiastu</p>
+          <p>
+            Dengan memohon rahmat Tuhan Yang Maha Esa, kami bermaksud menyelenggarakan
+            upacara pernikahan dan resepsi. Kehadiran serta doa restu Bapak/Ibu/Saudara/i
+            akan menjadi kehormatan bagi kami.
+          </p>
+        </div>
       </div>
     </section>
 
     <section class="section couple">
-      <h2>Pasangan Mempelai</h2>
-      <div class="couple-grid">
-        <div class="profile-card">
-          <div class="avatar">M</div>
-          <h3>Made Wirawan</h3>
-          <p>Putra dari Bapak I Made Sujana<br>dan Ibu Ni Ketut Sari</p>
-        </div>
-        <div class="profile-card">
-          <div class="avatar">A</div>
-          <h3>Ayu Lestari</h3>
-          <p>Putri dari Bapak I Wayan Arta<br>dan Ibu Ni Luh Dewi</p>
+      <div class="container">
+        <h2 class="section-title">Mempelai</h2>
+        <div class="couple-grid">
+          <article class="person-card">
+            <div class="portrait portrait-left">M</div>
+            <h3>Made Wirawan</h3>
+            <p class="person-desc">Putra dari Bapak I Made Sujana<br>dan Ibu Ni Ketut Sari</p>
+          </article>
+
+          <div class="heart-separator">❤</div>
+
+          <article class="person-card">
+            <div class="portrait portrait-right">A</div>
+            <h3>Ayu Lestari</h3>
+            <p class="person-desc">Putri dari Bapak I Wayan Arta<br>dan Ibu Ni Luh Dewi</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section event">
-      <h2>Informasi Acara</h2>
-      <div class="event-card">
-        <h3>Akad / Mekala-kalaan</h3>
-        <p>08.00 WITA</p>
-        <p>Jumat, 18 Juli 2026</p>
-      </div>
-      <div class="event-card">
-        <h3>Resepsi</h3>
-        <p>11.00 - 16.00 WITA</p>
-        <p>Minggu, 20 Juli 2026</p>
-      </div>
-      <div class="event-card">
-        <h3>Lokasi</h3>
-        <p>Jl. Raya Ubud No. 88, Gianyar, Bali</p>
-        <a href="https://maps.google.com" target="_blank" rel="noopener">Buka Google Maps</a>
+      <div class="container">
+        <h2 class="section-title">Detail Acara</h2>
+        <div class="event-grid">
+          <article class="event-card">
+            <span class="event-badge">01</span>
+            <h3>Mepandes / Mekala-kalaan</h3>
+            <p>Jumat, 18 Juli 2026</p>
+            <p>08.00 WITA</p>
+          </article>
+
+          <article class="event-card">
+            <span class="event-badge">02</span>
+            <h3>Resepsi Pernikahan</h3>
+            <p>Minggu, 20 Juli 2026</p>
+            <p>11.00 - 16.00 WITA</p>
+          </article>
+
+          <article class="event-card" id="maps">
+            <span class="event-badge">03</span>
+            <h3>Lokasi</h3>
+            <p>Jl. Raya Ubud No. 88, Gianyar, Bali</p>
+            <a class="link" href="https://maps.google.com" target="_blank" rel="noopener">Buka Google Maps</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section countdown">
-      <h2>Menuju Hari Bahagia</h2>
-      <div class="countdown-grid">
-        <div><span id="days">0</span><small>Hari</small></div>
-        <div><span id="hours">0</span><small>Jam</small></div>
-        <div><span id="minutes">0</span><small>Menit</small></div>
-        <div><span id="seconds">0</span><small>Detik</small></div>
+    <section class="section countdown-section">
+      <div class="container">
+        <h2 class="section-title">Menuju Hari Bahagia</h2>
+        <div class="countdown-grid">
+          <div class="count-box"><span id="days">0</span><small>Hari</small></div>
+          <div class="count-box"><span id="hours">0</span><small>Jam</small></div>
+          <div class="count-box"><span id="minutes">0</span><small>Menit</small></div>
+          <div class="count-box"><span id="seconds">0</span><small>Detik</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story">
+      <div class="container">
+        <h2 class="section-title">Cerita Singkat</h2>
+        <div class="story-card">
+          <p>
+            Dari pertemuan sederhana, tumbuh rasa yang membawa kami ke perjalanan hidup baru.
+            Dengan restu keluarga, kami memulai lembaran baru dalam ikatan suci pernikahan.
+          </p>
+        </div>
       </div>
     </section>
 
     <section class="section gallery">
-      <h2>Galeri</h2>
-      <div class="gallery-grid">
-        <div class="photo">Foto 1</div>
-        <div class="photo">Foto 2</div>
-        <div class="photo">Foto 3</div>
+      <div class="container">
+        <h2 class="section-title">Galeri</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item g1">Foto 1</div>
+          <div class="gallery-item g2">Foto 2</div>
+          <div class="gallery-item g3">Foto 3</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wishes">
+      <div class="container">
+        <h2 class="section-title">Ucapan & Doa</h2>
+        <form id="wishForm" class="wish-form">
+          <div class="input-row">
+            <input type="text" id="guestName" placeholder="Nama Anda" required />
+            <input type="text" id="guestRole" placeholder="Relasi (opsional)" />
+          </div>
+          <textarea id="guestMessage" rows="5" placeholder="Tulis ucapan terbaik Anda..." required></textarea>
+          <button type="submit" class="btn btn-gold">Kirim Ucapan</button>
+        </form>
+        <div id="wishList" class="wish-list"></div>
       </div>
     </section>
 
     <section class="section rsvp">
-      <h2>Ucapan & Doa</h2>
-      <form class="wish-form" id="wishForm">
-        <input type="text" id="name" placeholder="Nama Anda" required />
-        <textarea id="message" rows="4" placeholder="Tulis ucapan..." required></textarea>
-        <button type="submit">Kirim Ucapan</button>
-      </form>
-      <div class="wish-list" id="wishList"></div>
+      <div class="container">
+        <h2 class="section-title">Konfirmasi Kehadiran</h2>
+        <div class="rsvp-card">
+          <p>Kirim konfirmasi lewat WhatsApp agar kami dapat menyiapkan tempat dengan lebih baik.</p>
+          <a class="btn btn-whatsapp" href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20konfirmasi%20kehadiran%20di%20undangan%20Made%20%26%20Ayu" target="_blank" rel="noopener">Konfirmasi via WhatsApp</a>
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
-      <p>Terima kasih atas doa dan kehadirannya.</p>
-      <span>Om Santih, Santih, Santih Om</span>
+      <div class="container">
+        <p class="footer-title">Terima kasih atas doa dan kehadirannya.</p>
+        <p class="footer-text">Om Shanti Shanti Shanti Om</p>
+      </div>
     </footer>
   </main>
 
+  <button id="musicToggle" class="music-btn" aria-label="Toggle music">♪</button>
   <script src="script.js"></script>
 </body>
 </html>
