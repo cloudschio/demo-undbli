@@ -39,25 +39,13 @@ button,input,textarea{font:inherit}
 .btn-gold{background:linear-gradient(135deg,var(--gold),#f1cd73);color:#2b1706}
 .btn-outline{border:1px solid rgba(248,222,160,.42);color:var(--text);background:transparent}
 .btn-whatsapp{background:#25d366;color:#fff}
-.loader{
-  position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
-  background:
-    radial-gradient(circle at top, rgba(214,160,70,.18), transparent 30%),
-    linear-gradient(180deg,#2a170f,#100704);
-  padding:20px;
-}
+.loader{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top, rgba(214,160,70,.18), transparent 30%),linear-gradient(180deg,#2a170f,#100704);padding:20px}
 .loader-card{width:min(440px,100%);padding:34px 24px;text-align:center;border-radius:28px;background:rgba(25,15,10,.88);border:1px solid rgba(246,215,140,.18);box-shadow:var(--shadow)}
 .loader-kicker{letter-spacing:4px;color:var(--gold2);text-transform:uppercase;margin-bottom:12px}
 .loader-card h1{font-family:'Great Vibes',cursive;font-size:3.4rem;line-height:1;margin-bottom:12px}
 .loader-names{color:var(--gold2);font-weight:700;margin-bottom:8px}
 .loader-text{color:var(--muted);line-height:1.8;margin-bottom:22px}
-.hero{
-  min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;
-  padding:40px 20px;
-  background:
-    linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.68)),
-    url('https://images.unsplash.com/photo-1511005813165-5f6da43d0e3b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.68)),url('https://images.unsplash.com/photo-1511005813165-5f6da43d0e3b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.62))}
 .hero-content{position:relative;z-index:2;max-width:820px;padding:20px}
 .hero-kicker{letter-spacing:5px;text-transform:uppercase;color:var(--gold2);margin-bottom:12px}
@@ -70,7 +58,7 @@ button,input,textarea{font:inherit}
 .ornament-top{top:18px;left:18px;width:160px;height:160px;clip-path:polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 92%, 50% 72%, 21% 92%, 32% 57%, 2% 35%, 39% 35%)}
 .ornament-bottom{right:18px;bottom:18px;width:180px;height:180px;clip-path:polygon(50% 0%, 62% 29%, 93% 29%, 69% 47%, 78% 78%, 50% 61%, 22% 78%, 31% 47%, 7% 29%, 38% 29%)}
 .section{padding:82px 0}
-.section-title{font-family:'Great Vibes',cursive;text-align:center;color:var(--gold2);font-size:clamp(2.4rem,6vw,3.8rem);margin-bottom:28px}
+.section-title{font-family:'Cormorant Garamond',serif;text-align:center;color:var(--gold2);font-size:clamp(2.4rem,6vw,3.8rem);margin-bottom:28px;letter-spacing:.5px}
 .intro-card,.story-card,.wish-form,.rsvp-card,.event-card,.profile-card,.count-box,.gallery-item,.wish-item{box-shadow:var(--shadow)}
 .intro-card{padding:30px;text-align:center;max-width:840px;margin:0 auto}
 .script-title{font-family:'Great Vibes',cursive;font-size:2.3rem;color:var(--gold2);margin-bottom:12px}
@@ -111,7 +99,7 @@ button,input,textarea{font:inherit}
 .rsvp-card{max-width:800px;margin:0 auto;padding:30px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:26px}
 .rsvp-card p{color:var(--muted);line-height:1.8;margin-bottom:16px}
 .footer{padding:32px 0 60px;text-align:center}
-.footer-title{font-family:'Great Vibes',cursive;font-size:2rem;color:var(--gold2);margin-bottom:8px}
+.footer-title{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold2);margin-bottom:8px}
 .footer-text{color:var(--muted)}
 .music-btn{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border:none;border-radius:50%;background:linear-gradient(135deg,var(--gold),#f0c85e);color:#2b1706;font-size:1.15rem;box-shadow:var(--shadow);z-index:60}
 .hidden{display:none !important}
