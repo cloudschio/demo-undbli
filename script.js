@@ -6,6 +6,13 @@ const bgm = document.getElementById('bgm');
 const musicToggle = document.getElementById('musicToggle');
 const copyBtns = document.querySelectorAll('.copy-btn');
 const targetDate = new Date('2026-07-20T11:00:00+08:00').getTime();
+const progressFill = document.getElementById('progressFill');
+const cursorSparkle = document.getElementById('cursorSparkle');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+const bottomLinks = document.querySelectorAll('.bottom-nav a');
+const sections = ['details','location','gallery','rsvp'].map(id => document.getElementById(id)).filter(Boolean);
 
 function createParticle(){
   const p = document.createElement('span');
@@ -79,4 +86,57 @@ wishForm.addEventListener('submit', (e) => {
   item.innerHTML = `<strong>${name}${role ? ` <span style="color:#d9a441;font-weight:500;">(${role})</span>` : ''}</strong><p>${message}</p>`;
   wishList.prepend(item);
   wishForm.reset();
+});
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.15});
+revealEls.forEach(el => io.observe(el));
+
+document.querySelectorAll('a, button, .gift-card, .event-card, .profile-card, .gallery-item').forEach(el => {
+  el.addEventListener('click', () => {
+    el.classList.remove('click-pop');
+    void el.offsetWidth;
+    el.classList.add('click-pop');
+  });
+});
+
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.remove('hidden');
+  });
+});
+
+lightboxClose.addEventListener('click', () => lightbox.classList.add('hidden'));
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.add('hidden'); });
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY * 0.2;
+  const layer = document.querySelector('.parallax-layer');
+  if (layer) layer.style.transform = `translateY(${y}px)`;
+
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressFill.style.width = percent + '%';
+
+  let active = '';
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= window.innerHeight * 0.4 && rect.bottom >= window.innerHeight * 0.2) active = sec.id;
+  });
+  bottomLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + active);
+  });
+});
+
+window.addEventListener('mousemove', (e) => {
+  cursorSparkle.style.left = e.clientX + 'px';
+  cursorSparkle.style.top = e.clientY + 'px';
+  cursorSparkle.style.opacity = '1';
+});
+window.addEventListener('mouseleave', () => {
+  cursorSparkle.style.opacity = '0';
 });
