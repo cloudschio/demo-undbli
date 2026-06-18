@@ -3,161 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Undangan Pernikahan – Fulan & Fulana</title>
+  <title>Fulan & Fulana | Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
 
-  <!-- COVER -->
-  <section id="cover">
+  <section id="cover" class="cover">
     <div class="cover-overlay"></div>
+    <div class="cover-frame"></div>
     <div class="cover-content">
-      <p class="cover-label">Undangan Pernikahan</p>
-      <h1 class="couple-name">Fulan<br><span>&amp;</span><br>Fulana</h1>
+      <p class="ornament">✦ ✦ ✦</p>
+      <p class="cover-label">The Wedding of</p>
+      <h1 class="hero-names">Fulan <span>&amp;</span> Fulana</h1>
       <p class="cover-date">19 Desember 2026</p>
-      <button id="openBtn" class="btn-open">Buka Undangan</button>
+      <p class="cover-desc">Dengan penuh rasa syukur, kami mengundang Anda untuk hadir dan memberikan doa restu.</p>
+      <button id="openBtn" class="btn-gold">Buka Undangan</button>
     </div>
-    <div class="scroll-hint">↓</div>
+    <div class="scroll-indicator">Scroll</div>
   </section>
 
-  <!-- MAIN CONTENT -->
   <main id="mainContent" class="hidden">
-
-    <!-- BISMILLAH -->
-    <section class="section section-bismillah">
+    <section class="section section-intro">
       <div class="container">
-        <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-        <p class="bismillah-text">Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang</p>
-        <p class="bismillah-sub">Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu dalam pernikahan kami.</p>
+        <div class="glass panel intro-panel">
+          <p class="arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+          <p class="intro-text">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan.</p>
+          <p class="intro-sub">Atas rahmat dan ridha-Nya, kami bermaksud menyelenggarakan pernikahan kami.</p>
+        </div>
       </div>
     </section>
 
-    <!-- COUPLE -->
     <section class="section section-couple">
       <div class="container">
-        <h2 class="section-title">Mempelai</h2>
-        <div class="couple-grid">
-          <div class="person-card">
-            <div class="avatar">👨</div>
-            <h3>Fulan</h3>
-            <p>Putra dari<br><strong>Bapak A &amp; Ibu B</strong></p>
+        <div class="section-head">
+          <span class="eyebrow">Calon Mempelai</span>
+          <h2 class="section-title">Pasangan yang Berbahagia</h2>
+        </div>
+
+        <div class="name-hero card">
+          <div class="name-line">
+            <span class="name-small">Fulan</span>
+            <span class="name-amp">&amp;</span>
+            <span class="name-small">Fulana</span>
           </div>
-          <div class="divider-heart">❤️</div>
-          <div class="person-card">
-            <div class="avatar">👩</div>
-            <h3>Fulana</h3>
-            <p>Putri dari<br><strong>Bapak C &amp; Ibu D</strong></p>
-          </div>
+          <p class="name-caption">Putra dari Bapak A &amp; Ibu B · Putri dari Bapak C &amp; Ibu D</p>
         </div>
       </div>
     </section>
 
-    <!-- EVENT -->
-    <section class="section section-event">
+    <section class="section section-timeline">
       <div class="container">
-        <h2 class="section-title">Detail Acara</h2>
-        <div class="event-cards">
-          <div class="event-card">
-            <div class="event-icon">🕙</div>
-            <h3>Akad Nikah</h3>
-            <p>Sabtu, 19 Desember 2026</p>
-            <p>08.00 WIB – Selesai</p>
+        <div class="section-head">
+          <span class="eyebrow">Wedding Details</span>
+          <h2 class="section-title">Detail Acara</h2>
+        </div>
+        <div class="timeline card">
+          <div class="time-item">
+            <div class="time-dot"></div>
+            <div>
+              <h3>Akad Nikah</h3>
+              <p>Sabtu, 19 Desember 2026 · 08.00 WIB – Selesai</p>
+            </div>
           </div>
-          <div class="event-card">
-            <div class="event-icon">🥂</div>
-            <h3>Resepsi</h3>
-            <p>Sabtu, 19 Desember 2026</p>
-            <p>10.00 WIB – Selesai</p>
+          <div class="time-item">
+            <div class="time-dot"></div>
+            <div>
+              <h3>Resepsi</h3>
+              <p>Sabtu, 19 Desember 2026 · 10.00 WIB – Selesai</p>
+            </div>
           </div>
         </div>
-        <div class="venue-box">
-          <div class="venue-icon">📍</div>
-          <div>
-            <h3>Fave Hotel Sidoarjo</h3>
-            <p>Jl. Raya Sidoarjo, Sidoarjo, Jawa Timur</p>
-            <a href="https://maps.google.com/?q=Fave+Hotel+Sidoarjo" target="_blank" class="btn-map">Lihat di Maps</a>
+        <div class="venue card">
+          <div class="venue-main">
+            <div class="venue-icon">📍</div>
+            <div>
+              <h3>Fave Hotel Sidoarjo</h3>
+              <p>Jl. Raya Sidoarjo, Jawa Timur</p>
+              <a class="btn-outline" target="_blank" href="https://maps.google.com/?q=Fave+Hotel+Sidoarjo">Buka Peta</a>
+            </div>
+          </div>
+          <div class="map-preview">
+            <iframe
+              src="https://www.google.com/maps?q=Fave%20Hotel%20Sidoarjo&z=15&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- COUNTDOWN -->
     <section class="section section-countdown">
       <div class="container">
-        <h2 class="section-title">Hitung Mundur</h2>
-        <div class="countdown-grid" id="countdown">
-          <div class="countdown-box"><span id="days">00</span><small>Hari</small></div>
-          <div class="countdown-box"><span id="hours">00</span><small>Jam</small></div>
-          <div class="countdown-box"><span id="minutes">00</span><small>Menit</small></div>
-          <div class="countdown-box"><span id="seconds">00</span><small>Detik</small></div>
+        <div class="section-head light">
+          <span class="eyebrow">Countdown</span>
+          <h2 class="section-title light">Menuju Hari Bahagia</h2>
+        </div>
+        <div id="countdown" class="countdown-grid">
+          <div class="count-box glass"><span id="days">00</span><small>Hari</small></div>
+          <div class="count-box glass"><span id="hours">00</span><small>Jam</small></div>
+          <div class="count-box glass"><span id="minutes">00</span><small>Menit</small></div>
+          <div class="count-box glass"><span id="seconds">00</span><small>Detik</small></div>
         </div>
       </div>
     </section>
 
-    <!-- GALLERY -->
     <section class="section section-gallery">
       <div class="container">
-        <h2 class="section-title">Galeri</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item g1"></div>
-          <div class="gallery-item g2"></div>
-          <div class="gallery-item g3"></div>
-          <div class="gallery-item g4"></div>
+        <div class="section-head">
+          <span class="eyebrow">Memories</span>
+          <h2 class="section-title">Galeri</h2>
         </div>
-        <p class="gallery-note">💡 Ganti warna placeholder di CSS dengan foto prewedding Anda</p>
+        <div class="masonry">
+          <div class="masonry-item g1"></div>
+          <div class="masonry-item g2"></div>
+          <div class="masonry-item g3"></div>
+          <div class="masonry-item g4"></div>
+        </div>
       </div>
     </section>
 
-    <!-- UCAPAN -->
+    <section class="section section-qris">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Digital Gift</span>
+          <h2 class="section-title">QRIS</h2>
+        </div>
+        <div class="qris-card card">
+          <div class="qris-left">
+            <div class="qris-badge">QRIS</div>
+            <h3>Scan untuk kirim hadiah</h3>
+            <p>Silakan scan kode QR di samping untuk amplop digital.</p>
+            <div class="qris-meta">
+              <span>SeaBank</span>
+              <strong>901794598110</strong>
+            </div>
+          </div>
+          <div class="qris-image-wrap">
+            <img src="qris.png" alt="QRIS" class="qris-image" />
+            <button class="btn-outline qris-copy" onclick="copyAccount()">Salin Rekening</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-wishes">
       <div class="container">
-        <h2 class="section-title">Ucapan &amp; Doa</h2>
-        <form id="wishForm" class="wish-form">
-          <input type="text" id="wishName" placeholder="Nama Anda" required />
-          <textarea id="wishMessage" placeholder="Tulis ucapan dan doa tulus Anda..." rows="4" required></textarea>
-          <button type="submit" class="btn-primary">Kirim Ucapan 💌</button>
+        <div class="section-head">
+          <span class="eyebrow">Guestbook</span>
+          <h2 class="section-title">Ucapan &amp; Doa</h2>
+        </div>
+        <form id="wishForm" class="wish-form card">
+          <input id="wishName" type="text" placeholder="Nama Anda" required />
+          <textarea id="wishMessage" rows="4" placeholder="Tulis ucapan dan doa..." required></textarea>
+          <button class="btn-gold" type="submit">Kirim Ucapan</button>
         </form>
         <div id="wishesList" class="wishes-list"></div>
       </div>
     </section>
 
-    <!-- AMPLOP DIGITAL -->
-    <section class="section section-gift">
+    <section class="section section-rsvp">
       <div class="container">
-        <h2 class="section-title">Amplop Digital</h2>
-        <p class="gift-desc">Bagi yang ingin memberikan hadiah, dapat ditransfer melalui:</p>
-        <div class="gift-card">
-          <div class="bank-logo">🏦</div>
-          <div class="bank-info">
-            <h3>SeaBank</h3>
-            <p class="account-number">901794598110</p>
-            <p>a.n. Fulan / Fulana</p>
+        <div class="rsvp card">
+          <div>
+            <span class="eyebrow">RSVP</span>
+            <h2 class="section-title">Konfirmasi Kehadiran</h2>
+            <p>Mohon konfirmasi melalui WhatsApp agar kami dapat mempersiapkan tempat dengan baik.</p>
           </div>
-          <button class="btn-copy" onclick="copyAccount()">Salin Nomor</button>
+          <a class="btn-wa" target="_blank" href="https://wa.me/62881081912121?text=Halo%2C%20saya%20ingin%20konfirmasi%20kehadiran%20di%20acara%20pernikahan%20Fulan%20%26%20Fulana.">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- KONFIRMASI -->
-    <section class="section section-confirm">
-      <div class="container">
-        <h2 class="section-title">Konfirmasi Kehadiran</h2>
-        <p>Mohon konfirmasi kehadiran Anda melalui WhatsApp kami.</p>
-        <a href="https://wa.me/62881081912121?text=Halo%2C%20saya%20konfirmasi%20kehadiran%20di%20pernikahan%20Fulan%20%26%20Fulana%20pada%2019%20Desember%202026."
-           target="_blank" class="btn-wa">
-          💬 Konfirmasi via WhatsApp
-        </a>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer class="footer">
-      <p>Made with ❤️ · Fulan &amp; Fulana · 19.12.2026</p>
+      <p>Fulan &amp; Fulana · 19.12.2026</p>
     </footer>
-
   </main>
 
   <script src="script.js"></script>
