@@ -1,81 +1,71 @@
-const bgm=document.getElementById('bgm');
-const fab=document.getElementById('musicFab');
-let started=false;
+const body = document.body;
+const themeBtn = document.getElementById('themeBtn');
+const musicBtn = document.getElementById('musicBtn');
+const bgm = document.getElementById('bgm');
+const openingScreen = document.getElementById('openingScreen');
+const mainPage = document.getElementById('mainPage');
+const openInvite = document.getElementById('openInvite');
 
-function toggleMusic(){
-  if(!started){
-    bgm.volume=.45;
-    bgm.play().then(()=>{
-      started=true;
-      fab.classList.add('playing');
-    }).catch(()=>{});
-    return;
-  }
-  if(bgm.paused){
-    bgm.play();
-    fab.classList.add('playing');
-  }else{
+const saved = localStorage.getItem('theme');
+if (saved === 'dark') {
+  body.classList.add('dark');
+  themeBtn.textContent = '☀';
+}
+
+themeBtn.addEventListener('click', () => {
+  body.classList.toggle('dark');
+  const dark = body.classList.contains('dark');
+  themeBtn.textContent = dark ? '☀' : '☾';
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+});
+
+openInvite.addEventListener('click', () => {
+  openingScreen.style.display = 'none';
+  mainPage.classList.remove('hidden');
+  bgm.play().catch(() => {});
+});
+
+musicBtn.addEventListener('click', async () => {
+  if (bgm.paused) {
+    try {
+      await bgm.play();
+      musicBtn.textContent = '❚❚';
+    } catch (e) {}
+  } else {
     bgm.pause();
-    fab.classList.remove('playing');
-  }
-}
-
-fab.addEventListener('click',toggleMusic);
-
-document.getElementById('openBtn').addEventListener('click',()=>{
-  document.getElementById('cover').style.display='none';
-  const m=document.getElementById('mainContent');
-  m.classList.remove('hidden');
-  window.scrollTo({top:0,behavior:'smooth'});
-  if(!started){
-    bgm.volume=.45;
-    bgm.play().then(()=>{
-      started=true;
-      fab.classList.add('playing');
-    }).catch(()=>{});
+    musicBtn.textContent = '♫';
   }
 });
 
-function cd(){
-  const t=new Date('2026-12-19T10:00:00');
-  const n=new Date();
-  const d=t-n;
-  if(d<=0){
-    document.getElementById('countdown').innerHTML='<div class="count-card" style="grid-column:1/-1"><span>🎉</span><small>Hari Bahagia</small></div>';
-    return;
-  }
-  const x=[['days',86400000],['hours',3600000],['minutes',60000],['seconds',1000]];
-  x.forEach(([id,v])=>document.getElementById(id).textContent=String(Math.floor((d%(v===86400000?999999999:v*24))/v)).padStart(2,'0'));
-}
-cd();
-setInterval(cd,1000);
+const target = new Date('2026-06-18T08:00:00+07:00').getTime();
 
-const wishes=[];
-document.getElementById('wishForm').addEventListener('submit',e=>{
+setInterval(() => {
+  const d = Math.max(target - Date.now(), 0);
+  days.textContent = String(Math.floor(d / 86400000)).padStart(2, '0');
+  hours.textContent = String(Math.floor((d % 86400000) / 3600000)).padStart(2, '0');
+  minutes.textContent = String(Math.floor((d % 3600000) / 60000)).padStart(2, '0');
+  seconds.textContent = String(Math.floor((d % 60000) / 1000)).padStart(2, '0');
+}, 1000);
+
+const modal = document.getElementById('qrisModal');
+const open = () => modal.classList.add('show');
+const close = () => modal.classList.remove('show');
+
+openQris.addEventListener('click', open);
+openQris2.addEventListener('click', open);
+closeQris.addEventListener('click', close);
+modal.addEventListener('click', e => {
+  if (e.target === modal) close();
+});
+
+rsvpForm.addEventListener('submit', e => {
   e.preventDefault();
-  const n=document.getElementById('wishName').value.trim(),
-        m=document.getElementById('wishMessage').value.trim();
-  if(!n||!m)return;
-  wishes.unshift({n,m});
-  document.getElementById('wishesList').innerHTML=wishes.map(w=>`<div class="wish-item"><strong>💙 ${esc(w.n)}</strong><p>${esc(w.m)}</p></div>`).join('');
-  e.target.reset();
+  const name = rsvpName.value.trim();
+  const status = rsvpStatus.value;
+  const guest = rsvpGuest.value || '1';
+  const message = rsvpMessage.value.trim();
+
+  const text = `Halo, saya ${name}. Saya ingin konfirmasi kehadiran: ${status}. Jumlah tamu: ${guest}. ${message ? 'Pesan: ' + message : ''} Pada undangan pernikahan Adam & Sari.`;
+
+  window.open('https://wa.me/6281234567890?text=' + encodeURIComponent(text), '_blank');
 });
-
-function esc(s){
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function copyAccount(){
-  navigator.clipboard.writeText('901794598110').then(()=>{
-    const b=document.querySelector('.btn-outline[onclick]');
-    const t=b.textContent;
-    b.textContent='Tersalin';
-    setTimeout(()=>b.textContent=t,1800);
-  });
-}
-
-const reveal=document.querySelectorAll('.reveal');
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting)e.target.classList.add('in-view');
-}),{threshold:.15});
-reveal.forEach(el=>io.observe(el));
