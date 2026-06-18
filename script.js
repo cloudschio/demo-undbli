@@ -61,3 +61,18 @@ rsvpForm.addEventListener('submit',e=>{
   const text=`Halo, saya ${name}. Saya ingin konfirmasi kehadiran: ${status}. Jumlah tamu: ${guest}. ${message ? 'Pesan: ' + message : ''} Pada undangan pernikahan Adam & Sari.`;
   window.open('https://wa.me/6281234567890?text='+encodeURIComponent(text),'_blank')
 });
+
+const copyRekening=document.getElementById('copyRekening');
+const rekeningNumber=document.getElementById('rekeningNumber');
+if(copyRekening&&rekeningNumber){
+  copyRekening.addEventListener('click',async()=>{
+    try{
+      await navigator.clipboard.writeText(rekeningNumber.textContent.trim());
+      copyRekening.textContent='Tersalin';
+      setTimeout(()=>copyRekening.textContent='Salin',1200)
+    }catch(e){
+      copyRekening.textContent='Gagal';
+      setTimeout(()=>copyRekening.textContent='Salin',1200)
+    }
+  });
+}
