@@ -11,10 +11,11 @@
 </head>
 <body>
   <div class="bg"></div>
+  <img class="decor decor-top-left" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/5265a63ed64bc0c1e31585df6086cd5b1db75e3f.jpg" alt="Dekorasi daun emas">
+  <img class="decor decor-top-right" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/5265a63ed64bc0c1e31585df6086cd5b1db75e3f.jpg" alt="Dekorasi daun emas">
 
   <div class="opening-screen" id="openingScreen">
-    <div class="floral floral-tl"></div>
-    <div class="floral floral-br"></div>
+    <img class="decor opening-flower" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/5265a63ed64bc0c1e31585df6086cd5b1db75e3f.jpg" alt="Dekorasi floral">
     <div class="opening-card glass">
       <p class="eyebrow">Wedding Invitation</p>
       <div class="opening-names"><span>Adam</span><span class="amp">&</span><span>Sari</span></div>
@@ -31,7 +32,6 @@
   <button class="floating-btn second" id="themeBtn">☾</button>
 
   <main class="page hidden" id="mainPage">
-    <div class="section-floral section-floral-top"></div>
     <section class="hero card glass">
       <p class="eyebrow">We are getting married</p>
       <h1>Adam & Sari</h1>
@@ -39,6 +39,7 @@
     </section>
 
     <section class="card glass date-card">
+      <img class="mini-divider" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/5bea387ca11fe0ae1462afca893bd72a018d3a07.jpg" alt="Divider floral">
       <div class="section-head"><span></span><h2>Tanggal Pernikahan</h2><span></span></div>
       <div class="date-display">
         <div class="date-main">Sabtu, 19 Desember 2026</div>
@@ -101,9 +102,10 @@
     </section>
 
     <section class="card glass" id="rsvp">
+      <img class="mini-divider" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/5bea387ca11fe0ae1462afca893bd72a018d3a07.jpg" alt="Divider floral">
       <div class="section-head"><span></span><h2>RSVP WhatsApp</h2><span></span></div>
       <p class="muted center rsvp-note">Konfirmasi kehadiran Anda melalui WhatsApp dengan mudah.</p>
-      <form id="rsvpForm" class="form">
+      <form id="rsvpForm" class="form narrow-form">
         <input type="text" id="rsvpName" class="input" placeholder="Nama Anda" required>
         <select id="rsvpStatus" class="input" required>
           <option value="">Pilih kehadiran</option>
@@ -117,18 +119,21 @@
     </section>
 
     <section class="card glass qris-card">
+      <img class="mini-divider" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/5bea387ca11fe0ae1462afca893bd72a018d3a07.jpg" alt="Divider floral">
       <div class="section-head"><span></span><h2>QRIS & Rekening</h2><span></span></div>
       <p class="muted center qris-note">Silakan gunakan QRIS di bawah atau transfer ke rekening berikut.</p>
       <div class="qris-wrap">
         <img src="https://images.unsplash.com/photo-1633265486064-086b219f3f90?auto=format&fit=crop&w=1200&q=80" alt="QRIS" class="qris-img">
         <div class="rekening-box">
           <p><strong>Bank:</strong> BRI</p>
-          <p><strong>No. Rekening:</strong> 1234 5678 9012 345</p>
+          <div class="rekening-line">
+            <p><strong>No. Rekening:</strong> <span id="rekeningNumber">1234 5678 9012 345</span></p>
+            <button class="btn btn-secondary copy-btn" type="button" id="copyRekening">Salin</button>
+          </div>
           <p><strong>Atas Nama:</strong> Adam Wijaya</p>
         </div>
       </div>
     </section>
-    <div class="section-floral section-floral-bottom"></div>
   </main>
 
   <script src="script.js"></script>
