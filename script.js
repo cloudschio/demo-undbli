@@ -1,5 +1,6 @@
 // === COUNTDOWN ===
-const weddingDate = new Date('2022-02-31T10:00:00').getTime();
+// Set tanggal pernikahan (ganti dengan tanggal yang benar)
+const weddingDate = new Date('2027-02-31T10:00:00').getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
@@ -15,6 +16,12 @@ function updateCountdown() {
     document.getElementById('hours').textContent = hours;
     document.getElementById('minutes').textContent = minutes;
     document.getElementById('seconds').textContent = seconds;
+  } else {
+    // Jika sudah lewat tanggal pernikahan
+    document.getElementById('days').textContent = '0';
+    document.getElementById('hours').textContent = '0';
+    document.getElementById('minutes').textContent = '0';
+    document.getElementById('seconds').textContent = '0';
   }
 }
 
@@ -22,34 +29,49 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // === OPEN INVITATION ===
-document.getElementById('openInvite').addEventListener('click', function() {
-  document.getElementById('cover').classList.add('hidden');
-  
-  // Start music automatically
-  const music = document.getElementById('bgMusic');
-  const musicToggle = document.getElementById('musicToggle');
-  
-  if (music) {
-    music.play().catch(() => {
-      console.log('Auto-play prevented');
-    });
-    musicToggle.classList.add('playing');
-  }
-});
+const openInviteBtn = document.getElementById('openInvite');
+const cover = document.getElementById('cover');
+
+// Pastikan elemen ada sebelum menambah event listener
+if (openInviteBtn && cover) {
+  openInviteBtn.addEventListener('click', function() {
+    console.log('Tombol dibuka!');
+    cover.classList.add('hidden');
+    
+    // Start music otomatis
+    const music = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+    
+    if (music) {
+      music.play().catch((err) => {
+        console.log('Auto-play prevented:', err);
+      });
+      if (musicToggle) {
+        musicToggle.classList.add('playing');
+      }
+    }
+  });
+} else {
+  console.log('Error: Element not found');
+}
 
 // === MUSIC TOGGLE ===
-const musicToggle = document.getElementById('musicToggle');
+const musicToggleBtn = document.getElementById('musicToggle');
 const bgMusic = document.getElementById('bgMusic');
 
-musicToggle.addEventListener('click', function() {
-  if (bgMusic.paused) {
-    bgMusic.play();
-    musicToggle.classList.add('playing');
-  } else {
-    bgMusic.pause();
-    musicToggle.classList.remove('playing');
-  }
-});
+if (musicToggleBtn && bgMusic) {
+  musicToggleBtn.addEventListener('click', function() {
+    if (bgMusic.paused) {
+      bgMusic.play().catch((err) => {
+        console.log('Play error:', err);
+      });
+      musicToggleBtn.classList.add('playing');
+    } else {
+      bgMusic.pause();
+      musicToggleBtn.classList.remove('playing');
+    }
+  });
+}
 
 // === NAVIGATION ACTIVE STATE ===
 const navItems = document.querySelectorAll('.nav-item');
@@ -75,25 +97,41 @@ window.addEventListener('scroll', function() {
   });
 });
 
+// === Smooth scrolling untuk anchor links ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
 // === RSVP FORM ===
 const rsvpCategory = document.getElementById('rsvpCategory');
 const rsvpGuest = document.getElementById('rsvpGuest');
 
-rsvpCategory.addEventListener('change', function() {
-  if (this.value === 'keluarga') {
-    rsvpGuest.innerHTML = '<option value="">-- Jumlah Orang --</option>' +
-      '<option value="1">1 Orang</option>' +
-      '<option value="2">2 Orang</option>' +
-      '<option value="3">3-4 Orang</option>' +
-      '<option value="4">5+ Orang</option>';
-  } else {
-    rsvpGuest.innerHTML = '<option value="">-- Jumlah Orang --</option>' +
-      '<option value="1">1 Orang</option>' +
-      '<option value="2">2 Orang</option>';
-  }
-  
-  rsvpGuest.disabled = false;
-});
+if (rsvpCategory && rsvpGuest) {
+  rsvpCategory.addEventListener('change', function() {
+    if (this.value === 'keluarga') {
+      rsvpGuest.innerHTML = '<option value="">-- Jumlah Orang --</option>' +
+        '<option value="1">1 Orang</option>' +
+        '<option value="2">2 Orang</option>' +
+        '<option value="3">3-4 Orang</option>' +
+        '<option value="4">5+ Orang</option>';
+    } else {
+      rsvpGuest.innerHTML = '<option value="">-- Jumlah Orang --</option>' +
+        '<option value="1">1 Orang</option>' +
+        '<option value="2">2 Orang</option>';
+    }
+    
+    rsvpGuest.disabled = false;
+  });
+}
 
 function sendRSVP(event) {
   event.preventDefault();
@@ -123,5 +161,12 @@ function sendRSVP(event) {
   }
   
   rsvpMessage += `Kehadiran: ${attendText}\n\n` +
-    `Ucapan:\n${message}\n\n` +
-    `Syuk
+    `Ucapan:\n${message}`;
+  
+  // Ganti nomor WhatsApp di bawah ini
+  const phoneNumber = ''; // Contoh: '628123456789'
+  
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(rsvpMessage)}`;
+  
+  window.open(whatsappURL, '_blank');
+}
