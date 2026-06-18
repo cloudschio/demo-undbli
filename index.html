@@ -3,195 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fulan & Fulana | Wedding Invitation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <title>Adam & Sari | Undangan Pernikahan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="grain"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-
-  <audio id="bgm" loop preload="auto">
-    <source src="music.mp3" type="audio/mpeg" />
-  </audio>
-  <div class="music-fab" id="musicFab" aria-label="Putar musik">♫</div>
-
-  <section id="cover" class="cover">
-    <div class="cover-overlay"></div>
-    <div class="cover-frame"></div>
-    <div class="cover-content">
-      <p class="ornament">✦ ✦ ✦</p>
-      <p class="cover-label">The Wedding of</p>
-      <h1 class="hero-names">Fulan <span>&amp;</span> Fulana</h1>
-      <p class="cover-date">19 Desember 2026</p>
-      <p class="cover-desc">Dengan penuh rasa syukur, kami mengundang Anda untuk hadir dan memberikan doa restu.</p>
-      <button id="openBtn" class="btn-gold">Buka Undangan</button>
+  <div class="opening-screen" id="openingScreen">
+    <div class="opening-card">
+      <p class="eyebrow">Wedding Invitation</p>
+      <h1>Adam & Sari</h1>
+      <p class="opening-sub">Undangan Pernikahan</p>
+      <button class="btn btn-primary" id="openInvite">Buka Undangan</button>
     </div>
-    <div class="scroll-indicator">Scroll</div>
-  </section>
+  </div>
 
-  <main id="mainContent" class="hidden">
-    <section class="section intro-section reveal">
-      <div class="container">
-        <div class="intro-card">
-          <div class="intro-line"></div>
-          <p class="arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-          <p class="intro-text">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan.</p>
-          <p class="intro-sub">Atas rahmat dan ridha-Nya, kami bermaksud menyelenggarakan pernikahan kami.</p>
+  <audio id="bgm" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="floating-btn" id="musicBtn">♫</button>
+  <button class="floating-btn second" id="themeBtn">☾</button>
+
+  <main class="page hidden" id="mainPage">
+    <section class="hero card floral">
+      <p class="eyebrow">We are getting married</p>
+      <h1>Adam & Sari</h1>
+      <p class="date">18 Juni 2026</p>
+      <p class="lead">Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu.</p>
+      <div class="actions">
+        <a href="#rsvp" class="btn btn-primary">RSVP Sekarang</a>
+        <button class="btn btn-secondary" id="openQris">Amplop Digital</button>
+      </div>
+    </section>
+
+    <section class="card couple-card">
+      <div class="couple-grid">
+        <div class="person">
+          <div class="avatar">A</div>
+          <h2>Adam Wijaya</h2>
+          <p>Putra dari Bpk. Wijaya & Ibu Susanti</p>
+        </div>
+        <div class="person">
+          <div class="avatar">S</div>
+          <h2>Sari Kusuma</h2>
+          <p>Putri dari Bpk. Kusuma & Ibu Dewi</p>
         </div>
       </div>
     </section>
 
-    <section class="section couple-section reveal">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Calon Mempelai</span>
-          <h2 class="section-title">Pasangan yang Berbahagia</h2>
-        </div>
-        <div class="name-hero">
-          <div class="bride-groom-grid">
-            <div class="parent-card">
-              <div class="name-badge">Groom</div>
-              <h3 class="name-person">Fulan</h3>
-              <p class="name-parent">Putra dari<br><strong>Bapak A &amp; Ibu B</strong></p>
-            </div>
-            <div class="name-separator">&amp;</div>
-            <div class="parent-card">
-              <div class="name-badge">Bride</div>
-              <h3 class="name-person">Fulana</h3>
-              <p class="name-parent">Putri dari<br><strong>Bapak C &amp; Ibu D</strong></p>
-            </div>
-          </div>
-        </div>
+    <section class="card grid-2">
+      <div class="info-box">
+        <h2>Akad Nikah</h2>
+        <p>Jumat, 18 Juni 2026</p>
+        <p>08:00 - 10:00 WIB</p>
+        <p>Masjid Agung Surabaya</p>
+      </div>
+      <div class="info-box">
+        <h2>Resepsi</h2>
+        <p>Jumat, 18 Juni 2026</p>
+        <p>11:00 - 14:00 WIB</p>
+        <p>Gedung Pernikahan Indah</p>
       </div>
     </section>
 
-    <section class="section detail-section reveal">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Wedding Details</span>
-          <h2 class="section-title">Detail Acara</h2>
-        </div>
-        <div class="detail-grid">
-          <div class="detail-card">
-            <div class="detail-icon">✦</div>
-            <h3>Akad Nikah</h3>
-            <p>Sabtu, 19 Desember 2026</p>
-            <p>08.00 WIB – Selesai</p>
-          </div>
-          <div class="detail-card">
-            <div class="detail-icon">✦</div>
-            <h3>Resepsi</h3>
-            <p>Sabtu, 19 Desember 2026</p>
-            <p>10.00 WIB – Selesai</p>
-          </div>
-        </div>
-        <div class="venue-card">
-          <div class="venue-copy">
-            <span class="eyebrow">Lokasi</span>
-            <h3>Fave Hotel Sidoarjo</h3>
-            <p>Jl. Raya Sidoarjo, Jawa Timur</p>
-            <a class="btn-outline" target="_blank" href="https://maps.google.com/?q=Fave+Hotel+Sidoarjo">Buka Peta</a>
-          </div>
-          <div class="venue-map">
-            <iframe src="https://www.google.com/maps?q=Fave%20Hotel%20Sidoarjo&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-          </div>
-        </div>
+    <section class="card">
+      <h2>Countdown</h2>
+      <div class="countdown">
+        <div><span id="days">00</span><small>Hari</small></div>
+        <div><span id="hours">00</span><small>Jam</small></div>
+        <div><span id="minutes">00</span><small>Menit</small></div>
+        <div><span id="seconds">00</span><small>Detik</small></div>
       </div>
     </section>
 
-    <section class="section countdown-section reveal">
-      <div class="container">
-        <div class="section-head light">
-          <span class="eyebrow">Countdown</span>
-          <h2 class="section-title light">Menuju Hari Bahagia</h2>
-        </div>
-        <div id="countdown" class="count-grid">
-          <div class="count-card"><span id="days">00</span><small>Hari</small></div>
-          <div class="count-card"><span id="hours">00</span><small>Jam</small></div>
-          <div class="count-card"><span id="minutes">00</span><small>Menit</small></div>
-          <div class="count-card"><span id="seconds">00</span><small>Detik</small></div>
-        </div>
+    <section class="card">
+      <h2>Galeri</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Gallery 1">
+        <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1200&q=80" alt="Gallery 2">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Gallery 3">
+        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59a6c?auto=format&fit=crop&w=1200&q=80" alt="Gallery 4">
       </div>
     </section>
 
-    <section class="section gallery-section reveal">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Memories</span>
-          <h2 class="section-title">Galeri</h2>
-        </div>
-        <div class="gallery-grid">
-          <div class="gallery-item g1"></div>
-          <div class="gallery-item g2"></div>
-          <div class="gallery-item g3"></div>
-          <div class="gallery-item g4"></div>
-        </div>
+    <section class="card">
+      <h2>Lokasi Acara</h2>
+      <div class="map-box">
+        <iframe src="https://www.google.com/maps?q=surabaya&output=embed" loading="lazy"></iframe>
       </div>
     </section>
 
-    <section class="section qris-section reveal">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Digital Gift</span>
-          <h2 class="section-title">QRIS</h2>
-        </div>
-        <div class="qris-card qris-card-noimg">
-          <div class="qris-copy-side">
-            <div class="qris-tag">QRIS</div>
-            <h3>Scan untuk kirim hadiah</h3>
-            <p>Silakan scan kode QR di bawah untuk amplop digital.</p>
-            <div class="bank-row"><span>SeaBank</span><strong>901794598110</strong></div>
-          </div>
-          <div class="qris-faux">
-            <div class="qris-faux-top">Fulan &amp; Fulana</div>
-            <div class="qris-qrbox">
-              <div class="qr-dot"></div><div class="qr-dot"></div><div class="qr-dot"></div>
-              <div class="qr-dot"></div><div class="qr-dot center"></div><div class="qr-dot"></div>
-              <div class="qr-dot"></div><div class="qr-dot"></div><div class="qr-dot"></div>
-            </div>
-            <div class="qris-faux-bottom">SeaBank · 901794598110</div>
-          </div>
-        </div>
-      </div>
+    <section class="card" id="rsvp">
+      <h2>RSVP WhatsApp</h2>
+      <p class="muted">Isi data lalu kirim langsung ke WhatsApp.</p>
+      <form id="rsvpForm" class="form">
+        <input type="text" id="rsvpName" class="input" placeholder="Nama Anda" required>
+        <select id="rsvpStatus" class="input" required>
+          <option value="">Pilih kehadiran</option>
+          <option value="Hadir">Hadir</option>
+          <option value="Tidak Hadir">Tidak Hadir</option>
+        </select>
+        <input type="number" id="rsvpGuest" class="input" placeholder="Jumlah tamu" min="1" value="1">
+        <textarea id="rsvpMessage" class="input" rows="4" placeholder="Pesan / ucapan"></textarea>
+        <button class="btn btn-primary" type="submit">Kirim via WhatsApp</button>
+      </form>
     </section>
 
-    <section class="section wishes-section reveal">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Guestbook</span>
-          <h2 class="section-title">Ucapan &amp; Doa</h2>
-        </div>
-        <form id="wishForm" class="wish-form">
-          <input id="wishName" type="text" placeholder="Nama Anda" required />
-          <textarea id="wishMessage" rows="4" placeholder="Tulis ucapan dan doa..." required></textarea>
-          <button class="btn-gold" type="submit">Kirim Ucapan</button>
-        </form>
-        <div id="wishesList" class="wishes-list"></div>
-      </div>
+    <section class="card">
+      <h2>QRIS Amplop Digital</h2>
+      <button class="btn btn-primary" id="openQris2">Lihat QRIS</button>
     </section>
-
-    <section class="section rsvp-section reveal">
-      <div class="container">
-        <div class="rsvp-card">
-          <div>
-            <span class="eyebrow">RSVP</span>
-            <h2 class="section-title">Konfirmasi Kehadiran</h2>
-            <p>Mohon konfirmasi melalui WhatsApp agar kami dapat mempersiapkan tempat dengan baik.</p>
-          </div>
-          <a class="btn-wa" target="_blank" href="https://wa.me/62881081912121?text=Halo%2C%20saya%20ingin%20konfirmasi%20kehadiran%20di%20acara%20pernikahan%20Fulan%20%26%20Fulana.">WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>Fulan &amp; Fulana · 19.12.2026</p>
-    </footer>
   </main>
+
+  <div class="modal" id="qrisModal">
+    <div class="modal-box">
+      <button class="close" id="closeQris">×</button>
+      <h2>QRIS</h2>
+      <img src="https://images.unsplash.com/photo-1633265486064-086b219f3f90?auto=format&fit=crop&w=1200&q=80" alt="QRIS placeholder" class="qris-img">
+      <p class="muted">Ganti link ini dengan QRIS asli kamu nanti.</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
