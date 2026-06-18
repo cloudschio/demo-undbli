@@ -18,3 +18,5 @@ waBtn.onclick=()=>{
   const text=encodeURIComponent(`Halo, saya ${name}. Jumlah tamu: ${count}. Pesan: ${msg}`);
   waBtn.href=`https://wa.me/620881081912121?text=${text}`;
 };
+const themeBtn=document.getElementById('themeBtn');
+themeBtn.onclick=()=>{document.body.classList.toggle('dark');themeBtn.textContent=document.body.classList.contains('dark')?'◐ Light Mode':'◐ Dark Mode';};
