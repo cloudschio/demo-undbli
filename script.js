@@ -1,111 +1,127 @@
-const CONFIG = {
-  title: "Undangan Pernikahan",
-  couple: "Kadek & Putu",
-  dateISO: "2026-08-20T10:00:00",
-  eventDateText: "Sabtu, 20 Agustus 2026",
-  backgroundImage: "https://images.unsplash.com/photo-1582719478250-6f2d0b3c1aaf?auto=format&fit=crop&w=1600&q=80",
-  musicUrl: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_2f6a1b6b27.mp3?filename=bali-traditional-ambience-7633.mp3"
-};
+// === COUNTDOWN ===
+const weddingDate = new Date('2022-02-31T10:00:00').getTime();
 
-document.getElementById("title").textContent = CONFIG.title;
-document.getElementById("couple").textContent = CONFIG.couple;
-document.getElementById("dateText").textContent = CONFIG.eventDateText;
-document.querySelector(".bg").style.backgroundImage = `url('${CONFIG.backgroundImage}')`;
-document.getElementById("bgMusic").src = CONFIG.musicUrl;
+function updateCountdown() {
+  const now = new Date().getTime();
+  const difference = weddingDate - now;
 
-const target = new Date(CONFIG.dateISO).getTime();
+  if (difference > 0) {
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / 1000 / 60) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
 
-function tick() {
-  const now = Date.now();
-  const diff = target - now;
-
-  const d = Math.max(0, Math.floor(diff / 86400000));
-  const h = Math.max(0, Math.floor((diff % 86400000) / 3600000));
-  const m = Math.max(0, Math.floor((diff % 3600000) / 60000));
-  const s = Math.max(0, Math.floor((diff % 60000) / 1000));
-
-  document.getElementById("d").textContent = String(d).padStart(2, "0");
-  document.getElementById("h").textContent = String(h).padStart(2, "0");
-  document.getElementById("m").textContent = String(m).padStart(2, "0");
-  document.getElementById("s").textContent = String(s).padStart(2, "0");
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+  }
 }
 
-tick();
-setInterval(tick, 1000);
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
-const music = document.getElementById("bgMusic");
-const musicToggle = document.getElementById("musicToggle");
-
-musicToggle.addEventListener("change", () => {
-  if (musicToggle.checked) {
-    music.play().catch(() => {});
-  } else {
-    music.pause();
+// === OPEN INVITATION ===
+document.getElementById('openInvite').addEventListener('click', function() {
+  document.getElementById('cover').classList.add('hidden');
+  
+  // Start music automatically
+  const music = document.getElementById('bgMusic');
+  const musicToggle = document.getElementById('musicToggle');
+  
+  if (music) {
+    music.play().catch(() => {
+      console.log('Auto-play prevented');
+    });
+    musicToggle.classList.add('playing');
   }
 });
 
-const openBtn = document.getElementById("openBtn");
-openBtn.addEventListener("click", () => {
-  document.querySelector(".card").scrollIntoView({ behavior: "smooth" });
-  if (musicToggle.checked) music.play().catch(() => {});
+// === MUSIC TOGGLE ===
+const musicToggle = document.getElementById('musicToggle');
+const bgMusic = document.getElementById('bgMusic');
+
+musicToggle.addEventListener('click', function() {
+  if (bgMusic.paused) {
+    bgMusic.play();
+    musicToggle.classList.add('playing');
+  } else {
+    bgMusic.pause();
+    musicToggle.classList.remove('playing');
+  }
 });
 
-const rsvpBtn = document.getElementById("rsvpBtn");
-const rsvpSection = document.getElementById("rsvpSection");
-rsvpBtn.addEventListener("click", () => {
-  rsvpSection.style.display = rsvpSection.style.display === "none" ? "block" : "none";
+// === NAVIGATION ACTIVE STATE ===
+const navItems = document.querySelectorAll('.nav-item');
+
+window.addEventListener('scroll', function() {
+  const sections = document.querySelectorAll('section');
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    
+    if (scrollY >= (sectionTop - 200)) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navItems.forEach(item => {
+    item.classList.remove('active');
+    if (item.getAttribute('href') === `#${current}`) {
+      item.classList.add('active');
+    }
+  });
 });
 
-const rsvpForm = document.getElementById("rsvpForm");
-rsvpForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const name = document.getElementById("rsvpName").value.trim();
-  const phone = document.getElementById("rsvpPhone").value.trim();
-  const attend = document.getElementById("rsvpAttend").value;
-  if (!name || !attend) return;
+// === RSVP FORM ===
+const rsvpCategory = document.getElementById('rsvpCategory');
+const rsvpGuest = document.getElementById('rsvpGuest');
 
-  const list = JSON.parse(localStorage.getItem("rsvps") || "[]");
-  list.unshift({ name, phone, attend, when: new Date().toISOString() });
-  localStorage.setItem("rsvps", JSON.stringify(list));
-
-  document.getElementById("rsvpMsg").textContent = "Terima kasih — Konfirmasi diterima.";
-  rsvpForm.reset();
-  setTimeout(() => document.getElementById("rsvpMsg").textContent = "", 3000);
+rsvpCategory.addEventListener('change', function() {
+  if (this.value === 'keluarga') {
+    rsvpGuest.innerHTML = '<option value="">-- Jumlah Orang --</option>' +
+      '<option value="1">1 Orang</option>' +
+      '<option value="2">2 Orang</option>' +
+      '<option value="3">3-4 Orang</option>' +
+      '<option value="4">5+ Orang</option>';
+  } else {
+    rsvpGuest.innerHTML = '<option value="">-- Jumlah Orang --</option>' +
+      '<option value="1">1 Orang</option>' +
+      '<option value="2">2 Orang</option>';
+  }
+  
+  rsvpGuest.disabled = false;
 });
 
-const guestForm = document.getElementById("guestForm");
-const guestListEl = document.getElementById("guestList");
-
-function renderGuests() {
-  const guests = JSON.parse(localStorage.getItem("guests") || "[]");
-  guestListEl.innerHTML = guests.length
-    ? guests
-        .map(
-          (g) =>
-            `<div class="guest-item"><strong>${escapeHtml(g.name)}</strong><div style="font-size:13px;opacity:.9">${escapeHtml(
-              g.msg
-            )}</div><div style="font-size:11px;opacity:.6">${new Date(g.when).toLocaleString("id-ID")}</div></div>`
-        )
-        .join("")
-    : '<div style="color:rgba(255,255,255,0.5)">Belum ada ucapan</div>';
-}
-
-guestForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const name = document.getElementById("guestName").value.trim();
-  const msg = document.getElementById("guestMsg").value.trim();
-  if (!name || !msg) return;
-
-  const list = JSON.parse(localStorage.getItem("guests") || "[]");
-  list.unshift({ name, msg, when: new Date().toISOString() });
-  localStorage.setItem("guests", JSON.stringify(list));
-
-  guestForm.reset();
-  renderGuests();
-});
-
-renderGuests();
-
-function escapeHtml(s) {
-  return s.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-}
+function sendRSVP(event) {
+  event.preventDefault();
+  
+  const name = document.getElementById('rsvpName').value.trim();
+  const category = document.getElementById('rsvpCategory').value;
+  const guest = document.getElementById('rsvpGuest').value;
+  const attend = document.getElementById('rsvpAttend').value;
+  const message = document.getElementById('rsvpMessage').value.trim();
+  
+  if (!name || !category || !attend || !message) {
+    alert('Mohon lengkapi semua data!');
+    return;
+  }
+  
+  let attendText = '';
+  if (attend === 'hadir') attendText = '✅ Hadir';
+  else if (attend === 'tidak') attendText = '❌ Tidak Hadir';
+  else attendText = '🤔 Mungkin Hadir';
+  
+  let rsvpMessage = `🙏 *RSVP UNDANGAN PERNIKAHAN*\n\n` +
+    `Nama: ${name}\n` +
+    `Kategori: ${category}\n`;
+  
+  if (category === 'keluarga' && guest) {
+    rsvpMessage += `Jumlah: ${guest}\n`;
+  }
+  
+  rsvpMessage += `Kehadiran: ${attendText}\n\n` +
+    `Ucapan:\n${message}\n\n` +
+    `Syuk
