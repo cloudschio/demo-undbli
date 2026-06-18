@@ -37,7 +37,7 @@ musicBtn.addEventListener('click',async()=>{
   }
 });
 
-const target=new Date('2026-06-18T08:00:00+07:00').getTime();
+const target=new Date('2026-12-19T08:00:00+07:00').getTime();
 const tick=()=>{
   const d=Math.max(target-Date.now(),0);
   days.textContent=String(Math.floor(d/86400000)).padStart(2,'0');
