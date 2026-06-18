@@ -1,22 +1,88 @@
-const target = new Date('2026-12-19T10:00:00+07:00').getTime();
-const ids = ['d','h','m','s'];
-const progressBar=document.getElementById('progressBar');
-setInterval(()=>{const now=Date.now();const diff=Math.max(0,target-now);const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);[d,h,m,s].forEach((v,i)=>document.getElementById(ids[i]).textContent=String(v).padStart(2,'0'));},1000);
-window.addEventListener('scroll',()=>{const h=document.documentElement;const sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight||1)*100;progressBar.style.width=sc+'%';});
-const bgm=document.getElementById('bgm'), musicBtn=document.getElementById('musicBtn');
-musicBtn.onclick=async()=>{try{if(bgm.paused){await bgm.play();musicBtn.textContent='♪ Pause'}else{bgm.pause();musicBtn.textContent='♪ Musik'}}catch(e){alert('Browser memblokir autoplay. Klik lagi untuk memulai musik.')}};
-document.getElementById('enterBtn').onclick=()=>document.getElementById('intro').classList.add('hide');
-document.getElementById('topBtn').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
-const reveals=document.querySelectorAll('.reveal');
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});},{threshold:.15});
-reveals.forEach(el=>io.observe(el));
-const waBtn=document.getElementById('waBtn');
-waBtn.onclick=()=>{
-  const name=document.getElementById('rsvpName').value.trim()||'Tamu Undangan';
-  const count=document.getElementById('rsvpCount').value.trim()||'1';
-  const msg=document.getElementById('rsvpMsg').value.trim()||'Hadir';
-  const text=encodeURIComponent(`Halo, saya ${name}. Jumlah tamu: ${count}. Pesan: ${msg}`);
-  waBtn.href=`https://wa.me/620881081912121?text=${text}`;
-};
-const themeBtn=document.getElementById('themeBtn');
-themeBtn.onclick=()=>{document.body.classList.toggle('dark');themeBtn.textContent=document.body.classList.contains('dark')?'◐ Light Mode':'◐ Dark Mode';};
+// ===== OPEN INVITATION =====
+document.getElementById('openBtn').addEventListener('click', function () {
+  document.getElementById('cover').style.display = 'none';
+  const main = document.getElementById('mainContent');
+  main.classList.remove('hidden');
+  main.style.animation = 'fadeInUp 0.8s ease both';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ===== COUNTDOWN =====
+function updateCountdown() {
+  const target = new Date('2026-12-19T10:00:00');
+  const now = new Date();
+  const diff = target - now;
+
+  if (diff <= 0) {
+    document.getElementById('countdown').innerHTML =
+      '<div class="countdown-box" style="grid-column:1/-1"><span>🎉</span><small>Hari Bahagia!</small></div>';
+    return;
+  }
+
+  const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('days').textContent    = String(days).padStart(2, '0');
+  document.getElementById('hours').textContent   = String(hours).padStart(2, '0');
+  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ===== UCAPAN / WISHES =====
+const wishes = [];
+
+document.getElementById('wishForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name    = document.getElementById('wishName').value.trim();
+  const message = document.getElementById('wishMessage').value.trim();
+  if (!name || !message) return;
+
+  wishes.unshift({ name, message });
+  renderWishes();
+  this.reset();
+});
+
+function renderWishes() {
+  const list = document.getElementById('wishesList');
+  list.innerHTML = wishes.map(w => `
+    <div class="wish-item">
+      <strong>💙 ${escapeHtml(w.name)}</strong>
+      <p>${escapeHtml(w.message)}</p>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ===== COPY ACCOUNT NUMBER =====
+function copyAccount() {
+  navigator.clipboard.writeText('901794598110').then(() => {
+    const btn = document.querySelector('.btn-copy');
+    const original = btn.textContent;
+    btn.textContent = '✅ Tersalin!';
+    setTimeout(() => (btn.textContent = original), 2000);
+  });
+}
+
+// ===== SCROLL ANIMATION =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = 'fadeInUp 0.7s ease both';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.section').forEach(sec => observer.observe(sec));
