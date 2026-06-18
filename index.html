@@ -3,65 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Undangan Digital Super Mewah</title>
-  <meta name="description" content="Undangan digital super mewah bertema biru soft dengan opening animation, stars, cursor glow, countdown, galeri, musik, dan RSVP." />
+  <title>Undangan Digital Fulan & Fulana</title>
+  <meta name="description" content="Undangan digital cinematic premium bertema biru soft untuk Fulan & Fulana." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="stars"></div>
   <div class="cursor" id="cursor"></div>
   <div class="cursor2" id="cursor2"></div>
-  <div class="intro" id="intro"><div class="intro-card"><h2>Alya & Dimas</h2><p>Wedding Invitation</p><button class="enter" id="enterBtn">Buka Undangan</button></div></div>
-  <audio id="bgm" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
-  <main class="wrap">
-    <article class="card">
-      <section class="hero">
-        <div class="left">
-          <div class="badge">✨ Undangan Pernikahan Premium</div>
-          <h1>Save The Date</h1>
-          <div class="names">Alya & Dimas</div>
-          <p class="desc">Dengan penuh kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam momen istimewa pernikahan kami yang akan diselenggarakan dengan nuansa elegan, hangat, dan penuh cinta.</p>
-          <div class="cta">
-            <a class="btn primary" href="#detail">Lihat Detail Acara</a>
-            <button class="btn ghost" id="musicBtn">Putar Musik</button>
-          </div>
-          <div class="countdown" id="countdown">
-            <div class="timebox"><div class="num" id="d">00</div><div class="txt">Hari</div></div>
-            <div class="timebox"><div class="num" id="h">00</div><div class="txt">Jam</div></div>
-            <div class="timebox"><div class="num" id="m">00</div><div class="txt">Menit</div></div>
-            <div class="timebox"><div class="num" id="s">00</div><div class="txt">Detik</div></div>
-          </div>
+  <div class="sparkles"></div>
+  <div class="intro" id="intro">
+    <div class="intro-card reveal show">
+      <h2 id="guestName">Fulan & Fulana</h2>
+      <p>Wedding Invitation</p>
+      <button class="enter" id="enterBtn">Buka Undangan</button>
+    </div>
+  </div>
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-inner reveal">
+        <p class="eyebrow">Wedding Invitation</p>
+        <h1>Fulan & Fulana</h1>
+        <p class="lead">Dengan penuh kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam momen istimewa pernikahan kami. Scroll perlahan untuk merasakan nuansa biru soft yang elegan dan sinematik.</p>
+        <div class="hero-actions">
+          <a href="#detail" class="btn primary">Lihat Detail</a>
+          <button class="btn ghost" id="musicBtn">Putar Musik</button>
         </div>
-        <div class="right"><div class="frame"><div class="photo"><div class="overlay"><div class="small">Wedding Invitation</div><div class="big">Soft Blue Elegance</div></div></div></div></div>
-      </section>
-      <section class="section" id="detail">
-        <h2 class="section-title">Detail Acara</h2>
-        <div class="timeline">
-          <div class="box"><div class="label">Akad Nikah</div><div class="value">Sabtu, 20 Juli 2026<br>08.00 WIB</div></div>
-          <div class="box"><div class="label">Resepsi</div><div class="value">Sabtu, 20 Juli 2026<br>11.00 - 14.00 WIB</div></div>
-          <div class="box"><div class="label">Lokasi</div><div class="value">Gedung Serbaguna<br>Surabaya, Jawa Timur</div></div>
+        <div class="countdown reveal" id="countdown">
+          <div class="timebox"><div class="num" id="d">00</div><div class="txt">Hari</div></div>
+          <div class="timebox"><div class="num" id="h">00</div><div class="txt">Jam</div></div>
+          <div class="timebox"><div class="num" id="m">00</div><div class="txt">Menit</div></div>
+          <div class="timebox"><div class="num" id="s">00</div><div class="txt">Detik</div></div>
         </div>
-        <div class="split">
-          <div class="panel"><h2>Amplop Digital</h2><p>BRI 1234567890 a.n. Alya Putri</p><p style="margin-top:10px">BCA 0987654321 a.n. Dimas Pratama</p></div>
-          <div class="panel"><h2>Dress Code</h2><p>Biru soft, putih, silver, atau warna pastel. Kami berharap kehadiran Anda menjadi bagian dari suasana indah di hari spesial kami.</p></div>
+      </div>
+      <div class="scroll-hint">Scroll ke bawah</div>
+    </section>
+    <section class="section reveal" id="detail">
+      <div class="section-title"><span>01</span> Detail Acara</div>
+      <div class="cards">
+        <div class="card glass"><h2>Akad & Resepsi</h2><p>19 Desember 2026</p><p>10.00 WIB - selesai</p></div>
+        <div class="card glass"><h2>Lokasi</h2><p>Fave Hotel Sidoarjo</p><p>Jawa Timur</p></div>
+        <div class="card glass"><h2>Dress Code</h2><p>Biru soft, putih, silver, atau pastel</p><p>untuk nuansa elegan</p></div>
+      </div>
+    </section>
+    <section class="section reveal parallax-band">
+      <div class="glass band">
+        <h2>Soft Blue Elegance</h2>
+        <p>Nuansa bersih, premium, dan hangat untuk undangan digital yang terlihat mahal di mobile maupun desktop.</p>
+      </div>
+    </section>
+    <section class="section split reveal">
+      <div class="glass panel">
+        <div class="section-title"><span>02</span> Amplop Digital</div>
+        <p>SeaBank 901794598110 a.n. Fulan & Fulana</p>
+      </div>
+      <div class="glass panel">
+        <div class="section-title"><span>03</span> Kontak</div>
+        <p>0881081912121</p>
+        <p style="margin-top:10px">Silakan konfirmasi kehadiran melalui WhatsApp.</p>
+      </div>
+    </section>
+    <section class="section reveal">
+      <div class="section-title"><span>04</span> Galeri Kenangan</div>
+      <div class="gallery">
+        <div class="g" style="background-image:url('https://images.unsplash.com/photo-1523438097201-eccf9d9d9f93?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="g" style="background-image:url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="g" style="background-image:url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80')"></div>
+      </div>
+    </section>
+    <section class="section split reveal">
+      <div class="glass panel">
+        <div class="section-title"><span>05</span> RSVP</div>
+        <div class="form">
+          <input class="input" id="rsvpName" placeholder="Nama Anda" />
+          <input class="input" id="rsvpCount" placeholder="Jumlah tamu" />
+          <textarea class="textarea" id="rsvpMsg" placeholder="Ucapan / konfirmasi kehadiran"></textarea>
+          <a class="btn primary" id="waBtn" href="#">Kirim via WhatsApp</a>
         </div>
-        <div class="gallery">
-          <div class="g" style="background-image:url('https://images.unsplash.com/photo-1523438097201-eccf9d9d9f93?auto=format&fit=crop&w=900&q=80')"></div>
-          <div class="g" style="background-image:url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=900&q=80')"></div>
-          <div class="g" style="background-image:url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80')"></div>
-        </div>
-        <div class="rsvp">
-          <div class="panel"><h2>RSVP</h2><div class="form"><input class="input" placeholder="Nama Anda" /><input class="input" placeholder="Jumlah tamu" /><textarea class="textarea" placeholder="Ucapan / konfirmasi kehadiran"></textarea></div></div>
-          <div class="panel"><h2>Lokasi Acara</h2><p>Gedung Serbaguna Surabaya</p><p style="margin-top:10px">Tambahkan embed Google Maps di sini untuk navigasi lokasi yang lebih praktis.</p><div class="cta" style="justify-content:flex-start"><a class="btn primary" href="#">Buka Peta</a><a class="btn ghost" href="https://wa.me/62xxxxxxxxxxx?text=Halo%20saya%20akan%20hadir%20di%20acara%20Alya%20%26%20Dimas">Konfirmasi</a></div></div>
-        </div>
-      </section>
-      <div class="footer">Terima kasih atas doa dan kehadiran Anda di hari bahagia kami.</div>
-    </article>
+      </div>
+      <div class="glass panel map-box">
+        <div class="section-title"><span>06</span> Lokasi Acara</div>
+        <p>Tambahkan Google Maps embed untuk navigasi yang lebih praktis.</p>
+        <a href="#" class="btn ghost" style="display:inline-flex;margin-top:14px">Buka Peta</a>
+      </div>
+    </section>
+    <section class="section footer reveal">Terima kasih atas doa dan kehadiran Anda di hari bahagia kami.</section>
   </main>
   <div class="floating"><button class="fab" id="topBtn">↑</button></div>
+  <audio id="bgm" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
   <script src="script.js"></script>
 </body>
 </html>
