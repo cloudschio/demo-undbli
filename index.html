@@ -10,9 +10,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="grain"></div>
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
+
+  <audio id="bgm" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+  <div class="music-fab" id="musicFab" aria-label="Putar musik">♫</div>
 
   <section id="cover" class="cover">
     <div class="cover-overlay"></div>
@@ -29,9 +35,10 @@
   </section>
 
   <main id="mainContent" class="hidden">
-    <section class="section section-intro">
+    <section class="section intro-section reveal">
       <div class="container">
-        <div class="glass panel intro-panel">
+        <div class="intro-card">
+          <div class="intro-line"></div>
           <p class="arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
           <p class="intro-text">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan.</p>
           <p class="intro-sub">Atas rahmat dan ridha-Nya, kami bermaksud menyelenggarakan pernikahan kami.</p>
@@ -39,127 +46,127 @@
       </div>
     </section>
 
-    <section class="section section-couple">
+    <section class="section couple-section reveal">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Calon Mempelai</span>
           <h2 class="section-title">Pasangan yang Berbahagia</h2>
         </div>
-        <div class="name-hero card">
-          <div class="name-line">
-            <span class="name-small">Fulan</span>
-            <span class="name-amp">&amp;</span>
-            <span class="name-small">Fulana</span>
+        <div class="name-hero">
+          <div class="bride-groom-grid">
+            <div class="parent-card">
+              <div class="name-badge">Groom</div>
+              <h3 class="name-person">Fulan</h3>
+              <p class="name-parent">Putra dari<br><strong>Bapak A &amp; Ibu B</strong></p>
+            </div>
+            <div class="name-separator">&amp;</div>
+            <div class="parent-card">
+              <div class="name-badge">Bride</div>
+              <h3 class="name-person">Fulana</h3>
+              <p class="name-parent">Putri dari<br><strong>Bapak C &amp; Ibu D</strong></p>
+            </div>
           </div>
-          <p class="name-caption">Putra dari Bapak A &amp; Ibu B · Putri dari Bapak C &amp; Ibu D</p>
         </div>
       </div>
     </section>
 
-    <section class="section section-timeline">
+    <section class="section detail-section reveal">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Wedding Details</span>
           <h2 class="section-title">Detail Acara</h2>
         </div>
-        <div class="timeline card">
-          <div class="time-item">
-            <div class="time-dot"></div>
-            <div>
-              <h3>Akad Nikah</h3>
-              <p>Sabtu, 19 Desember 2026 · 08.00 WIB – Selesai</p>
-            </div>
+        <div class="detail-grid">
+          <div class="detail-card">
+            <div class="detail-icon">✦</div>
+            <h3>Akad Nikah</h3>
+            <p>Sabtu, 19 Desember 2026</p>
+            <p>08.00 WIB – Selesai</p>
           </div>
-          <div class="time-item">
-            <div class="time-dot"></div>
-            <div>
-              <h3>Resepsi</h3>
-              <p>Sabtu, 19 Desember 2026 · 10.00 WIB – Selesai</p>
-            </div>
+          <div class="detail-card">
+            <div class="detail-icon">✦</div>
+            <h3>Resepsi</h3>
+            <p>Sabtu, 19 Desember 2026</p>
+            <p>10.00 WIB – Selesai</p>
           </div>
         </div>
-        <div class="venue card">
-          <div class="venue-main">
-            <div class="venue-icon">📍</div>
-            <div>
-              <h3>Fave Hotel Sidoarjo</h3>
-              <p>Jl. Raya Sidoarjo, Jawa Timur</p>
-              <a class="btn-outline" target="_blank" href="https://maps.google.com/?q=Fave+Hotel+Sidoarjo">Buka Peta</a>
-            </div>
+        <div class="venue-card">
+          <div class="venue-copy">
+            <span class="eyebrow">Lokasi</span>
+            <h3>Fave Hotel Sidoarjo</h3>
+            <p>Jl. Raya Sidoarjo, Jawa Timur</p>
+            <a class="btn-outline" target="_blank" href="https://maps.google.com/?q=Fave+Hotel+Sidoarjo">Buka Peta</a>
           </div>
-          <div class="map-preview">
-            <iframe
-              src="https://www.google.com/maps?q=Fave%20Hotel%20Sidoarjo&z=15&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen>
-            </iframe>
+          <div class="venue-map">
+            <iframe src="https://www.google.com/maps?q=Fave%20Hotel%20Sidoarjo&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-countdown">
+    <section class="section countdown-section reveal">
       <div class="container">
         <div class="section-head light">
           <span class="eyebrow">Countdown</span>
           <h2 class="section-title light">Menuju Hari Bahagia</h2>
         </div>
-        <div id="countdown" class="countdown-grid">
-          <div class="count-box glass"><span id="days">00</span><small>Hari</small></div>
-          <div class="count-box glass"><span id="hours">00</span><small>Jam</small></div>
-          <div class="count-box glass"><span id="minutes">00</span><small>Menit</small></div>
-          <div class="count-box glass"><span id="seconds">00</span><small>Detik</small></div>
+        <div id="countdown" class="count-grid">
+          <div class="count-card"><span id="days">00</span><small>Hari</small></div>
+          <div class="count-card"><span id="hours">00</span><small>Jam</small></div>
+          <div class="count-card"><span id="minutes">00</span><small>Menit</small></div>
+          <div class="count-card"><span id="seconds">00</span><small>Detik</small></div>
         </div>
       </div>
     </section>
 
-    <section class="section section-gallery">
+    <section class="section gallery-section reveal">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Memories</span>
           <h2 class="section-title">Galeri</h2>
         </div>
-        <div class="masonry">
-          <div class="masonry-item g1"></div>
-          <div class="masonry-item g2"></div>
-          <div class="masonry-item g3"></div>
-          <div class="masonry-item g4"></div>
+        <div class="gallery-grid">
+          <div class="gallery-item g1"></div>
+          <div class="gallery-item g2"></div>
+          <div class="gallery-item g3"></div>
+          <div class="gallery-item g4"></div>
         </div>
       </div>
     </section>
 
-    <section class="section section-qris">
+    <section class="section qris-section reveal">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Digital Gift</span>
           <h2 class="section-title">QRIS</h2>
         </div>
-        <div class="qris-card card">
-          <div class="qris-left">
-            <div class="qris-badge">QRIS</div>
+        <div class="qris-card qris-card-noimg">
+          <div class="qris-copy-side">
+            <div class="qris-tag">QRIS</div>
             <h3>Scan untuk kirim hadiah</h3>
-            <p>Silakan scan kode QR di samping untuk amplop digital.</p>
-            <div class="qris-meta">
-              <span>SeaBank</span>
-              <strong>901794598110</strong>
-            </div>
+            <p>Silakan scan kode QR di bawah untuk amplop digital.</p>
+            <div class="bank-row"><span>SeaBank</span><strong>901794598110</strong></div>
           </div>
-          <div class="qris-image-wrap">
-            <img src="qris.png" alt="QRIS" class="qris-image" />
-            <button class="btn-outline qris-copy" onclick="copyAccount()">Salin Rekening</button>
+          <div class="qris-faux">
+            <div class="qris-faux-top">Fulan &amp; Fulana</div>
+            <div class="qris-qrbox">
+              <div class="qr-dot"></div><div class="qr-dot"></div><div class="qr-dot"></div>
+              <div class="qr-dot"></div><div class="qr-dot center"></div><div class="qr-dot"></div>
+              <div class="qr-dot"></div><div class="qr-dot"></div><div class="qr-dot"></div>
+            </div>
+            <div class="qris-faux-bottom">SeaBank · 901794598110</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-wishes">
+    <section class="section wishes-section reveal">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Guestbook</span>
           <h2 class="section-title">Ucapan &amp; Doa</h2>
         </div>
-        <form id="wishForm" class="wish-form card">
+        <form id="wishForm" class="wish-form">
           <input id="wishName" type="text" placeholder="Nama Anda" required />
           <textarea id="wishMessage" rows="4" placeholder="Tulis ucapan dan doa..." required></textarea>
           <button class="btn-gold" type="submit">Kirim Ucapan</button>
@@ -168,9 +175,9 @@
       </div>
     </section>
 
-    <section class="section section-rsvp">
+    <section class="section rsvp-section reveal">
       <div class="container">
-        <div class="rsvp card">
+        <div class="rsvp-card">
           <div>
             <span class="eyebrow">RSVP</span>
             <h2 class="section-title">Konfirmasi Kehadiran</h2>
