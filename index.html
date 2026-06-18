@@ -1,108 +1,181 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Undangan Pernikahan</title>
-  <meta name="description" content="Undangan digital tema Bali" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Digital | Tema Bali</title>
+  <meta name="description" content="Undangan digital pernikahan Chio & Pasangan - Tema Bali" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg"></div>
   <div class="overlay"></div>
 
-  <main>
-    <div class="card">
-      <div class="hero">
-        <div>
-          <h1 id="title">Undangan Pernikahan</h1>
-          <div class="couple" id="couple">Kadek & Putu</div>
-
-          <div class="meta">
-            <span class="badge">📍 Pura Uluwatu, Bali</span>
-            <span class="badge" id="dateText">Sabtu, 20 Agustus 2026</span>
-          </div>
-
-          <div class="countdown" aria-live="polite">
-            <div class="cd-item"><div class="cd-num" id="d">00</div><div class="cd-label">Hari</div></div>
-            <div class="cd-item"><div class="cd-num" id="h">00</div><div class="cd-label">Jam</div></div>
-            <div class="cd-item"><div class="cd-num" id="m">00</div><div class="cd-label">Menit</div></div>
-            <div class="cd-item"><div class="cd-num" id="s">00</div><div class="cd-label">Detik</div></div>
-          </div>
-
-          <div class="btns">
-            <button class="btn" id="openBtn">Buka Undangan</button>
-            <button class="btn secondary" id="rsvpBtn">RSVP</button>
-            <label class="toggle">
-              <input type="checkbox" id="musicToggle">
-              Musik
-            </label>
-          </div>
-
-          <div class="panel">
-            <div class="section" id="storySection">
-              <h3>Cerita Kami</h3>
-              <p>
-                Dari awal bertemu, kami belajar banyak hal tentang cinta, sabar, dan perjalanan hidup.
-                Kini kami ingin merayakan hari bahagia ini bersama keluarga dan sahabat tercinta dalam suasana Bali yang hangat.
-              </p>
-            </div>
-
-            <div class="section">
-              <h3>Gallery</h3>
-              <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1505765051889-9c8d3c1f7c5b?auto=format&fit=crop&w=800&q=60" alt="">
-                <img src="https://images.unsplash.com/photo-1546419412-6b4c9aec3f3a?auto=format&fit=crop&w=800&q=60" alt="">
-                <img src="https://images.unsplash.com/photo-1520771525856-9a0b9b7c0a04?auto=format&fit=crop&w=800&q=60" alt="">
-                <img src="https://images.unsplash.com/photo-1547097465-6b2b3cfb7d6a?auto=format&fit=crop&w=800&q=60" alt="">
-              </div>
-            </div>
-
-            <div class="section" id="rsvpSection" style="display:none">
-              <h3>RSVP</h3>
-              <form id="rsvpForm">
-                <input type="text" id="rsvpName" placeholder="Nama lengkap" required>
-                <input type="tel" id="rsvpPhone" placeholder="No. HP (opsional)">
-                <select id="rsvpAttend" required>
-                  <option value="">Konfirmasi Kehadiran</option>
-                  <option value="Hadir">Hadir</option>
-                  <option value="Tidak Hadir">Tidak Hadir</option>
-                </select>
-                <button class="btn" type="submit">Kirim RSVP</button>
-                <div id="rsvpMsg" class="small"></div>
-              </form>
-            </div>
-
-            <div class="section">
-              <h3>Ucapan Tamu</h3>
-              <form id="guestForm">
-                <input type="text" id="guestName" placeholder="Nama" required>
-                <textarea id="guestMsg" rows="3" placeholder="Tulis ucapan..." required></textarea>
-                <button class="btn" type="submit">Kirim Ucapan</button>
-              </form>
-              <div class="guest-list" id="guestList"></div>
-            </div>
-          </div>
-
-          <footer>Dibuat dengan nuansa Bali yang elegan.</footer>
-        </div>
-
-        <div class="side">
-          <img class="portrait" src="https://images.unsplash.com/photo-1558980664-10bfa1b1e1b4?auto=format&fit=crop&w=900&q=70" alt="Foto pengantin">
-          <div class="mini-card">
-            <strong>Detail Acara</strong><br>
-            Akad / Upacara: 10.00 WITA<br>
-            Resepsi: 14.00 WITA<br>
-            Lokasi: Pura Uluwatu, Bali
-          </div>
-        </div>
-      </div>
+  <div id="cover" class="cover">
+    <div class="cover-card">
+      <p class="cover-label">Undangan Pernikahan</p>
+      <h2 class="cover-couple">Chio & Pasangan</h2>
+      <div class="bali-ornament cover-ornament">❁ ❀ ❁</div>
+      <button id="openInvite" class="open-invite-btn">Buka Undangan</button>
     </div>
+  </div>
+
+  <button id="musicToggle" class="music-btn">♫ Musik</button>
+
+  <audio id="bgMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <main class="invitation">
+    <section class="hero" id="home">
+      <div class="bali-ornament top-ornament">❁ ❀ ❁</div>
+      <div class="emblem-wrap">
+        <div class="emblem">✦</div>
+        <p class="label">THE WEDDING OF</p>
+      </div>
+      <h1 class="couple">Chio &amp; Pasangan</h1>
+      <p class="subtitle">
+        Dengan izin Allah SWT dan restu kedua orang tua,<br />
+        Insyaallah kami akan melaksanakan acara resepsi pernikahan yang digelar pada :
+      </p>
+
+      <section class="countdown-section">
+        <div class="countdown-box"><span id="days">00</span><small>Hari</small></div>
+        <div class="countdown-box"><span id="hours">00</span><small>Jam</small></div>
+        <div class="countdown-box"><span id="minutes">00</span><small>Menit</small></div>
+        <div class="countdown-box"><span id="seconds">00</span><small>Detik</small></div>
+      </section>
+
+      <p class="event-date">Sabtu, 31 Februari 2222</p>
+      <a class="open-btn" href="#detail">Lihat Undangan</a>
+      <div class="bali-ornament bottom-ornament">❁ ❀ ❁</div>
+    </section>
+
+    <section class="detail" id="detail">
+      <h2>Detail Acara</h2>
+      <div class="bali-divider"></div>
+      <div class="card">
+        <p><strong>Akad Nikah</strong></p>
+        <p>Jum'at, 30 Februari 2222</p>
+        <p>08.00 WIB</p>
+        <p>Masjid Agung Al-Akbar Surabaya</p>
+      </div>
+      <div class="card">
+        <p><strong>Resepsi</strong></p>
+        <p>Sabtu, 31 Februari 2222</p>
+        <p>10.00 WIB - Selesai</p>
+        <p>Food Junction Surabaya</p>
+      </div>
+
+      <div class="action-section">
+        <a class="action-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding%20Chio%20%26%20Pasangan&dates=20270109T010000Z/20270109T050000Z&details=Undangan%20pernikahan%20Chio%20%26%20Pasangan&location=Food%20Junction%20Surabaya" target="_blank" rel="noopener noreferrer">📅 Tambah ke Kalender</a>
+        <a class="action-btn" href="https://wa.me/?text=Saya%20mengundang%20Anda%20ke%20pernikahan%20Chio%20%26%20Pasangan" target="_blank" rel="noopener noreferrer">📤 Share ke WhatsApp</a>
+      </div>
+    </section>
+
+    <section class="lokasi" id="lokasi">
+      <h2>Lokasi</h2>
+      <div class="bali-divider"></div>
+      <div class="card lokasi-info">
+        <p>📍 <strong>Food Junction Surabaya</strong></p>
+        <p>Jl. Grand Banjar Sugihan, Kecamatan Tandes, Surabaya</p>
+      </div>
+
+      <div class="maps-preview">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6!2d112.7521!3d-7.2575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMTUnMjcuMCJTIDExMsKwNDUnMDcuNiJF!5e0!3m2!1sid!2sid!4v1234567890"
+          width="100%"
+          height="220"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Lokasi Acara">
+        </iframe>
+      </div>
+
+      <a class="action-btn maps-btn" href="https://www.google.com/maps?q=-7.2575,112.7521" target="_blank" rel="noopener noreferrer">
+        🗺️ Buka di Google Maps
+      </a>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <h2>Gallery</h2>
+      <div class="bali-divider"></div>
+      <div class="gallery-grid">
+        <img src="assets/foto1.jpg" alt="Foto 1">
+        <img src="assets/foto2.jpg" alt="Foto 2">
+        <img src="assets/foto3.jpg" alt="Foto 3">
+        <img src="assets/foto4.jpg" alt="Foto 4">
+      </div>
+    </section>
+
+    <section class="qris" id="qris">
+      <h2>Wedding Gift</h2>
+      <div class="bali-divider"></div>
+      <div class="card">
+        <p>Doa restu Anda adalah hadiah terbaik bagi kami. Namun jika ingin memberikan hadiah, bisa melalui:</p>
+      </div>
+
+      <div class="card qris-card">
+        <p class="qris-label">Transfer Bank</p>
+        <p>SEABANK — <strong>9017 9459 8110</strong></p>
+        <p>a.n. <strong>Fitrah Ramadhani</strong></p>
+      </div>
+
+      <div class="card qris-card">
+        <p class="qris-label">QRIS</p>
+        <img src="assets/qris.jpg" alt="QRIS Wedding Gift" class="qris-img" />
+        <p class="qris-note">Scan untuk memberi hadiah</p>
+      </div>
+    </section>
+
+    <section class="rsvp" id="rsvp">
+      <h2>RSVP & Ucapan</h2>
+      <div class="bali-divider"></div>
+      <div class="card">
+        <p>Konfirmasi kehadiran Anda paling lambat <strong>28 Februari 2222</strong>.</p>
+      </div>
+      <div class="rsvp-form">
+        <input type="text" id="rsvpName" placeholder="Nama lengkap kamu" />
+
+        <select id="rsvpCategory">
+          <option value="">-- Kategori Tamu --</option>
+          <option value="keluarga">👨‍👩‍👧 Keluarga</option>
+          <option value="tamu">🤝 Tamu Mempelai</option>
+          <option value="teman">👫 Teman Mempelai</option>
+        </select>
+
+        <select id="rsvpGuest" disabled>
+          <option value="">-- Pilih kategori dulu --</option>
+        </select>
+
+        <select id="rsvpAttend">
+          <option value="">-- Konfirmasi Kehadiran --</option>
+          <option value="hadir">✅ Hadir</option>
+          <option value="tidak">❌ Tidak Hadir</option>
+          <option value="mungkin">🤔 Mungkin Hadir</option>
+        </select>
+
+        <textarea id="rsvpMessage" placeholder="Tulis ucapan & doa untuk pengantin..."></textarea>
+
+        <a id="rsvpSend" class="action-btn rsvp-btn" href="#" onclick="sendRSVP(event)">
+          Kirim via WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <nav class="bottom-nav">
+      <a href="#home" class="nav-item">⌂</a>
+      <a href="#detail" class="nav-item">♥</a>
+      <a href="#gallery" class="nav-item">❖</a>
+      <a href="#qris" class="nav-item">💳</a>
+      <a href="#rsvp" class="nav-item">✉</a>
+    </nav>
   </main>
 
-  <audio id="bgMusic" loop src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2f6a1b6b27.mp3?filename=bali-traditional-ambience-7633.mp3"></audio>
-
-  <script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
