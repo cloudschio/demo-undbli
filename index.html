@@ -6,16 +6,20 @@
   <title>Adam & Sari | Undangan Pernikahan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg-gradient"></div>
+  <div class="bg-pattern"></div>
+  <div class="progress"><span id="progressBar"></span></div>
+
   <div class="opening-screen" id="openingScreen">
-    <div class="opening-card">
+    <div class="opening-card glass pop-in">
       <p class="eyebrow">Wedding Invitation</p>
-      <h1>Adam & Sari</h1>
-      <p class="opening-sub">Undangan Pernikahan</p>
-      <button class="btn btn-primary" id="openInvite">Buka Undangan</button>
+      <h1 id="titleAnim">Adam & Sari</h1>
+      <p class="opening-sub">18 Juni 2026</p>
+      <button class="btn btn-primary luxe" id="openInvite">Buka Undangan</button>
     </div>
   </div>
 
@@ -27,49 +31,61 @@
   <button class="floating-btn second" id="themeBtn">☾</button>
 
   <main class="page hidden" id="mainPage">
-    <section class="hero card floral">
+    <section class="hero card glass reveal" data-parallax="0.08">
       <p class="eyebrow">We are getting married</p>
-      <h1>Adam & Sari</h1>
+      <h1 class="typing" id="heroName">Adam & Sari</h1>
       <p class="date">18 Juni 2026</p>
-      <p class="lead">Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu.</p>
-      <div class="actions">
-        <a href="#rsvp" class="btn btn-primary">RSVP Sekarang</a>
+      <p class="lead">Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.</p>
+      <div class="hero-actions">
+        <a href="#rsvp" class="btn btn-primary luxe">RSVP Sekarang</a>
         <button class="btn btn-secondary" id="openQris">Amplop Digital</button>
       </div>
     </section>
 
-    <section class="card couple-card">
-      <div class="couple-grid">
-        <div class="person">
-          <div class="avatar">A</div>
-          <h2>Adam Wijaya</h2>
-          <p>Putra dari Bpk. Wijaya & Ibu Susanti</p>
+    <section class="content-grid">
+      <article class="card glass reveal" data-parallax="0.05">
+        <div class="section-head"><span class="line"></span><h2>Mempelai</h2><span class="line"></span></div>
+        <div class="couple-grid">
+          <div class="person">
+            <div class="avatar ring">A</div>
+            <h3>Adam Wijaya</h3>
+            <p>Putra dari Bpk. Wijaya & Ibu Susanti</p>
+          </div>
+          <div class="person">
+            <div class="avatar ring">S</div>
+            <h3>Sari Kusuma</h3>
+            <p>Putri dari Bpk. Kusuma & Ibu Dewi</p>
+          </div>
         </div>
-        <div class="person">
-          <div class="avatar">S</div>
-          <h2>Sari Kusuma</h2>
-          <p>Putri dari Bpk. Kusuma & Ibu Dewi</p>
+      </article>
+
+      <article class="card glass reveal" data-parallax="0.05">
+        <div class="section-head"><span class="line"></span><h2>Acara</h2><span class="line"></span></div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div>
+              <h3>Akad Nikah</h3>
+              <p>Jumat, 18 Juni 2026</p>
+              <p>08:00 - 10:00 WIB</p>
+              <p>Masjid Agung Surabaya</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div>
+              <h3>Resepsi</h3>
+              <p>Jumat, 18 Juni 2026</p>
+              <p>11:00 - 14:00 WIB</p>
+              <p>Gedung Pernikahan Indah</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </article>
     </section>
 
-    <section class="card grid-2">
-      <div class="info-box">
-        <h2>Akad Nikah</h2>
-        <p>Jumat, 18 Juni 2026</p>
-        <p>08:00 - 10:00 WIB</p>
-        <p>Masjid Agung Surabaya</p>
-      </div>
-      <div class="info-box">
-        <h2>Resepsi</h2>
-        <p>Jumat, 18 Juni 2026</p>
-        <p>11:00 - 14:00 WIB</p>
-        <p>Gedung Pernikahan Indah</p>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Countdown</h2>
+    <section class="card glass reveal" data-parallax="0.03">
+      <div class="section-head"><span class="line"></span><h2>Countdown</h2><span class="line"></span></div>
       <div class="countdown">
         <div><span id="days">00</span><small>Hari</small></div>
         <div><span id="hours">00</span><small>Jam</small></div>
@@ -78,8 +94,8 @@
       </div>
     </section>
 
-    <section class="card">
-      <h2>Galeri</h2>
+    <section class="card glass reveal" data-parallax="0.04">
+      <div class="section-head"><span class="line"></span><h2>Galeri</h2><span class="line"></span></div>
       <div class="gallery">
         <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Gallery 1">
         <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1200&q=80" alt="Gallery 2">
@@ -88,16 +104,16 @@
       </div>
     </section>
 
-    <section class="card">
-      <h2>Lokasi Acara</h2>
+    <section class="card glass reveal" data-parallax="0.04">
+      <div class="section-head"><span class="line"></span><h2>Lokasi Acara</h2><span class="line"></span></div>
       <div class="map-box">
         <iframe src="https://www.google.com/maps?q=surabaya&output=embed" loading="lazy"></iframe>
       </div>
     </section>
 
-    <section class="card" id="rsvp">
-      <h2>RSVP WhatsApp</h2>
-      <p class="muted">Isi data lalu kirim langsung ke WhatsApp.</p>
+    <section class="card glass reveal" id="rsvp" data-parallax="0.05">
+      <div class="section-head"><span class="line"></span><h2>RSVP WhatsApp</h2><span class="line"></span></div>
+      <p class="muted center">Isi data lalu kirim langsung ke WhatsApp.</p>
       <form id="rsvpForm" class="form">
         <input type="text" id="rsvpName" class="input" placeholder="Nama Anda" required>
         <select id="rsvpStatus" class="input" required>
@@ -107,22 +123,22 @@
         </select>
         <input type="number" id="rsvpGuest" class="input" placeholder="Jumlah tamu" min="1" value="1">
         <textarea id="rsvpMessage" class="input" rows="4" placeholder="Pesan / ucapan"></textarea>
-        <button class="btn btn-primary" type="submit">Kirim via WhatsApp</button>
+        <button class="btn btn-primary luxe submit-luxe" type="submit">Kirim RSVP ke WhatsApp</button>
       </form>
     </section>
 
-    <section class="card">
-      <h2>QRIS Amplop Digital</h2>
-      <button class="btn btn-primary" id="openQris2">Lihat QRIS</button>
+    <section class="card glass reveal" data-parallax="0.03">
+      <div class="section-head"><span class="line"></span><h2>QRIS Amplop Digital</h2><span class="line"></span></div>
+      <button class="btn btn-secondary" id="openQris2">Lihat QRIS</button>
     </section>
   </main>
 
   <div class="modal" id="qrisModal">
-    <div class="modal-box">
+    <div class="modal-box glass pop-in">
       <button class="close" id="closeQris">×</button>
       <h2>QRIS</h2>
       <img src="https://images.unsplash.com/photo-1633265486064-086b219f3f90?auto=format&fit=crop&w=1200&q=80" alt="QRIS placeholder" class="qris-img">
-      <p class="muted">Ganti link ini dengan QRIS asli kamu nanti.</p>
+      <p class="muted center">Ganti link ini dengan QRIS asli kamu nanti.</p>
     </div>
   </div>
 
