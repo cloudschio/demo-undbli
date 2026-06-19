@@ -5,164 +5,206 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Undangan Pernikahan | Fulan & Fulana</title>
   <meta name="description" content="Undangan pernikahan digital Fulan & Fulana - 19 Desember 2026 - Fave Hotel Sidoarjo" />
+  <meta property="og:title" content="Undangan Pernikahan | Fulan & Fulana" />
+  <meta property="og:description" content="Undangan pernikahan digital bahasa Indonesia, full section, siap GitHub Pages." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#c89b3c" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Cormorant+GPC:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <div class="bg-overlay"></div>
+  <div class="top-nav">
+    <a href="#mempelai">Mempelai</a>
+    <a href="#acara">Acara</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#penutup">Penutup</a>
+  </div>
+
+  <div class="opening-screen" id="openingScreen">
+    <div class="opening-card">
+      <span class="badge">Undangan Pernikahan</span>
+      <h2>Fulan &amp; Fulana</h2>
+      <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+      <p class="opening-sub">Mohon berkenan membuka undangan digital ini untuk melihat detail acara.</p>
+      <button class="btn primary" id="openInvite">Buka Undangan</button>
+    </div>
+  </div>
+
   <section class="hero">
     <div class="hero-inner container">
+      <div class="ornament-top">✦ ✦ ✦</div>
       <span class="badge">Undangan Pernikahan</span>
-      <h1 class="title">Fulan <span class="gold">&amp;</span> Fulana</h1>
+      <h1>Fulan <span class="gold">&amp;</span> Fulana</h1>
       <div class="divider"></div>
-      <p class="subtitle">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami.</p>
-      <p class="meta">19 Desember 2026 • Fave Hotel Sidoarjo</p>
+      <p class="subtitle">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.</p>
+      <p class="meta">Jumat, 19 Desember 2026 • 10.00 WIB • Fave Hotel Sidoarjo</p>
       <div class="btns">
         <a class="btn primary" href="#acara">Lihat Acara</a>
         <a class="btn outline" href="#rsvp">RSVP</a>
       </div>
+      <div class="mini-note">Scroll ke bawah untuk melihat detail undangan</div>
     </div>
   </section>
 
   <main class="container">
-    <section class="section" id="mempelai">
+    <section class="section accent" id="mempelai">
+      <div class="section-head">
+        <span class="section-kicker">Mempelai</span>
+        <h2>Pasangan yang Berbahagia</h2>
+      </div>
       <div class="grid grid-2">
-        <div class="card">
-          <div class="label">Mempelai Pria</div>
-          <h2>Fulan</h2>
-          <p class="muted">Putra dari Bapak ... dan Ibu ...</p>
+        <div class="profile-card">
+          <div class="initial">F</div>
+          <h3>Fulan</h3>
+          <p>Putra dari Bapak ... dan Ibu ...</p>
         </div>
-        <div class="card">
-          <div class="label">Mempelai Wanita</h2>
-          <h2>Fulana</h2>
-          <p class="muted">Putri dari Bapak ... dan Ibu ...</p>
+        <div class="profile-card">
+          <div class="initial">F</div>
+          <h3>Fulana</h3>
+          <p>Putri dari Bapak ... dan Ibu ...</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Assalamu'alaikum</h2>
-      <p>Dengan penuh rasa syukur, kami mengundang Anda untuk hadir dan memberikan doa restu pada hari bahagia kami.</p>
+    <section class="section" id="ayat">
+      <div class="section-head">
+        <span class="section-kicker">Pembuka</span>
+        <h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+      </div>
+      <blockquote>Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri agar kamu cenderung dan merasa tenteram kepadanya.</blockquote>
+      <p class="source">QS. Ar-Rum: 21</p>
     </section>
 
     <section class="section" id="acara">
-      <h2>Detail Acara</h2>
-      <div class="grid grid-2" style="margin-top:18px;">
-        <div class="card">
+      <div class="section-head">
+        <span class="section-kicker">Acara</span>
+        <h2>Detail Rangkaian Acara</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="card schedule">
           <div class="label">Akad Nikah</div>
-          <div class="event-item">
-            <strong>Jumat, 19 Desember 2026</strong><br>
-            10.00 WIB - selesai
-          </div>
-          <div class="event-item">
-            <strong>Fave Hotel Sidoarjo</strong><br>
-            Sidoarjo, Jawa Timur
-          </div>
+          <h3>Jumat, 19 Desember 2026</h3>
+          <p>10.00 WIB - selesai</p>
+          <p>Fave Hotel Sidoarjo</p>
         </div>
-        <div class="card">
+        <div class="card schedule">
           <div class="label">Resepsi</div>
-          <div class="event-item">
-            <strong>Jumat, 19 Desember 2026</strong><br>
-            10.00 WIB - selesai
-          </div>
-          <div class="event-item">
-            <strong>Fave Hotel Sidoarjo</strong><br>
-            Sidoarjo, Jawa Timur
-          </div>
+          <h3>Jumat, 19 Desember 2026</h3>
+          <p>10.00 WIB - selesai</p>
+          <p>Fave Hotel Sidoarjo</p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Countdown</h2>
-      <div class="countdown" id="countdown" style="margin-top:18px;">
-        <div><strong id="d">0</strong>Hari</div>
-        <div><strong id="h">0</strong>Jam</div>
-        <div><strong id="m">0</strong>Menit</div>
-        <div><strong id="s">0</strong>Detik</div>
+      <div class="section-head">
+        <span class="section-kicker">Countdown</span>
+        <h2>Menuju Hari Bahagia</h2>
+      </div>
+      <div class="countdown" id="countdown">
+        <div><strong id="d">0</strong><span>Hari</span></div>
+        <div><strong id="h">0</strong><span>Jam</span></div>
+        <div><strong id="m">0</strong><span>Menit</span></div>
+        <div><strong id="s">0</strong><span>Detik</span></div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Lokasi</h2>
-      <p class="muted">Fave Hotel Sidoarjo</p>
-      <div style="margin-top:16px; border-radius:18px; overflow:hidden; border:1px solid var(--line);">
-        <iframe
-          src="https://www.google.com/maps?q=Fave%20Hotel%20Sidoarjo&output=embed"
-          width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <div class="section-head">
+        <span class="section-kicker">Lokasi</span>
+        <h2>Tempat Acara</h2>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps?q=Fave%20Hotel%20Sidoarjo&output=embed" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="location-meta">Fave Hotel Sidoarjo • Sidoarjo, Jawa Timur</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Galeri</span>
+        <h2>Kenangan Kami</h2>
+      </div>
+      <div class="slider-shell">
+        <button class="slider-btn prev" id="prevSlide">‹</button>
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide"><img src="https://images.unsplash.com/photo-1523438097201-512ae7d59bbf?auto=format&fit=crop&w=1200&q=80" alt="Foto galeri 1"></div>
+          <div class="slide"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Foto galeri 2"></div>
+          <div class="slide"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80" alt="Foto galeri 3"></div>
+        </div>
+        <button class="slider-btn next" id="nextSlide">›</button>
       </div>
     </section>
 
     <section class="section">
-      <h2>Galeri</h2>
-      <div class="gallery" style="margin-top:18px;">
-        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59bbf?auto=format&fit=crop&w=1200&q=80" alt="Foto 1">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Foto 2">
-        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80" alt="Foto 3">
+      <div class="section-head">
+        <span class="section-kicker">Love Story</span>
+        <h2>Perjalanan Singkat Kami</h2>
       </div>
-    </section>
-
-    <section class="section">
-      <h2>Love Story</h2>
-      <div class="story-line" style="margin-top:18px;">
-        <p><strong>Pertemuan</strong> — Cerita dimulai dari pertemuan sederhana yang membawa kami pada langkah yang lebih serius.</p>
-        <br>
-        <p><strong>Lamaran</strong> — Dengan restu keluarga, kami melangkah ke jenjang yang lebih indah.</p>
-        <br>
-        <p><strong>Menikah</strong> — Kini kami siap membangun rumah tangga bersama dalam cinta dan doa.</p>
+      <div class="timeline">
+        <div class="timeline-item"><span>1</span><div><h3>Pertemuan</h3><p>Dari pertemuan sederhana, tumbuh rasa saling mengenal dan percaya.</p></div></div>
+        <div class="timeline-item"><span>2</span><div><h3>Lamaran</h3><p>Dengan restu keluarga, kami melangkah lebih serius menuju masa depan bersama.</p></div></div>
+        <div class="timeline-item"><span>3</span><div><h3>Pernikahan</h3><p>Hari ini kami berikrar membangun rumah tangga dengan cinta dan doa.</p></div></div>
       </div>
     </section>
 
     <section class="section" id="rsvp">
-      <h2>RSVP</h2>
-      <p class="muted">Konfirmasi kehadiran bisa langsung via WhatsApp.</p>
-      <div class="grid grid-2" style="margin-top:18px;">
-        <div class="card">
+      <div class="section-head">
+        <span class="section-kicker">RSVP</span>
+        <h2>Konfirmasi Kehadiran</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="card form-card">
           <label>Nama</label>
-          <input type="text" placeholder="Nama Anda">
-          <div style="height:12px"></div>
-          <label>Pesan</label>
-          <textarea placeholder="Ucapan untuk mempelai"></textarea>
-          <div style="height:12px"></div>
-          <a class="btn primary" href="https://wa.me/62881081912121" target="_blank">Kirim via WhatsApp</a>
+          <input id="nama" type="text" placeholder="Nama Anda">
+          <label>Ucapan</label>
+          <textarea id="pesan" placeholder="Tulis ucapan singkat"></textarea>
+          <label>Jumlah Hadir</label>
+          <input id="jumlah" type="number" min="1" placeholder="Contoh: 2">
+          <button class="btn primary" id="waBtn">Kirim via WhatsApp</button>
         </div>
-        <div class="card">
+        <div class="card note-card">
           <div class="label">Catatan</div>
-          <p class="muted">RSVP tidak wajib menggunakan sheet, dan undangan tetap bisa dipakai tanpa nama tamu.</p>
+          <p>RSVP tidak wajib memakai sheet. Undangan juga tetap nyaman dipakai tanpa nama tamu.</p>
+          <div class="gift-box">
+            <div class="label">Digital Envelope</div>
+            <p>Seabank 901794598110</p>
+          </div>
+          <div class="gift-box">
+            <div class="label">Kontak</div>
+            <p>WA 0881081912121</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Hadiah Digital</h2>
-      <div class="grid grid-2" style="margin-top:18px;">
-        <div class="card">
-          <div class="label">Digital Envelope</div>
-          <p>Seabank: 901794598110</p>
-        </div>
-        <div class="card">
-          <div class="label">Kontak</div>
-          <p>WA: 0881081912121</p>
-        </div>
+      <div class="section-head">
+        <span class="section-kicker">Doa</span>
+        <h2>Ucapan & Doa Restu</h2>
+      </div>
+      <div class="card quote-card">
+        <p>Doa restu Anda adalah hadiah paling berharga bagi kami. Terima kasih atas kehadiran, perhatian, dan doa baik yang diberikan.</p>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Doa & Ucapan</h2>
-      <div class="card" style="margin-top:18px;">
-        <p>Doa restu Anda adalah hadiah terindah bagi kami. Terima kasih atas kehadiran dan perhatian yang diberikan.</p>
+    <section class="section" id="penutup">
+      <div class="section-head">
+        <span class="section-kicker">Penutup</span>
+        <h2>Terima Kasih</h2>
       </div>
+      <p>Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Wassalamu'alaikum Warahmatullahi Wabarakatuh.</p>
     </section>
 
-    <section class="section">
-      <h2>Penutup</h2>
-      <p>Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-      <p style="margin-top:14px;">Wassalamu'alaikum Warahmatullahi Wabarakatuh.</p>
-    </section>
+    <div class="footer">Made with love for Fulan & Fulana</div>
+    <div class="footer-ornament">✦ ✦ ✦</div>
 
-    <div class="footer">
-      <p>Made with love for Fulan & Fulana</p>
+    <div class="music-bar card">
+      <span>Musik Latar</span>
+      <button class="btn outline" id="musicToggle">Play / Pause</button>
     </div>
   </main>
 
