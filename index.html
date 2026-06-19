@@ -43,29 +43,41 @@
       </div>
     </section>
 
-    <section class="card glass two-col location-short">
-      <div class="info-box">
-        <h2>Akad Nikah</h2>
-        <p>08:00 - 10:00 WIB</p>
-        <p>Masjid Agung Surabaya</p>
-      </div>
-      <div class="info-box">
-        <h2>Resepsi</h2>
-        <p>11:00 - 14:00 WIB</p>
-        <p>Gedung Pernikahan Indah</p>
+    <section class="card glass location-short">
+      <div class="section-head"><span></span><h2>Akad & Resepsi</h2><span></span></div>
+      <div class="two-col">
+        <div class="info-box">
+          <h2>Akad Nikah</h2>
+          <p>08:00 - 10:00 WIB</p>
+          <p>Masjid Agung Surabaya</p>
+        </div>
+        <div class="info-box">
+          <h2>Resepsi</h2>
+          <p>11:00 - 14:00 WIB</p>
+          <p>Gedung Pernikahan Indah</p>
+        </div>
       </div>
     </section>
 
-    <section class="card glass two-col">
-      <div class="info-box">
-        <h2>Mempelai Pria</h2>
-        <h3>Adam Wijaya</h3>
-        <p>Putra dari Bpk. Wijaya & Ibu Susanti</p>
-      </div>
-      <div class="info-box">
-        <h2>Mempelai Wanita</h2>
-        <h3>Sari Kusuma</h3>
-        <p>Putri dari Bpk. Kusuma & Ibu Dewi</p>
+    <section class="card glass groom-bride">
+      <div class="section-head"><span></span><h2>Mempelai</h2><span></span></div>
+      <div class="couple-grid">
+        <div class="couple-card groom-card">
+          <img class="couple-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Foto mempelai pria">
+          <div class="couple-text">
+            <p class="eyebrow">Mempelai Pria</p>
+            <h3>Adam Wijaya</h3>
+            <p>Putra dari Bpk. Wijaya & Ibu Susanti</p>
+          </div>
+        </div>
+        <div class="couple-card bride-card">
+          <img class="couple-photo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80" alt="Foto mempelai wanita">
+          <div class="couple-text">
+            <p class="eyebrow">Mempelai Wanita</p>
+            <h3>Sari Kusuma</h3>
+            <p>Putri dari Bpk. Kusuma & Ibu Dewi</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -116,15 +128,15 @@
     <section class="card glass qris-card">
       <div class="section-head"><span></span><h2>QRIS & Rekening</h2><span></span></div>
       <p class="muted center qris-note">Silakan gunakan QRIS di bawah atau transfer ke rekening berikut.</p>
-      <div class="qris-wrap">
-        <img src="https://images.unsplash.com/photo-1633265486064-086b219f3f90?auto=format&fit=crop&w=1200&q=80" alt="QRIS" class="qris-img">
+      <div class="qris-horizontal">
+        <div class="qris-left">
+          <img src="https://images.unsplash.com/photo-1633265486064-086b219f3f90?auto=format&fit=crop&w=1200&q=80" alt="QRIS" class="qris-img">
+          <p class="qris-caption">Scan QRIS untuk donasi / amplop digital</p>
+        </div>
         <div class="rekening-box">
-          <p><strong>Bank:</strong> BRI</p>
-          <div class="rekening-line">
-            <p><strong>No. Rekening:</strong> <span id="rekeningNumber">1234 5678 9012 345</span></p>
-            <button class="btn btn-secondary copy-btn" type="button" id="copyRekening">Salin</button>
-          </div>
-          <p><strong>Atas Nama:</strong> Adam Wijaya</p>
+          <div class="rekening-row"><span class="label">Bank</span><span class="value">BRI</span></div>
+          <div class="rekening-row rekening-number-row"><span class="label">No. Rekening</span><span class="value" id="rekeningNumber">1234 5678 9012 345</span><button class="btn btn-secondary copy-btn" type="button" id="copyRekening">Salin</button></div>
+          <div class="rekening-row"><span class="label">Atas Nama</span><span class="value">Adam Wijaya</span></div>
         </div>
       </div>
     </section>
