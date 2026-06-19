@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serat Ulem - Undangan Pernikahan</title>
-    
+    <title>Undangan Pernikahan - Rama & Shinta</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -45,17 +45,21 @@
         .title-jawa {
             font-family: 'Cinzel Decorative', serif;
             color: var(--gold);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
         }
 
         .cursive {
             font-family: 'Great Vibes', cursive;
             font-size: 3rem;
             color: var(--gold);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
         }
 
         .section-padding {
             padding: 80px 20px;
             text-align: center;
+            position: relative;
+            z-index: 3;
         }
 
         .btn-gold {
@@ -88,7 +92,7 @@
         .gunungan {
             max-width: 120px;
             margin: 20px auto;
-            opacity: 0.8;
+            opacity: 0.85;
             filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.2));
         }
 
@@ -107,7 +111,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(36, 20, 14, 0.92), rgba(92, 6, 18, 0.95)), url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=1200') center/cover;
+            background: linear-gradient(rgba(20, 18, 16, 0.95), rgba(36, 20, 14, 0.97)), url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=1200') center/cover;
             z-index: 9999;
             display: flex;
             flex-direction: column;
@@ -130,7 +134,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(36, 20, 14, 0.9);
+            background: rgba(36, 20, 14, 0.92);
             border: 1px solid var(--gold);
             border-radius: 30px;
             padding: 10px 20px;
@@ -178,8 +182,8 @@
         }
 
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80&w=1500') center/cover;
+            min-height: 100svh;
+            background: linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80&w=1500') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -187,6 +191,12 @@
             color: var(--text-light);
             text-align: center;
             padding: 20px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero p, .hero h2 {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
         }
 
         .mempelai-container {
@@ -205,6 +215,8 @@
             max-width: 350px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: transform 0.3s;
+            position: relative;
+            z-index: 3;
         }
 
         .mempelai-card:hover {
@@ -310,7 +322,6 @@
 
         .left { left: 0; }
         .right { left: 50%; }
-
         .right::after { left: -8px; }
 
         .content {
@@ -336,6 +347,8 @@
             border: 2px solid var(--gold);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: left;
+            position: relative;
+            z-index: 3;
         }
 
         .form-group {
@@ -400,10 +413,26 @@
             margin: 20px auto;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
             transition: transform 0.3s ease;
+            position: relative;
+            z-index: 3;
         }
 
         .gift-box:hover {
             transform: translateY(-4px);
+        }
+
+        footer {
+            background-color: var(--dark-brown);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 3px solid var(--gold);
+            position: relative;
+            z-index: 3;
+        }
+
+        .text-overlay-clear {
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55), 0 0 20px rgba(0, 0, 0, 0.35);
         }
 
         @media (max-width: 768px) {
@@ -413,6 +442,12 @@
             .right { left: 0%; }
             .right .content { border-right: none; border-left: 5px solid var(--maroon); }
             .floating-nav { width: 90%; justify-content: space-around; font-size: 1rem; }
+            .music-control { animation: none; }
+            .floating-nav { backdrop-filter: none; }
+            [data-aos] { transition-duration: 500ms !important; }
+            .hero {
+                background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.78)), url('https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80&w=1000') center/cover;
+            }
         }
     </style>
 </head>
@@ -431,32 +466,31 @@
         <svg class="gunungan" viewBox="0 0 100 100" width="100" fill="#d4af37">
             <path d="M50 5 L90 85 L70 85 L70 95 L30 95 L30 85 L10 85 Z M50 20 L30 75 L70 75 Z"/>
         </svg>
-        <p style="letter-spacing: 3px; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">Serat Ulem</p>
+        <p style="letter-spacing: 3px; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">Undangan Pernikahan</p>
         <h1 class="cursive" style="font-size: 4rem; margin-bottom: 10px;">Rama & Shinta</h1>
-        <p style="margin-bottom: 30px; font-style: italic;">Mugi kerso rawuh ing dinten agung kawulo</p>
-        
-        <div style="margin-bottom: 30px; border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); padding: 10px 20px;">
-            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Katur dumateng Bpk/Ibu/Sdr/i:</p>
-            <h3 id="guest-name" style="margin-top: 5px; color: var(--gold);">Tamu Undangan</h3>
-        </div>
+        <p style="margin-bottom: 30px; font-style: italic;">Dengan hormat, kami mengundang Anda untuk hadir di hari bahagia kami</p>
 
-        <button class="btn-gold" onclick="openInvitation()"><i class="fa-solid fa-envelope-open"></i> Buka Undangan</button>
+        <button class="btn-gold" onclick="openInvitation()">
+            <i class="fa-solid fa-envelope-open"></i> Buka Undangan
+        </button>
     </div>
 
     <nav class="floating-nav">
-        <a href="#home" title="Home"><i class="fas fa-home"></i></a>
+        <a href="#home" title="Beranda"><i class="fas fa-home"></i></a>
         <a href="#mempelai" title="Mempelai"><i class="fas fa-heart"></i></a>
         <a href="#acara" title="Acara"><i class="fas fa-calendar-alt"></i></a>
-        <a href="#cerita" title="Cerita"><i class="fas fa-book-open"></i></a>
-        <a href="#rsvp" title="RSVP"><i class="fas fa-paper-plane"></i></a>
-        <a href="#hadiah" title="Kado"><i class="fas fa-gift"></i></a>
+        <a href="#cerita" title="Perjalanan Cinta"><i class="fas fa-book-open"></i></a>
+        <a href="#rsvp" title="Konfirmasi"><i class="fas fa-paper-plane"></i></a>
+        <a href="#hadiah" title="Hadiah"><i class="fas fa-gift"></i></a>
     </nav>
 
     <section id="home" class="hero">
-        <p data-aos="fade-down" style="letter-spacing: 3px;">PAWIDAHAN AGUNG</p>
+        <p data-aos="fade-down" style="letter-spacing: 3px;" class="text-overlay-clear">UNDANGAN PERNIKAHAN</p>
         <h2 data-aos="zoom-in" class="cursive" style="font-size: 5rem; margin: 20px 0;">Rama & Shinta</h2>
-        <p data-aos="fade-up" style="max-width: 600px; font-weight: 300; line-height: 1.6;">“Mugi kerso rawuh dumateng serat ulem pawidahan agung kito roro.”</p>
-        <p data-aos="fade-up" data-aos-delay="150" style="margin-top: 20px; font-weight: 600; color: var(--gold);">25 OKTOBER 2026</p>
+        <p data-aos="fade-up" style="max-width: 600px; font-weight: 300; line-height: 1.6;" class="text-overlay-clear">
+            “Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.”
+        </p>
+        <p data-aos="fade-up" data-aos-delay="150" style="margin-top: 20px; font-weight: 600; color: var(--gold); text-shadow: 0 2px 10px rgba(0,0,0,0.6);">25 OKTOBER 2026</p>
     </section>
 
     <section class="section-padding" style="background-color: white;">
@@ -465,22 +499,22 @@
                 <path d="M50 5 L90 85 L70 85 L70 95 L30 95 L30 85 L10 85 Z M50 20 L30 75 L70 75 Z"/>
             </svg>
             <p style="font-style: italic; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: var(--dark-brown);">
-                "Mugi-mugi Gusti Ingkang Moho Agung tansah njangkung lan ngayomi lampah panjenengan sedaya, ugi maringi berkah dumateng bale wisma kito roro."
+                “Semoga Tuhan senantiasa melimpahkan rahmat dan keberkahan kepada kita semua.”
             </p>
-            <p style="font-weight: bold; color: var(--maroon);">- Sastra Jawi -</p>
+            <p style="font-weight: bold; color: var(--maroon);">- Kata Pembuka -</p>
         </div>
     </section>
 
     <section id="mempelai" class="section-padding">
-        <h2 class="title-jawa" data-aos="fade-up">Arum Pinilih</h2>
-        <p data-aos="fade-up" style="margin-bottom: 40px; color: #666;">Kanthi sih nugrahaning Gusti, kulo nembadani jombloning katresnan</p>
-        
+        <h2 class="title-jawa" data-aos="fade-up">Mempelai</h2>
+        <p data-aos="fade-up" style="margin-bottom: 40px; color: #666;">Dengan rahmat dan kasih Tuhan, kami dipersatukan dalam ikatan pernikahan.</p>
+
         <div class="mempelai-container">
             <div class="mempelai-card" data-aos="fade-right" data-aos-duration="1000">
                 <img class="mempelai-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300" alt="Mempelai Pria">
                 <h3 class="cursive">Raden Rama Wijaya</h3>
                 <p style="font-weight: 600; margin-top: 10px;">Rama</p>
-                <p style="font-size: 0.85rem; margin-top: 15px; color: #555;">Putra kaping pisan saking:</p>
+                <p style="font-size: 0.85rem; margin-top: 15px; color: #555;">Putra pertama dari:</p>
                 <p style="font-weight: bold;">Bpk. Heru Wijaya & Ibu Retno Susilowati</p>
                 <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">Sleman, Yogyakarta</p>
                 <div style="margin-top: 15px;">
@@ -492,7 +526,7 @@
                 <img class="mempelai-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300" alt="Mempelai Wanita">
                 <h3 class="cursive">Dewi Shinta Larasati</h3>
                 <p style="font-weight: 600; margin-top: 10px;">Shinta</p>
-                <p style="font-size: 0.85rem; margin-top: 15px; color: #555;">Putri kaping kalih saking:</p>
+                <p style="font-size: 0.85rem; margin-top: 15px; color: #555;">Putri kedua dari:</p>
                 <p style="font-weight: bold;">Bpk. Bambang Purnomo & Ibu Sri Rahayu</p>
                 <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">Bantul, Yogyakarta</p>
                 <div style="margin-top: 15px;">
@@ -503,14 +537,22 @@
     </section>
 
     <section id="acara" class="section-padding" style="background-color: #24140e; color: white;">
-        <h2 class="title-jawa" data-aos="fade-up" style="color: var(--gold);">Wektu lan Panggonan</h2>
-        <p data-aos="fade-up" style="color: var(--cream); margin-bottom: 30px;">Mugi Gusti ngijabahi sedaya rancangan kito</p>
+        <h2 class="title-jawa" data-aos="fade-up" style="color: var(--gold);">Waktu dan Tempat</h2>
+        <p data-aos="fade-up" style="color: var(--cream); margin-bottom: 30px;">Semoga Tuhan memberkahi rencana baik kami.</p>
 
         <div class="countdown" data-aos="zoom-in">
-            <div class="countdown-item"><span id="days">00</span>Dina</div>
-            <div class="countdown-item"><span id="hours">00</span>Jam</div>
-            <div class="countdown-item"><span id="minutes">00</span>Menit</div>
-            <div class="countdown-item"><span id="seconds">00</span>Detik</div>
+            <div class="countdown-item">
+                <span id="days">00</span>Hari
+            </div>
+            <div class="countdown-item">
+                <span id="hours">00</span>Jam
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">00</span>Menit
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">00</span>Detik
+            </div>
         </div>
 
         <div class="acara-container">
@@ -541,65 +583,65 @@
     </section>
 
     <section id="cerita" class="section-padding">
-        <h2 class="title-jawa" data-aos="fade-up">Cariyos Tresno</h2>
-        <p data-aos="fade-up" style="margin-bottom: 40px; color: #666;">Kepriye asmaraning kito roro wiwit nemu marganing katresnan</p>
+        <h2 class="title-jawa" data-aos="fade-up">Perjalanan Cinta</h2>
+        <p data-aos="fade-up" style="margin-bottom: 40px; color: #666;">Awal pertemuan kami hingga akhirnya dipersatukan dalam ikatan suci.</p>
 
         <div class="timeline">
             <div class="timeline-container left" data-aos="fade-right">
                 <div class="content">
-                    <h3 style="color: var(--maroon);">Pisanan Ketemu (2020)</h3>
-                    <p style="margin-top: 10px; font-size: 0.9rem;">Ketemu ing papan pamulangan luhur nalika nindakake kegiyatan sosial bareng-bareng.</p>
+                    <h3 style="color: var(--maroon);">Pertama Bertemu (2020)</h3>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Kami bertemu di lingkungan kampus saat mengikuti kegiatan sosial bersama.</p>
                 </div>
             </div>
             <div class="timeline-container right" data-aos="fade-left">
                 <div class="content">
-                    <h3 style="color: var(--maroon);">Mratelakake Katresnan (2022)</h3>
-                    <p style="margin-top: 10px; font-size: 0.9rem;">Sawise rong taun dadi kanca raket, kito roro mutusake kanggo mbangun sesambungan katresnan.</p>
+                    <h3 style="color: var(--maroon);">Menjalin Kasih (2022)</h3>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Setelah dua tahun menjadi sahabat, kami memutuskan untuk menjalin hubungan yang lebih serius.</p>
                 </div>
             </div>
             <div class="timeline-container left" data-aos="fade-right">
                 <div class="content">
-                    <h3 style="color: var(--maroon);">Khitbah / Lamaran (2025)</h3>
-                    <p style="margin-top: 10px; font-size: 0.9rem;">Kanthi idining rono lan roni, kulawarga kito roro nindakake rembagan pinilih lan pepasihan lamaran.</p>
+                    <h3 style="color: var(--maroon);">Lamaran (2025)</h3>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Dengan restu keluarga, kami melangkah ke tahap lamaran sebagai komitmen menuju pernikahan.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="rsvp" class="section-padding" style="background-color: white;">
-        <h2 class="title-jawa" data-aos="fade-up">Konfirmasi Rawuh (RSVP)</h2>
-        <p data-aos="fade-up" style="margin-bottom: 35px; color: #666;">Mugi kerso maringi pawartos rawuh panjenengan sedaya</p>
+        <h2 class="title-jawa" data-aos="fade-up">Konfirmasi Kehadiran</h2>
+        <p data-aos="fade-up" style="margin-bottom: 35px; color: #666;">Mohon kesediaannya untuk memberikan konfirmasi kehadiran dan doa restu.</p>
 
         <div class="rsvp-form" data-aos="zoom-in" data-aos-duration="1000">
             <form id="rsvpForm">
                 <div class="form-group">
-                    <label for="nama">Jeneng Sampeyan</label>
-                    <input type="text" id="nama" class="form-control" required placeholder="Tulis asma panjenengan...">
+                    <label for="nama">Nama Anda</label>
+                    <input type="text" id="nama" class="form-control" required placeholder="Tulis nama Anda...">
                 </div>
                 <div class="form-group">
                     <label for="kehadiran">Konfirmasi Kehadiran</label>
                     <select id="kehadiran" class="form-control" required>
-                        <option value="">-- Pilih Rawuh --</option>
-                        <option value="Rawuh">Kulo Badhe Rawuh (Hadir)</option>
-                        <option value="Mboten Rawuh">Mboten Saged Rawuh (Tidak Hadir)</option>
-                        <option value="Ragu">Taksih Ragu (Ragu-ragu)</option>
+                        <option value="">-- Pilih Kehadiran --</option>
+                        <option value="Hadir">Saya Akan Hadir</option>
+                        <option value="Tidak Hadir">Saya Tidak Dapat Hadir</option>
+                        <option value="Ragu-ragu">Masih Ragu-ragu</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="pesan">Atur Layang / Pesan Pangajab</label>
-                    <textarea id="pesan" class="form-control" rows="4" placeholder="Maringi berkah donga pangestu..." required></textarea>
+                    <label for="pesan">Ucapan dan Doa</label>
+                    <textarea id="pesan" class="form-control" rows="4" placeholder="Tuliskan doa dan ucapan terbaik Anda..." required></textarea>
                 </div>
-                <button type="submit" class="btn-gold" style="width: 100%;">Kirim RSVP & Donga</button>
+                <button type="submit" class="btn-gold" style="width: 100%;">Kirim Konfirmasi</button>
             </form>
         </div>
 
-        <h3 class="title-jawa" style="font-size: 1.5rem; margin-top: 50px;">Buku Tamu & Donga Pangestu</h3>
+        <h3 class="title-jawa" style="font-size: 1.5rem; margin-top: 50px;">Doa dan Ucapan</h3>
         <div class="wishes-display" id="wishesBox"></div>
     </section>
 
     <section id="hadiah" class="section-padding">
-        <h2 class="title-jawa" data-aos="fade-up">Kado Digital</h2>
-        <p data-aos="fade-up" style="margin-bottom: 30px; color: #666;">Kagem panjenengan ingkang kerso maringi kado dhumateng kito roro</p>
+        <h2 class="title-jawa" data-aos="fade-up">Hadiah Pernikahan</h2>
+        <p data-aos="fade-up" style="margin-bottom: 30px; color: #666;">Bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih, kami ucapkan terima kasih.</p>
 
         <div class="gift-box" data-aos="zoom-in">
             <i class="fas fa-credit-card" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 15px;"></i>
@@ -611,20 +653,20 @@
 
         <div class="gift-box" data-aos="zoom-in" style="margin-top: 30px;">
             <i class="fas fa-wallet" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 15px;"></i>
-            <h4>Dompet Digital E-Wallet (OVO/DANA)</h4>
+            <h4>Dompet Digital (OVO / DANA)</h4>
             <p style="font-size: 1.2rem; font-weight: bold; margin: 10px 0; color: var(--maroon);">0812-3456-7890</p>
             <p style="font-size: 0.9rem; color: #555;">A/N: Dewi Shinta Larasati</p>
             <button class="btn-gold" style="padding: 5px 15px; font-size: 0.8rem; margin-top: 10px;" onclick="copyText('0812-3456-7890')">Salin Nomor</button>
         </div>
     </section>
 
-    <footer style="background-color: var(--dark-brown); color: var(--text-light); text-align: center; padding: 40px 20px; border-top: 3px solid var(--gold);">
+    <footer>
         <svg class="gunungan" viewBox="0 0 100 100" width="50" fill="#d4af37">
             <path d="M50 5 L90 85 L70 85 L70 95 L30 95 L30 85 L10 85 Z M50 20 L30 75 L70 75 Z"/>
         </svg>
-        <p style="font-style: italic;">"Matur Nuwun dhumateng rawuh lan donga pangestunipun panjenengan sedaya."</p>
+        <p style="font-style: italic;">"Terima kasih atas kehadiran dan doa restu Bapak/Ibu/Saudara/i."</p>
         <h3 class="cursive" style="margin: 15px 0;">Rama & Shinta</h3>
-        <p style="font-size: 0.75rem; color: #888;">&copy; 2026 Rama & Shinta Wedding. All rights reserved.</p>
+        <p style="font-size: 0.75rem; color: #888;">&copy; 2026 Rama & Shinta Wedding. Seluruh hak dilindungi.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -635,10 +677,6 @@
             offset: 120
         });
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const guestName = urlParams.get('to');
-        if (guestName) document.getElementById('guest-name').innerText = guestName;
-
         const audio = document.getElementById("bg-music");
         const musicToggle = document.getElementById("musicToggle");
         const scrollOverlay = document.getElementById('scroll-overlay');
@@ -647,7 +685,6 @@
             document.getElementById("cover-overlay").classList.add("fade-out");
             document.body.style.overflow = "auto";
             audio.play().catch(function(){});
-            requestAnimationFrame(updateScrollOverlay);
         }
 
         document.body.style.overflow = "hidden";
@@ -688,7 +725,7 @@
 
         function copyText(text) {
             navigator.clipboard.writeText(text).then(function() {
-                alert("Nomor rekening kasalin dhumateng clipboard: " + text);
+                alert("Nomor berhasil disalin ke clipboard: " + text);
             });
         }
 
@@ -703,8 +740,8 @@
         function renderWishes() {
             wishesBox.innerHTML = '';
             let wishes = JSON.parse(localStorage.getItem('wedding_wishes')) || [
-                { name: "Suryo Atmojo", status: "Rawuh", wish: "Sugeng mengku garwo kagem Mas Rama lan Mbak Shinta. Mugi tansah rukun runtut runtung reruntungan sacoro lahir dumateng batin." },
-                { name: "Giri & Putri", status: "Rawuh", wish: "Nderek mangubagyo. Mugi Gusti maringi berkah katresnan ingkang sejati salawase." }
+                { name: "Suryo Atmojo", status: "Hadir", wish: "Selamat menempuh hidup baru. Semoga menjadi keluarga yang sakinah, mawaddah, dan warahmah." },
+                { name: "Giri & Putri", status: "Hadir", wish: "Turut berbahagia. Semoga pernikahan ini penuh berkah dan kebahagiaan selamanya." }
             ];
 
             wishes.forEach(function(item) {
@@ -734,7 +771,7 @@
             localStorage.setItem('wedding_wishes', JSON.stringify(wishes));
             renderWishes();
             rsvpForm.reset();
-            alert("Matur nuwun! RSVP lan donga pangestu panjenengan sampun katampi.");
+            alert("Terima kasih! Konfirmasi dan doa restu Anda telah kami terima.");
         });
 
         function updateScrollOverlay() {
