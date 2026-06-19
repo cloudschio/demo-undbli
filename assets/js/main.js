@@ -86,3 +86,27 @@ const navToggle = document.getElementById('navToggle');
 const topNav = document.getElementById('topNav');
 navToggle?.addEventListener('click', () => topNav.classList.toggle('open'));
 document.querySelectorAll('.top-nav a').forEach(a => a.addEventListener('click', () => topNav.classList.remove('open')));
+
+const copyBtn = document.getElementById('copyAccount');
+copyBtn?.addEventListener('click', async () => {
+  const text = document.getElementById('accountValue')?.textContent?.trim() || '901794598110';
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast('Nomor rekening berhasil disalin');
+  } catch {
+    showToast('Gagal menyalin nomor rekening');
+  }
+});
+
+function showToast(message){
+  let toast = document.querySelector('.toast');
+  if(!toast){
+    toast = document.createElement('div');
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
