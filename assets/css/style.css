@@ -134,12 +134,24 @@ label{display:block;margin:14px 0 8px;font-weight:700;color:var(--text)}
 input,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);font:inherit;background:#fff;outline:none}
 textarea{min-height:120px;resize:vertical}
 .form-card .btn{width:100%;margin-top:16px}
-.note-card p{color:var(--muted)}
-.gift-box{margin-top:16px;padding:16px;border-radius:18px;background:#fffaf4;border:1px dashed rgba(200,155,60,.35)}
+.note-card{display:flex;flex-direction:column;gap:16px}
+.gift-header{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.gift-title{font-size:clamp(2rem,5vw,3rem);line-height:1.05;margin:6px 0 0;color:#1f1a14}
+.gift-row{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:stretch}
+.gift-col{border:1px solid rgba(200,155,60,.18);border-radius:20px;padding:18px 18px 16px;background:linear-gradient(180deg,#fff, #fffaf7);box-shadow:0 10px 22px rgba(0,0,0,.04)}
+.gift-col-main{display:flex;flex-direction:column;justify-content:center}
+.gift-col-qris{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.gift-label{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:900}
+.gift-value{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;line-height:1.02;margin-top:8px;color:#1f1a14;letter-spacing:.02em}
+.gift-sub{margin-top:10px;color:var(--muted);font-size:.95rem}
+.qris-img{width:min(100%,240px);aspect-ratio:1/1;object-fit:cover;border-radius:18px;border:1px solid rgba(200,155,60,.18);background:#fff;box-shadow:0 12px 26px rgba(0,0,0,.05)}
+.gift-copy{margin-top:14px;border:none;border-radius:14px;padding:12px 16px;background:linear-gradient(135deg,var(--gold),#e6c15b);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 10px 22px rgba(200,155,60,.22);width:max-content}
+.gift-copy:hover{transform:translateY(-2px)}
+.gift-foot{margin-top:2px;color:var(--muted);font-size:.95rem;text-align:center;border-top:1px solid rgba(200,155,60,.12);padding-top:12px}
 .quote-card{font-size:1.03rem;background:linear-gradient(135deg,#fff, #fff8ef)}
 .footer{text-align:center;padding:18px 0 8px;color:var(--muted);font-size:.95rem}
 .footer-ornament{text-align:center;color:var(--gold);letter-spacing:.6em;font-weight:900;margin-bottom:0;margin-top:10px}
-.music-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;padding:18px 22px}
+.music-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;padding:18px 22px;border-radius:22px}
 .music-bar span{font-weight:700;color:var(--muted)}
 .opening-screen{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:linear-gradient(rgba(255,248,239,.92), rgba(255,248,239,.82)), url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;backdrop-filter:blur(8px)}
 .opening-card{width:min(92vw,520px);text-align:center;background:rgba(255,255,255,.92);border:1px solid rgba(200,155,60,.26);border-radius:30px;padding:40px 34px;box-shadow:0 24px 70px rgba(0,0,0,.12)}
@@ -148,6 +160,8 @@ textarea{min-height:120px;resize:vertical}
 .opening-sub{margin:10px 0 20px;color:var(--muted)}
 .modal-announce{position:fixed;inset:auto 18px 18px 18px;z-index:60;max-width:420px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);display:none}
 .modal-announce.show{display:block}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:70;background:#1f1a14;color:#fff;padding:12px 16px;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.18);font-weight:700;opacity:0;pointer-events:none;transition:opacity .3s ease, transform .3s ease}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
 .section:nth-of-type(odd){background:rgba(255,255,255,.83)}
 .section:nth-of-type(even){background:rgba(255,252,246,.92)}
 .section, .hero, .opening-card, .profile-card, .card, .timeline-item, .countdown div, .map-wrap, .slide img{border:1px solid rgba(200,155,60,.16)}
@@ -176,6 +190,12 @@ textarea{min-height:120px;resize:vertical}
   .card,.profile-card,.opening-card{padding:22px}
   .opening-card h2{font-size:2rem}
   .opening-screen{padding:18px}
+  .gift-row{grid-template-columns:1fr}
+  .gift-copy{width:100%}
+  .gift-col-qris{padding-top:16px}
+  .floating-wa{bottom:14px;right:14px}
+  .mobile-nav-toggle{top:12px;right:12px}
+  .top-nav{top:66px}
 }
 @media (max-width: 420px){
   h1{font-size:clamp(2.4rem,15vw,4rem)}
@@ -189,6 +209,12 @@ textarea{min-height:120px;resize:vertical}
   .timeline-item span{width:48px;height:48px;font-size:1rem}
   .map-wrap iframe{height:220px}
   .floating-wa{width:50px;height:50px;right:12px;bottom:12px}
+  .opening-card{padding:20px}
+  .section{padding:18px 16px}
+  .card{padding:18px}
+  .gift-value{font-size:2rem}
+  .gift-copy{padding:11px 14px}
+  .btn{padding:13px 16px}
 }
 @media (min-width:641px) and (max-width:900px){
   .grid-2{grid-template-columns:1fr}
