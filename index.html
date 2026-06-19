@@ -19,6 +19,8 @@
             --dark-gold: #aa841e;
             --cream: #fdfbf7;
             --dark-brown: #24140e;
+            --soft-brown: #5b3b2e;
+            --soft-brown-dark: #3c2418;
             --text-dark: #333333;
             --text-light: #f5f5f5;
         }
@@ -205,17 +207,36 @@
 
         .bg-section {
             position: relative;
+            overflow: hidden;
+            isolation: isolate;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            overflow: hidden;
         }
 
         .bg-section::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.65));
+            background:
+                linear-gradient(to bottom,
+                    rgba(36, 20, 14, 0.84) 0%,
+                    rgba(36, 20, 14, 0.58) 18%,
+                    rgba(36, 20, 14, 0.34) 45%,
+                    rgba(36, 20, 14, 0.58) 82%,
+                    rgba(36, 20, 14, 0.86) 100%);
+            z-index: 0;
+        }
+
+        .bg-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at center, rgba(255,255,255,0.08), rgba(0,0,0,0.18)),
+                linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
             z-index: 0;
         }
 
@@ -224,8 +245,26 @@
             z-index: 1;
         }
 
+        .soft-brown {
+            background: linear-gradient(180deg, rgba(91, 59, 46, 0.94), rgba(60, 36, 24, 0.96));
+            color: #fff;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .soft-brown .title-jawa,
+        .soft-brown p,
+        .soft-brown h2,
+        .soft-brown h3,
+        .soft-brown h4,
+        .soft-brown label {
+            color: #fff;
+        }
+
         .section-light {
-            background-color: white;
+            background: linear-gradient(180deg, rgba(245, 237, 230, 0.95), rgba(231, 215, 205, 0.96));
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .mempelai-container {
@@ -619,9 +658,9 @@
         </div>
     </section>
 
-    <section id="rsvp" class="section-padding section-light">
+    <section id="rsvp" class="section-padding soft-brown">
         <h2 class="title-jawa" data-aos="fade-up">Konfirmasi Kehadiran</h2>
-        <p data-aos="fade-up" style="margin-bottom: 35px; color: #666;">Mohon kesediaannya untuk memberikan konfirmasi kehadiran dan doa restu.</p>
+        <p data-aos="fade-up" style="margin-bottom: 35px;">Mohon kesediaannya untuk memberikan konfirmasi kehadiran dan doa restu.</p>
 
         <div class="rsvp-form" data-aos="zoom-in" data-aos-duration="1000">
             <form id="rsvpForm">
