@@ -39,7 +39,6 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--cream);
             color: var(--text-dark);
-            overflow-x: hidden;
         }
 
         .title-jawa {
@@ -171,10 +170,15 @@
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             animation: spin 6s linear infinite;
+            font-size: 1.1rem;
         }
 
         .music-control.paused {
             animation-play-state: paused;
+        }
+
+        .music-control i {
+            pointer-events: none;
         }
 
         @keyframes spin {
@@ -208,15 +212,17 @@
         }
 
         .mempelai-card {
-            background: white;
-            border: 2px solid var(--gold);
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,247,240,0.92));
+            border: 1px solid rgba(212, 175, 55, 0.35);
             border-radius: 15px;
             padding: 30px;
             max-width: 350px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             z-index: 3;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .mempelai-card:hover {
@@ -265,16 +271,20 @@
         }
 
         .acara-box {
-            background: var(--dark-brown);
-            color: var(--text-light);
-            border: 2px solid var(--gold);
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,247,240,0.92));
+            color: var(--text-dark);
+            border: 1px solid rgba(212, 175, 55, 0.35);
             border-radius: 15px;
             padding: 40px 30px;
             flex: 1;
             min-width: 290px;
             max-width: 450px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.10);
             transition: transform 0.3s ease;
+            position: relative;
+            z-index: 3;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .acara-box:hover {
@@ -326,11 +336,13 @@
 
         .content {
             padding: 20px 30px;
-            background-color: white;
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,247,240,0.94));
             position: relative;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--maroon);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .right .content {
@@ -405,20 +417,31 @@
         }
 
         .gift-box {
-            background: #fff;
-            border: 1px dashed var(--gold);
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(251,248,242,0.93));
+            border: 1px solid rgba(212, 175, 55, 0.35);
             border-radius: 10px;
             padding: 25px;
             max-width: 400px;
             margin: 20px auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.10);
             transition: transform 0.3s ease;
             position: relative;
             z-index: 3;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .gift-box:hover {
             transform: translateY(-4px);
+        }
+
+        .map-box {
+            max-width: 900px;
+            margin: 30px auto 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            border: 2px solid rgba(212,175,55,0.35);
         }
 
         footer {
@@ -429,10 +452,6 @@
             border-top: 3px solid var(--gold);
             position: relative;
             z-index: 3;
-        }
-
-        .text-overlay-clear {
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55), 0 0 20px rgba(0, 0, 0, 0.35);
         }
 
         @media (max-width: 768px) {
@@ -458,8 +477,8 @@
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="music-control" id="musicToggle" onclick="toggleMusic()">
-        <i class="fas fa-music"></i>
+    <div class="music-control" id="musicToggle" onclick="toggleMusic()" title="Putar musik">
+        <i class="fas fa-play" id="musicIcon"></i>
     </div>
 
     <div id="cover-overlay">
@@ -469,7 +488,6 @@
         <p style="letter-spacing: 3px; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">Undangan Pernikahan</p>
         <h1 class="cursive" style="font-size: 4rem; margin-bottom: 10px;">Rama & Shinta</h1>
         <p style="margin-bottom: 30px; font-style: italic;">Dengan hormat, kami mengundang Anda untuk hadir di hari bahagia kami</p>
-
         <button class="btn-gold" onclick="openInvitation()">
             <i class="fa-solid fa-envelope-open"></i> Buka Undangan
         </button>
@@ -485,12 +503,12 @@
     </nav>
 
     <section id="home" class="hero">
-        <p data-aos="fade-down" style="letter-spacing: 3px;" class="text-overlay-clear">UNDANGAN PERNIKAHAN</p>
+        <p data-aos="fade-down" style="letter-spacing: 3px;">UNDANGAN PERNIKAHAN</p>
         <h2 data-aos="zoom-in" class="cursive" style="font-size: 5rem; margin: 20px 0;">Rama & Shinta</h2>
-        <p data-aos="fade-up" style="max-width: 600px; font-weight: 300; line-height: 1.6;" class="text-overlay-clear">
+        <p data-aos="fade-up" style="max-width: 600px; font-weight: 300; line-height: 1.6;">
             “Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.”
         </p>
-        <p data-aos="fade-up" data-aos-delay="150" style="margin-top: 20px; font-weight: 600; color: var(--gold); text-shadow: 0 2px 10px rgba(0,0,0,0.6);">25 OKTOBER 2026</p>
+        <p data-aos="fade-up" data-aos-delay="150" style="margin-top: 20px; font-weight: 600; color: var(--gold);">25 OKTOBER 2026</p>
     </section>
 
     <section class="section-padding" style="background-color: white;">
@@ -517,9 +535,6 @@
                 <p style="font-size: 0.85rem; margin-top: 15px; color: #555;">Putra pertama dari:</p>
                 <p style="font-weight: bold;">Bpk. Heru Wijaya & Ibu Retno Susilowati</p>
                 <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">Sleman, Yogyakarta</p>
-                <div style="margin-top: 15px;">
-                    <a href="#" style="color: var(--maroon); margin: 0 10px;"><i class="fab fa-instagram fa-lg"></i></a>
-                </div>
             </div>
 
             <div class="mempelai-card" data-aos="fade-left" data-aos-duration="1000">
@@ -529,9 +544,6 @@
                 <p style="font-size: 0.85rem; margin-top: 15px; color: #555;">Putri kedua dari:</p>
                 <p style="font-weight: bold;">Bpk. Bambang Purnomo & Ibu Sri Rahayu</p>
                 <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">Bantul, Yogyakarta</p>
-                <div style="margin-top: 15px;">
-                    <a href="#" style="color: var(--maroon); margin: 0 10px;"><i class="fab fa-instagram fa-lg"></i></a>
-                </div>
             </div>
         </div>
     </section>
@@ -541,18 +553,10 @@
         <p data-aos="fade-up" style="color: var(--cream); margin-bottom: 30px;">Semoga Tuhan memberkahi rencana baik kami.</p>
 
         <div class="countdown" data-aos="zoom-in">
-            <div class="countdown-item">
-                <span id="days">00</span>Hari
-            </div>
-            <div class="countdown-item">
-                <span id="hours">00</span>Jam
-            </div>
-            <div class="countdown-item">
-                <span id="minutes">00</span>Menit
-            </div>
-            <div class="countdown-item">
-                <span id="seconds">00</span>Detik
-            </div>
+            <div class="countdown-item"><span id="days">00</span>Hari</div>
+            <div class="countdown-item"><span id="hours">00</span>Jam</div>
+            <div class="countdown-item"><span id="minutes">00</span>Menit</div>
+            <div class="countdown-item"><span id="seconds">00</span>Detik</div>
         </div>
 
         <div class="acara-container">
@@ -565,7 +569,18 @@
                 </p>
                 <p style="font-weight: bold; color: var(--gold);">Kraton Yogyakarta</p>
                 <p style="font-size: 0.9rem; margin-bottom: 20px;">Jl. Rotowijayan Blok No. 1, Panembahan, Kecamatan Kraton, Kota Yogyakarta</p>
-                <a href="https://maps.app.goo.gl/9D6U8y1bZUpE8X1A8" target="_blank" class="btn-gold"><i class="fas fa-map-marker-alt"></i> Petunjuk Google Maps</a>
+
+                <div class="map-box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="150">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_DI_SINI"
+                        width="100%"
+                        height="320"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
 
             <div class="acara-box" data-aos="fade-up-left" data-aos-duration="1000">
@@ -577,7 +592,6 @@
                 </p>
                 <p style="font-weight: bold; color: var(--gold);">Gedung Sasana Hinggil Dwi Abad</p>
                 <p style="font-size: 0.9rem; margin-bottom: 20px;">Alun-Alun Kidul, Kecamatan Kraton, Kota Yogyakarta</p>
-                <a href="https://maps.app.goo.gl/9D6U8y1bZUpE8X1A8" target="_blank" class="btn-gold"><i class="fas fa-map-marker-alt"></i> Petunjuk Google Maps</a>
             </div>
         </div>
     </section>
@@ -679,22 +693,29 @@
 
         const audio = document.getElementById("bg-music");
         const musicToggle = document.getElementById("musicToggle");
+        const musicIcon = document.getElementById("musicIcon");
         const scrollOverlay = document.getElementById('scroll-overlay');
 
         function openInvitation() {
             document.getElementById("cover-overlay").classList.add("fade-out");
             document.body.style.overflow = "auto";
-            audio.play().catch(function(){});
+            audio.play().then(() => {
+                musicIcon.className = "fas fa-pause";
+                musicToggle.classList.remove("paused");
+            }).catch(() => {});
         }
 
         document.body.style.overflow = "hidden";
 
         function toggleMusic() {
             if (audio.paused) {
-                audio.play();
-                musicToggle.classList.remove("paused");
+                audio.play().then(() => {
+                    musicIcon.className = "fas fa-pause";
+                    musicToggle.classList.remove("paused");
+                }).catch(() => {});
             } else {
                 audio.pause();
+                musicIcon.className = "fas fa-play";
                 musicToggle.classList.add("paused");
             }
         }
