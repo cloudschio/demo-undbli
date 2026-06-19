@@ -81,3 +81,8 @@ setInterval(() => showSlide(index + 1), 4500);
 document.querySelectorAll('.top-nav a').forEach(a => a.addEventListener('click', () => {
   document.getElementById('openingScreen')?.remove();
 }));
+
+const navToggle = document.getElementById('navToggle');
+const topNav = document.getElementById('topNav');
+navToggle?.addEventListener('click', () => topNav.classList.toggle('open'));
+document.querySelectorAll('.top-nav a').forEach(a => a.addEventListener('click', () => topNav.classList.remove('open')));
