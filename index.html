@@ -169,16 +169,26 @@
           <button class="btn primary" id="waBtn">Kirim via WhatsApp</button>
         </div>
         <div class="card note-card">
-          <div class="label">Catatan</div>
-          <p>RSVP tidak wajib memakai sheet. Undangan juga tetap nyaman dipakai tanpa nama tamu.</p>
-          <div class="gift-box">
-            <div class="label">Digital Envelope</div>
-            <p>Seabank 901794598110</p>
+          <div class="gift-header">
+            <div>
+              <div class="label">Hadiah Digital</div>
+              <h3 class="gift-title">Hadiah Digital</h3>
+            </div>
           </div>
-          <div class="gift-box">
-            <div class="label">Kontak</div>
-            <p>WA 0881081912121</p>
+          <div class="gift-row">
+            <div class="gift-col gift-col-main">
+              <div class="gift-label">Digital Envelope</div>
+              <div class="gift-value" id="accountValue">901794598110</div>
+              <div class="gift-sub">Seabank • Atas nama: Fulan &amp; Fulana</div>
+              <button class="gift-copy" id="copyAccount">Salin Nomor Rekening</button>
+            </div>
+            <div class="gift-col gift-col-qris">
+              <div class="gift-label">QRIS</div>
+              <img class="qris-img" src="https://via.placeholder.com/420x420.png?text=QRIS" alt="QRIS pembayaran">
+              <div class="gift-sub">Scan untuk kirim hadiah digital</div>
+            </div>
           </div>
+          <div class="gift-foot">Terima kasih atas doa dan perhatian yang diberikan.</div>
         </div>
       </div>
     </section>
@@ -211,6 +221,7 @@
   </main>
 
   <a class="floating-wa" href="https://wa.me/62881081912121" target="_blank" aria-label="WhatsApp">WA</a>
+  <div class="toast" aria-live="polite"></div>
 
   <script src="assets/js/main.js"></script>
 </body>
