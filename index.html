@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serat Ulem - Undangan Pernikahan</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* CSS RESET & VARIABLES */
         :root {
             --maroon: #5c0612;
             --gold: #d4af37;
@@ -35,6 +30,11 @@
             scroll-behavior: smooth;
         }
 
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--cream);
@@ -42,7 +42,6 @@
             overflow-x: hidden;
         }
 
-        /* UTILITIES */
         .title-jawa {
             font-family: 'Cinzel Decorative', serif;
             color: var(--gold);
@@ -79,7 +78,6 @@
             transform: translateY(-2px);
         }
 
-        /* BACKGROUND & DECORATIONS */
         .batik-bg {
             background-image: radial-gradient(rgba(92, 6, 18, 0.05) 1px, transparent 0),
                               radial-gradient(rgba(92, 6, 18, 0.05) 1px, transparent 0);
@@ -94,7 +92,15 @@
             filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.2));
         }
 
-        /* COVER OVERLAY */
+        #scroll-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: rgba(0, 0, 0, 0);
+            z-index: 2;
+            transition: background 0.15s ease;
+        }
+
         #cover-overlay {
             position: fixed;
             top: 0;
@@ -119,7 +125,6 @@
             pointer-events: none;
         }
 
-        /* NAVBAR / FLOATING MENU */
         .floating-nav {
             position: fixed;
             bottom: 20px;
@@ -146,7 +151,6 @@
             color: var(--gold);
         }
 
-        /* MUSIC CONTROLLER */
         .music-control {
             position: fixed;
             top: 20px;
@@ -173,7 +177,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* HERO SECTION */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80&w=1500') center/cover;
@@ -186,7 +189,6 @@
             padding: 20px;
         }
 
-        /* PROFIL MEMPELAI */
         .mempelai-container {
             display: flex;
             flex-wrap: wrap;
@@ -218,7 +220,6 @@
             margin: 0 auto 20px;
         }
 
-        /* COUNTDOWN TIMER */
         .countdown {
             display: flex;
             justify-content: center;
@@ -243,7 +244,6 @@
             color: var(--gold);
         }
 
-        /* DETAIL ACARA */
         .acara-container {
             display: flex;
             flex-wrap: wrap;
@@ -262,9 +262,13 @@
             min-width: 290px;
             max-width: 450px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
         }
 
-        /* LOVE JOURNEY TIMELINE */
+        .acara-box:hover {
+            transform: translateY(-4px);
+        }
+
         .timeline {
             position: relative;
             max-width: 800px;
@@ -323,7 +327,6 @@
             border-right: 5px solid var(--maroon);
         }
 
-        /* RSVP & WISHES */
         .rsvp-form {
             max-width: 600px;
             margin: 0 auto;
@@ -388,7 +391,6 @@
             display: inline-block;
         }
 
-        /* DIGITAL GIFT */
         .gift-box {
             background: #fff;
             border: 1px dashed var(--gold);
@@ -397,9 +399,13 @@
             max-width: 400px;
             margin: 20px auto;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
         }
 
-        /* RESPONSIVE CSS */
+        .gift-box:hover {
+            transform: translateY(-4px);
+        }
+
         @media (max-width: 768px) {
             .timeline::after { left: 31px; }
             .timeline-container { width: 100%; padding-left: 70px; padding-right: 25px; }
@@ -411,21 +417,17 @@
     </style>
 </head>
 <body class="batik-bg">
+    <div id="scroll-overlay"></div>
 
-    <!-- AUDIO PLAYER (Gamelan / Javanese Instrumental) -->
     <audio id="bg-music" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        <!-- Anda bisa mengganti URL di atas dengan file audio gamelan atau instrumen romantis pilihan Anda -->
     </audio>
 
-    <!-- FLOATING MUSIC CONTROL -->
     <div class="music-control" id="musicToggle" onclick="toggleMusic()">
         <i class="fas fa-music"></i>
     </div>
 
-    <!-- COVER OVERLAY -->
     <div id="cover-overlay">
-        <!-- SVG Gunungan Sederhana -->
         <svg class="gunungan" viewBox="0 0 100 100" width="100" fill="#d4af37">
             <path d="M50 5 L90 85 L70 85 L70 95 L30 95 L30 85 L10 85 Z M50 20 L30 75 L70 75 Z"/>
         </svg>
@@ -438,10 +440,9 @@
             <h3 id="guest-name" style="margin-top: 5px; color: var(--gold);">Tamu Undangan</h3>
         </div>
 
-        <button class="btn-gold" onclick="openInvitation()"><i class="fa-open fa-envelope-open mr-2"></i> Buka Undangan</button>
+        <button class="btn-gold" onclick="openInvitation()"><i class="fa-solid fa-envelope-open"></i> Buka Undangan</button>
     </div>
 
-    <!-- FLOATING NAVIGATION -->
     <nav class="floating-nav">
         <a href="#home" title="Home"><i class="fas fa-home"></i></a>
         <a href="#mempelai" title="Mempelai"><i class="fas fa-heart"></i></a>
@@ -451,15 +452,13 @@
         <a href="#hadiah" title="Kado"><i class="fas fa-gift"></i></a>
     </nav>
 
-    <!-- HERO SECTION -->
     <section id="home" class="hero">
         <p data-aos="fade-down" style="letter-spacing: 3px;">PAWIDAHAN AGUNG</p>
         <h2 data-aos="zoom-in" class="cursive" style="font-size: 5rem; margin: 20px 0;">Rama & Shinta</h2>
         <p data-aos="fade-up" style="max-width: 600px; font-weight: 300; line-height: 1.6;">“Mugi kerso rawuh dumateng serat ulem pawidahan agung kito roro.”</p>
-        <p data-aos="fade-up" style="margin-top: 20px; font-weight: 600; color: var(--gold);">25 OKTOBER 2026</p>
+        <p data-aos="fade-up" data-aos-delay="150" style="margin-top: 20px; font-weight: 600; color: var(--gold);">25 OKTOBER 2026</p>
     </section>
 
-    <!-- KATA PENGANTAR (AYAT/KUTIPAN) -->
     <section class="section-padding" style="background-color: white;">
         <div style="max-width: 800px; margin: 0 auto;" data-aos="fade-up">
             <svg class="gunungan" viewBox="0 0 100 100" width="60" fill="#5c0612">
@@ -472,14 +471,12 @@
         </div>
     </section>
 
-    <!-- MEMPELAI SECTION -->
     <section id="mempelai" class="section-padding">
         <h2 class="title-jawa" data-aos="fade-up">Arum Pinilih</h2>
         <p data-aos="fade-up" style="margin-bottom: 40px; color: #666;">Kanthi sih nugrahaning Gusti, kulo nembadani jombloning katresnan</p>
         
         <div class="mempelai-container">
-            <!-- MEMPELAI PRIA -->
-            <div class="mempelai-card" data-aos="fade-right">
+            <div class="mempelai-card" data-aos="fade-right" data-aos-duration="1000">
                 <img class="mempelai-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300" alt="Mempelai Pria">
                 <h3 class="cursive">Raden Rama Wijaya</h3>
                 <p style="font-weight: 600; margin-top: 10px;">Rama</p>
@@ -491,8 +488,7 @@
                 </div>
             </div>
 
-            <!-- MEMPELAI WANITA -->
-            <div class="mempelai-card" data-aos="fade-left">
+            <div class="mempelai-card" data-aos="fade-left" data-aos-duration="1000">
                 <img class="mempelai-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300" alt="Mempelai Wanita">
                 <h3 class="cursive">Dewi Shinta Larasati</h3>
                 <p style="font-weight: 600; margin-top: 10px;">Shinta</p>
@@ -506,30 +502,19 @@
         </div>
     </section>
 
-    <!-- DETAIL ACARA & COUNTDOWN -->
     <section id="acara" class="section-padding" style="background-color: #24140e; color: white;">
         <h2 class="title-jawa" data-aos="fade-up" style="color: var(--gold);">Wektu lan Panggonan</h2>
         <p data-aos="fade-up" style="color: var(--cream); margin-bottom: 30px;">Mugi Gusti ngijabahi sedaya rancangan kito</p>
 
-        <!-- COUNTDOWN -->
         <div class="countdown" data-aos="zoom-in">
-            <div class="countdown-item">
-                <span id="days">00</span>Dina
-            </div>
-            <div class="countdown-item">
-                <span id="hours">00</span>Jam
-            </div>
-            <div class="countdown-item">
-                <span id="minutes">00</span>Menit
-            </div>
-            <div class="countdown-item">
-                <span id="seconds">00</span>Detik
-            </div>
+            <div class="countdown-item"><span id="days">00</span>Dina</div>
+            <div class="countdown-item"><span id="hours">00</span>Jam</div>
+            <div class="countdown-item"><span id="minutes">00</span>Menit</div>
+            <div class="countdown-item"><span id="seconds">00</span>Detik</div>
         </div>
 
         <div class="acara-container">
-            <!-- AKAD NIKAH -->
-            <div class="acara-box" data-aos="fade-up-right">
+            <div class="acara-box" data-aos="fade-up-right" data-aos-duration="1000">
                 <i class="fas fa-ring" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 20px;"></i>
                 <h3 class="title-jawa" style="font-size: 1.5rem; margin-bottom: 15px;">Akad Nikah</h3>
                 <p style="border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 15px; margin-bottom: 15px;">
@@ -541,8 +526,7 @@
                 <a href="https://maps.app.goo.gl/9D6U8y1bZUpE8X1A8" target="_blank" class="btn-gold"><i class="fas fa-map-marker-alt"></i> Petunjuk Google Maps</a>
             </div>
 
-            <!-- RESEPSI -->
-            <div class="acara-box" data-aos="fade-up-left">
+            <div class="acara-box" data-aos="fade-up-left" data-aos-duration="1000">
                 <i class="fas fa-utensils" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 20px;"></i>
                 <h3 class="title-jawa" style="font-size: 1.5rem; margin-bottom: 15px;">Resepsi</h3>
                 <p style="border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 15px; margin-bottom: 15px;">
@@ -556,7 +540,6 @@
         </div>
     </section>
 
-    <!-- LOVE STORY TIMELINE -->
     <section id="cerita" class="section-padding">
         <h2 class="title-jawa" data-aos="fade-up">Cariyos Tresno</h2>
         <p data-aos="fade-up" style="margin-bottom: 40px; color: #666;">Kepriye asmaraning kito roro wiwit nemu marganing katresnan</p>
@@ -583,12 +566,11 @@
         </div>
     </section>
 
-    <!-- RSVP & GUESTBOOK -->
     <section id="rsvp" class="section-padding" style="background-color: white;">
         <h2 class="title-jawa" data-aos="fade-up">Konfirmasi Rawuh (RSVP)</h2>
         <p data-aos="fade-up" style="margin-bottom: 35px; color: #666;">Mugi kerso maringi pawartos rawuh panjenengan sedaya</p>
 
-        <div class="rsvp-form" data-aos="zoom-in">
+        <div class="rsvp-form" data-aos="zoom-in" data-aos-duration="1000">
             <form id="rsvpForm">
                 <div class="form-group">
                     <label for="nama">Jeneng Sampeyan</label>
@@ -611,14 +593,10 @@
             </form>
         </div>
 
-        <!-- LIVE GUEST BOOK (LOCAL STORAGE) -->
         <h3 class="title-jawa" style="font-size: 1.5rem; margin-top: 50px;">Buku Tamu & Donga Pangestu</h3>
-        <div class="wishes-display" id="wishesBox">
-            <!-- Dynamic list generated by JS -->
-        </div>
+        <div class="wishes-display" id="wishesBox"></div>
     </section>
 
-    <!-- DIGITAL GIFT (ANGPAO) -->
     <section id="hadiah" class="section-padding">
         <h2 class="title-jawa" data-aos="fade-up">Kado Digital</h2>
         <p data-aos="fade-up" style="margin-bottom: 30px; color: #666;">Kagem panjenengan ingkang kerso maringi kado dhumateng kito roro</p>
@@ -640,7 +618,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer style="background-color: var(--dark-brown); color: var(--text-light); text-align: center; padding: 40px 20px; border-top: 3px solid var(--gold);">
         <svg class="gunungan" viewBox="0 0 100 100" width="50" fill="#d4af37">
             <path d="M50 5 L90 85 L70 85 L70 95 L30 95 L30 85 L10 85 Z M50 20 L30 75 L70 75 Z"/>
@@ -650,42 +627,31 @@
         <p style="font-size: 0.75rem; color: #888;">&copy; 2026 Rama & Shinta Wedding. All rights reserved.</p>
     </footer>
 
-    <!-- AOS JS Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inisialisasi library animasi scroll (AOS)
         AOS.init({
             duration: 1000,
-            once: true
+            once: true,
+            offset: 120
         });
 
-        // Tangkap nama tamu dari parameter URL (contoh: url.com/?to=Budi)
         const urlParams = new URLSearchParams(window.location.search);
         const guestName = urlParams.get('to');
-        if (guestName) {
-            document.getElementById('guest-name').innerText = guestName;
-        }
+        if (guestName) document.getElementById('guest-name').innerText = guestName;
 
-        // FUNGSI UNTUK MEMBUKA UNDANGAN
         const audio = document.getElementById("bg-music");
         const musicToggle = document.getElementById("musicToggle");
+        const scrollOverlay = document.getElementById('scroll-overlay');
 
         function openInvitation() {
-            // Hilangkan overlay penutup
             document.getElementById("cover-overlay").classList.add("fade-out");
-            // Aktifkan scroll pada body
             document.body.style.overflow = "auto";
-            
-            // Putar musik otomatis setelah interaksi pengguna
-            audio.play().catch(function(error) {
-                console.log("Autoplay dicegah oleh browser. Pengguna harus mengaktifkannya secara manual.");
-            });
+            audio.play().catch(function(){});
+            requestAnimationFrame(updateScrollOverlay);
         }
 
-        // Blokir scroll sebelum undangan dibuka
         document.body.style.overflow = "hidden";
 
-        // PLAY/PAUSE MUSIK
         function toggleMusic() {
             if (audio.paused) {
                 audio.play();
@@ -696,9 +662,7 @@
             }
         }
 
-        // COUNTDOWN TIMER
         const targetDate = new Date("October 25, 2026 08:00:00").getTime();
-
         const timer = setInterval(function() {
             const now = new Date().getTime();
             const difference = targetDate - now;
@@ -722,23 +686,22 @@
             }
         }, 1000);
 
-        // SALIN NO REKENING
         function copyText(text) {
             navigator.clipboard.writeText(text).then(function() {
                 alert("Nomor rekening kasalin dhumateng clipboard: " + text);
-            }, function(err) {
-                console.error("Gagal nyalin teks: ", err);
             });
         }
 
-        // RSVP & BUKU TAMU DENGAN LOCAL STORAGE
         const rsvpForm = document.getElementById('rsvpForm');
         const wishesBox = document.getElementById('wishesBox');
 
-        // Fungsi menampilkan pesan-pesan tamu
+        function escapeHtml(text) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+
         function renderWishes() {
             wishesBox.innerHTML = '';
-            // Ambil data yang ada di localstorage atau gunakan default jika kosong
             let wishes = JSON.parse(localStorage.getItem('wedding_wishes')) || [
                 { name: "Suryo Atmojo", status: "Rawuh", wish: "Sugeng mengku garwo kagem Mas Rama lan Mbak Shinta. Mugi tansah rukun runtut runtung reruntungan sacoro lahir dumateng batin." },
                 { name: "Giri & Putri", status: "Rawuh", wish: "Nderek mangubagyo. Mugi Gusti maringi berkah katresnan ingkang sejati salawase." }
@@ -755,19 +718,6 @@
             });
         }
 
-        // Menghindari eksploitasi XSS dari inputan tamu
-        function escapeHtml(text) {
-            const map = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#039;'
-            };
-            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-        }
-
-        // Tangani submit form rsvp
         rsvpForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const namaInput = document.getElementById('nama').value;
@@ -787,8 +737,17 @@
             alert("Matur nuwun! RSVP lan donga pangestu panjenengan sampun katampi.");
         });
 
-        // Panggil render saat halaman dimuat
+        function updateScrollOverlay() {
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const progress = maxScroll > 0 ? scrollTop / maxScroll : 0;
+            const opacity = Math.min(0.85, Math.pow(progress, 1.35) * 0.85);
+            scrollOverlay.style.background = `rgba(0, 0, 0, ${opacity})`;
+        }
+
+        window.addEventListener('scroll', updateScrollOverlay);
         renderWishes();
+        updateScrollOverlay();
     </script>
 </body>
 </html>
