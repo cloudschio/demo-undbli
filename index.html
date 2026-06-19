@@ -6,142 +6,101 @@
   <title>Adam & Sari | Undangan Pernikahan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="bg"></div>
-
-  <div class="opening-screen" id="openingScreen">
-    <div class="opening-card glass">
-      <p class="eyebrow">Wedding Invitation</p>
-      <div class="opening-names"><span>Adam</span><span class="amp">&</span><span>Sari</span></div>
-      <p class="opening-sub opening-date">19 Desember 2026</p>
-      <button class="btn btn-primary" id="openInvite">Buka Undangan</button>
-    </div>
-  </div>
-
-  <audio id="bgm" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  </audio>
-
-  <button class="floating-btn" id="musicBtn">♫</button>
-  <button class="floating-btn second" id="themeBtn">☾</button>
-
-  <main class="page hidden" id="mainPage">
-    <section class="hero card glass">
-      <p class="eyebrow">We are getting married</p>
-      <h1>Adam & Sari</h1>
-      <p class="lead">Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu.</p>
-    </section>
-
-    <section class="card glass date-card">
-      <div class="section-head"><span></span><h2>Tanggal Pernikahan</h2><span></span></div>
-      <div class="date-display">
-        <div class="date-main">Sabtu, 19 Desember 2026</div>
-        <div class="date-sub">Surabaya, Jawa Timur</div>
-      </div>
-    </section>
-
-    <section class="card glass location-short">
-      <div class="section-head"><span></span><h2>Akad & Resepsi</h2><span></span></div>
-      <div class="two-col">
-        <div class="info-box">
-          <h2>Akad Nikah</h2>
-          <p>08:00 - 10:00 WIB</p>
-          <p>Masjid Agung Surabaya</p>
-        </div>
-        <div class="info-box">
-          <h2>Resepsi</h2>
-          <p>11:00 - 14:00 WIB</p>
-          <p>Gedung Pernikahan Indah</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card glass groom-bride">
-      <div class="section-head"><span></span><h2>Mempelai</h2><span></span></div>
-      <div class="couple-grid">
-        <div class="couple-card groom-card">
-          <img class="couple-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Foto mempelai pria">
-          <div class="couple-text">
-            <p class="eyebrow">Mempelai Pria</p>
-            <h3>Adam Wijaya</h3>
-            <p>Putra dari Bpk. Wijaya & Ibu Susanti</p>
-          </div>
-        </div>
-        <div class="couple-card bride-card">
-          <img class="couple-photo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80" alt="Foto mempelai wanita">
-          <div class="couple-text">
-            <p class="eyebrow">Mempelai Wanita</p>
-            <h3>Sari Kusuma</h3>
-            <p>Putri dari Bpk. Kusuma & Ibu Dewi</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="card glass countdown-card">
-      <div class="section-head"><span></span><h2>Menuju Hari Bahagia</h2><span></span></div>
-      <p class="muted center countdown-note">Hitung mundur menuju momen sakral pernikahan kami.</p>
-      <div class="countdown" id="countdownBox">
-        <div><span id="days">00</span><small>Hari</small></div>
-        <div><span id="hours">00</span><small>Jam</small></div>
-        <div><span id="minutes">00</span><small>Menit</small></div>
-        <div><span id="seconds">00</span><small>Detik</small></div>
-      </div>
-    </section>
-
-    <section class="card glass">
-      <div class="section-head"><span></span><h2>Galeri</h2><span></span></div>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Gallery 1">
-        <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1200&q=80" alt="Gallery 2">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Gallery 3">
-        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59a6c?auto=format&fit=crop&w=1200&q=80" alt="Gallery 4">
-      </div>
-    </section>
-
-    <section class="card glass">
-      <div class="section-head"><span></span><h2>Lokasi</h2><span></span></div>
-      <div class="map-box">
-        <iframe src="https://www.google.com/maps?q=surabaya&output=embed" loading="lazy"></iframe>
-      </div>
-    </section>
-
-    <section class="card glass" id="rsvp">
-      <div class="section-head"><span></span><h2>RSVP WhatsApp</h2><span></span></div>
-      <p class="muted center rsvp-note">Konfirmasi kehadiran Anda melalui WhatsApp dengan mudah.</p>
-      <form id="rsvpForm" class="form narrow-form">
-        <input type="text" id="rsvpName" class="input" placeholder="Nama Anda" required>
-        <select id="rsvpStatus" class="input" required>
-          <option value="">Pilih kehadiran</option>
-          <option value="Hadir">Hadir</option>
-          <option value="Tidak Hadir">Tidak Hadir</option>
-        </select>
-        <input type="number" id="rsvpGuest" class="input" placeholder="Jumlah tamu" min="1" value="1">
-        <textarea id="rsvpMessage" class="input" rows="4" placeholder="Pesan / ucapan"></textarea>
-        <button class="btn btn-primary rsvp-btn" type="submit">Kirim RSVP</button>
-      </form>
-    </section>
-
-    <section class="card glass qris-card">
-      <div class="section-head"><span></span><h2>QRIS & Rekening</h2><span></span></div>
-      <p class="muted center qris-note">Silakan gunakan QRIS di bawah atau transfer ke rekening berikut.</p>
-      <div class="qris-horizontal">
-        <div class="qris-left">
-          <img src="https://images.unsplash.com/photo-1633265486064-086b219f3f90?auto=format&fit=crop&w=1200&q=80" alt="QRIS" class="qris-img">
-          <p class="qris-caption">Scan QRIS untuk donasi / amplop digital</p>
-        </div>
-        <div class="rekening-box">
-          <div class="rekening-row"><span class="label">Bank</span><span class="value">BRI</span></div>
-          <div class="rekening-row rekening-number-row"><span class="label">No. Rekening</span><span class="value" id="rekeningNumber">1234 5678 9012 345</span><button class="btn btn-secondary copy-btn" type="button" id="copyRekening">Salin</button></div>
-          <div class="rekening-row"><span class="label">Atas Nama</span><span class="value">Adam Wijaya</span></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#f6f1ea;
+      --card:rgba(255,255,255,.72);
+      --text:#1d1713;
+      --muted:#6f665f;
+      --gold:#c79a5a;
+      --gold2:#9c6d2d;
+      --line:rgba(199,154,90,.2);
+      --shadow:0 18px 50px rgba(35,25,17,.12);
+    }
+    body{
+      font-family:'Manrope',sans-serif;
+      background:radial-gradient(circle at top,rgba(199,154,90,.22),transparent 24%),linear-gradient(180deg,#f7f0e8,#efe4d7);
+      color:var(--text);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    h1,h2,h3{
+      font-family:'Cormorant Garamond',serif;
+    }
+    .bg{
+      position:fixed;inset:0;
+      background:linear-gradient(130deg,rgba(199,154,90,.14),transparent 35%,rgba(156,109,45,.12));
+      z-index:0;pointer-events:none;
+    }
+    .opening-screen{
+      position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:90;
+      background:linear-gradient(180deg,rgba(246,241,234,.95),rgba(255,255,255,.98));
+      transition:.4s ease;overflow:hidden;
+    }
+    .opening-card{
+      max-width:420px;width:calc(100% - 28px);padding:40px 24px 34px;text-align:center;position:relative;overflow:hidden;
+      border:1px solid rgba(199,154,90,.22);border-radius:26px;
+      backdrop-filter:blur(16px);
+      background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.58));
+      box-shadow:0 22px 60px rgba(35,25,17,.11),inset 0 1px 0 rgba(255,255,255,.55);
+      animation:cardEnter .9s cubic-bezier(.2,.8,.2,1);
+    }
+    .opening-card::after{
+      content:"";position:absolute;left:-20px;bottom:-20px;width:120px;height:120px;border-radius:50%;
+      background:radial-gradient(circle,rgba(199,154,90,.16),transparent 70%);pointer-events:none;
+    }
+    .eyebrow,.opening-sub{
+      font-size:.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--muted);
+    }
+    .opening-names{
+      display:flex;flex-direction:column;align-items:center;gap:4px;line-height:1;margin:10px 0 10px;
+    }
+    .opening-names span{
+      display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,8vw,4.6rem);font-weight:700;
+      color:transparent;background:linear-gradient(180deg,#cda061,#8f6327);-webkit-background-clip:text;background-clip:text;
+    }
+    .opening-names .amp{
+      font-size:clamp(2rem,6vw,3rem);line-height:1;margin:2px 0 4px;
+    }
+    .opening-date{font-size:1.05rem;margin-bottom:22px}
+    .page{
+      position:relative;z-index:1;max-width:1060px;margin:0 auto;padding:18px 14px 28px;overflow:hidden;
+    }
+    .hidden{display:none}
+    .glass{
+      backdrop-filter:blur(16px);
+      background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.58));
+      border:1px solid rgba(199,154,90,.2);
+      box-shadow:0 18px 50px rgba(35,25,17,.12),inset 0 1px 0 rgba(255,255,255,.55);
+    }
+    .card,.opening-card{
+      border-radius:30px;
+    }
+    .card{
+      padding:28px;margin-bottom:20px;
+      border:1.5px solid rgba(199,154,90,.2);
+      box-shadow:0 18px 50px rgba(35,25,17,.12),inset 0 1px 0 rgba(255,255,255,.35);
+    }
+    .hero{
+      text-align:center;display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:56vh;padding-top:12px;padding-bottom:12px;
+    }
+    .hero h1{
+      font-size:clamp(3rem,10vw,6rem);line-height:.95;
+      background:linear-gradient(180deg,#cda061,#8f6327);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      letter-spacing:.6px;font-weight:600;text-shadow:0 1px 0 rgba(255,255,255,.5);
+    }
+    .lead,.muted,.info-box p,.rekening-box p,.date-sub,.qris-caption,.couple-text p,.opening-message p,.location-detail p{
+      color:var(--muted);line-height:1.95;font-size:1.02rem;
+    }
+    .btn{
+      border:none;border-radius:999px;padding:13px 20px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+      text-decoration:none;transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(135deg,#d2a561,#9c6d2d);
+      color:#fff;
+      box-shadow:0 16px 30px rgba(156,109,45,.28),inset 
