@@ -267,6 +267,41 @@
             -webkit-backdrop-filter: blur(8px);
         }
 
+        .webdings-deco {
+            font-family: Webdings, sans-serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            line-height: 1;
+            display: inline-block;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            margin: 0 8px;
+            opacity: 0.9;
+        }
+
+        .webdings-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 14px 0 20px;
+            color: var(--gold);
+        }
+
+        .webdings-line::before,
+        .webdings-line::after {
+            content: "";
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.75), transparent);
+        }
+
+        .webdings-bullet {
+            font-family: Webdings, sans-serif;
+            color: var(--gold);
+            font-size: 0.95rem;
+            margin-right: 6px;
+        }
+
         .mempelai-container {
             display: flex;
             flex-wrap: wrap;
@@ -518,7 +553,7 @@
     <div id="scroll-overlay"></div>
 
     <audio id="bg-music" loop>
-        <source src="assets/music.mp3" type="audio/mpeg">
+        <source src="assets/kebo-giro.mp3" type="audio/mpeg">
     </audio>
 
     <div class="music-control" id="musicToggle" onclick="toggleMusic()" title="Putar musik">
@@ -557,18 +592,26 @@
 
     <section class="section-padding section-light">
         <div style="max-width: 800px; margin: 0 auto;" data-aos="fade-up">
+            <div class="webdings-line">
+                <span class="webdings-deco">n</span>
+                <span class="webdings-deco">n</span>
+            </div>
             <svg class="gunungan" viewBox="0 0 100 100" width="60" fill="#5c0612">
                 <path d="M50 5 L90 85 L70 85 L70 95 L30 95 L30 85 L10 85 Z M50 20 L30 75 L70 75 Z"/>
             </svg>
+            <div class="webdings-line">
+                <span class="webdings-deco">n</span>
+                <span class="webdings-deco">n</span>
+            </div>
             <p style="font-style: italic; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: var(--dark-brown);">
                 “Semoga Tuhan senantiasa melimpahkan rahmat dan keberkahan kepada kita semua.”
             </p>
-            <p style="font-weight: bold; color: var(--maroon);">- Kata Pembuka -</p>
+            <p style="font-weight: bold; color: var(--maroon);"><span class="webdings-bullet">n</span>- Kata Pembuka -<span class="webdings-bullet">n</span></p>
         </div>
     </section>
 
     <section id="mempelai" class="section-padding bg-section" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1600');">
-        <h2 class="title-jawa" data-aos="fade-up">Mempelai</h2>
+        <h2 class="title-jawa" data-aos="fade-up"><span class="webdings-deco">n</span>Mempelai<span class="webdings-deco">n</span></h2>
         <p data-aos="fade-up" style="margin-bottom: 40px; color: var(--cream);">Dengan rahmat dan kasih Tuhan, kami dipersatukan dalam ikatan pernikahan.</p>
 
         <div class="mempelai-container">
@@ -593,7 +636,7 @@
     </section>
 
     <section id="acara" class="section-padding bg-section" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1600');">
-        <h2 class="title-jawa" data-aos="fade-up">Waktu dan Tempat</h2>
+        <h2 class="title-jawa" data-aos="fade-up"><span class="webdings-deco">n</span>Waktu dan Tempat<span class="webdings-deco">n</span></h2>
         <p data-aos="fade-up" style="color: var(--cream); margin-bottom: 30px;">Semoga Tuhan memberkahi rencana baik kami.</p>
 
         <div class="countdown" data-aos="zoom-in">
@@ -633,7 +676,7 @@
     </section>
 
     <section id="cerita" class="section-padding bg-section" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1600');">
-        <h2 class="title-jawa" data-aos="fade-up">Perjalanan Cinta</h2>
+        <h2 class="title-jawa" data-aos="fade-up"><span class="webdings-deco">n</span>Perjalanan Cinta<span class="webdings-deco">n</span></h2>
         <p data-aos="fade-up" style="margin-bottom: 40px; color: var(--cream);">Awal pertemuan kami hingga akhirnya dipersatukan dalam ikatan suci.</p>
 
         <div class="timeline">
@@ -659,7 +702,7 @@
     </section>
 
     <section id="rsvp" class="section-padding soft-brown">
-        <h2 class="title-jawa" data-aos="fade-up">Konfirmasi Kehadiran</h2>
+        <h2 class="title-jawa" data-aos="fade-up"><span class="webdings-deco">n</span>Konfirmasi Kehadiran<span class="webdings-deco">n</span></h2>
         <p data-aos="fade-up" style="margin-bottom: 35px;">Mohon kesediaannya untuk memberikan konfirmasi kehadiran dan doa restu.</p>
 
         <div class="rsvp-form" data-aos="zoom-in" data-aos-duration="1000">
@@ -685,12 +728,12 @@
             </form>
         </div>
 
-        <h3 class="title-jawa" style="font-size: 1.5rem; margin-top: 50px;">Doa dan Ucapan</h3>
+        <h3 class="title-jawa" style="font-size: 1.5rem; margin-top: 50px;"><span class="webdings-deco">n</span>Doa dan Ucapan<span class="webdings-deco">n</span></h3>
         <div class="wishes-display" id="wishesBox"></div>
     </section>
 
     <section id="hadiah" class="section-padding bg-section" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1600');">
-        <h2 class="title-jawa" data-aos="fade-up">Hadiah Pernikahan</h2>
+        <h2 class="title-jawa" data-aos="fade-up"><span class="webdings-deco">n</span>Hadiah Pernikahan<span class="webdings-deco">n</span></h2>
         <p data-aos="fade-up" style="margin-bottom: 30px; color: var(--cream);">Bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih, kami ucapkan terima kasih.</p>
 
         <div class="gift-box" data-aos="zoom-in">
